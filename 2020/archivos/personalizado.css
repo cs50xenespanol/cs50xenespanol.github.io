@@ -1,0 +1,22 @@
+aside {
+	background-color: #e52525;
+}
+
+#logo {
+	display: block;
+	margin: 0 auto;
+}
+
+#div-leyenda {
+	background-color: #d4d4d4;
+	padding: 15px;
+}
+
+#div-leyenda ul {
+	list-style: none;
+}
+
+
+#lista-pasos li {
+	margin-bottom: 1em;	
+}
