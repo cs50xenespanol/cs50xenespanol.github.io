@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Español</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: orangered">
+  <header>
+    <h1>
+      <a href="">CS50x en Español</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href="">Curso de Introducción a la Ciencia de la Computación de la Universidad de Harvard</a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semanas/0.html">Semana
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semanas/1.html">Semana
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semanas/2.html">Semana
+          2</a>
+        Arreglos
+      </li>
+      <li>
+        <a href="/2024/semanas/3.html">Semana
+          3</a>
+        Algoritmos
+      </li>
+      <li>
+        <a href="/2024/semanas/4.html">Semana
+          4</a>
+        Memoria
+      </li>
+      <li>
+        <a href="/2024/semanas/5.html">Semana
+          5</a>
+        Estructuras de Datos
+      </li>
+      <li>
+        <a href="/2024/semanas/6.html">Semana
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semanas/7.html">Semana
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semanas/8.html">Semana
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semanas/9.html">Semana
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semanas/10.html">Semana
+          10</a>
+        Ciberseguridad
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/proyecto.html">Proyecto Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honestidad.html">Honestidad Académica</a>
+      </li>
+      <li>
+        <a href="/2024/certificado.html">Certificado CS50</a>
+      </li>
+      <li>
+        <a href="/2024/preguntas_frecuentes.html">Preguntas Frecuentes</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Libro de Calificaciones</a>
+      </li>
+      <li>
+        <a href="/2024/personal.html">Equipo</a>
+      </li>
+      <li>
+        <a href="/2024/plan_de_estudios.html">Programa del Curso</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Manual del Programador</a>
+      </li>
+      <li>
+        <a href="/2024/estilo.html">Guía de Estilo</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h2>Guía de estilo para C</h2>
+<p>No existe una única forma correcta de diseñar códigos. Pero definitivamente hay muchas formas incorrectas (o al menos malas). Aun así, CS50 te pide que respetes las siguientes convenciones para que podamos analizar de forma confiable el estilo de tu código. De manera similar, las empresas suelen adoptar sus propias convenciones de estilo en toda la empresa.</p>
+<h2>Longitud de línea</h2>
+<p>Por convención, la longitud máxima de una línea de código en C es de 80 caracteres, lo que históricamente se basa en monitores de tamaño estándar en terminales de computadora antiguos, que podían mostrar 24 líneas verticalmente y 80 caracteres horizontalmente. Aunque la tecnología moderna ha dejado obsoleta la necesidad de mantener las líneas con un máximo de 80 caracteres, sigue siendo una pauta que debe considerarse una "detención suave", y una línea de 100 caracteres realmente debería ser la más larga que escribas en C, de lo contrario, los lectores generalmente deberán desplazarse. Si necesitas más de 100 caracteres, ¡quizás sea hora de repensar tus nombres de variables o tu diseño general!</p>
+<pre><code>  // Estas siguientes líneas de código primero le piden al usuario que dé dos valores enteros y luego multiplica esos dos valores enteros para que puedan usarse más adelante en el programa
+  int first_collected_integer_value_from_user = get_int("Integer please: ");
+  int second_collected_integer_value_from_user = get_int("Another integer please: ");
+  int product_of_the_two_integer_values_from_user = first_collected_integer_value_from_user * second_collected_integer_value_from_user;
+</code></pre>
+<p>En otros idiomas, particularmente JavaScript, es significativamente más difícil restringir las líneas a una longitud máxima; en cambio, tu objetivo debería ser dividir líneas (como mediante <code>\n</code>) en lugares que maximicen la legibilidad y claridad.</p>
+<h2>Comentarios</h2>
+<p>Los comentarios hacen que el código sea más legible, no solo para otros (por ejemplo, tu TF) sino también para ti, especialmente cuando pasan horas, días, semanas, meses o años entre escribir y leer tu propio código. Comentar muy poco es malo. Comentar demasiado es malo. ¿Dónde está el punto óptimo? Comentar cada pocas líneas de código (es decir, bloques interesantes) es una pauta decente. Intenta escribir comentarios que aborden una o ambas de estas preguntas:</p>
+<ol>
+<li>¿Qué hace este bloque?</li>
+<li>¿Por qué implementé este bloque de esta manera?</li>
+</ol>
+<p>Dentro de las funciones, usa "comentarios en línea" y mantenlos cortos (por ejemplo, una línea), de lo contrario, se vuelve difícil distinguir los comentarios del código, incluso con <a href="http://en.wikipedia.org/wiki/Syntax_highlighting">resaltado de sintaxis</a>. Coloca el comentario encima de las líneas a las que se aplica. No es necesario escribir oraciones completas, pero sí poner en mayúscula la primera palabra del comentario (a menos que sea el nombre de una función, variable o similar), y deja un espacio entre el <code>//</code> y el primer carácter de tu comentario, como en:</p>
+<pre><code>  // Convertir Fahrenheit a Celsius
+  float c = 5.0 / 9.0 * (f - 32.0);
+</code></pre>
+<p>En otras palabras, no hagas esto:</p>
+<pre><code>  //Convertir Fahrenheit a Celsius
+  float c = 5.0 / 9.0 * (f - 32.0);
+</code></pre>
+<p>O esto:</p>
+<pre><code>  // convertir Fahrenheit a Celsius
+  float c = 5.0 / 9.0 * (f - 32.0);
+</code></pre>
+<p>O esto:</p>
+<pre><code>  float c = 5.0 / 9.0 * (f - 32.0); // Convertir Fahrenheit a Celsius
+</code></pre>
+<p>En la parte superior de tus archivos .c y .h debe haber un comentario que resuma lo que hace tu programa (o ese archivo en particular), como:</p>
+<pre><code>  // Saluda al mundo
+</code></pre>
+<p>En la parte superior de cada una de tus funciones (excepto, quizás, <code>main</code>), mientras tanto, debe haber un comentario que resuma lo que está haciendo tu función, como:</p>
+<pre><code>  // Devuelve el cuadrado de n
+  int square(int n)
+  {
+      return n * n;
+  }
+</code></pre>
+<h2>Encabezados de biblioteca</h2>
+<p>Cualquier encabezado de biblioteca que incluyas debe aparecer en orden alfabético, como en:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+</code></pre>
+<p>Esto hace que sea más fácil ver de un vistazo, particularmente en una lista larga, si has incluido un encabezado.</p>
+<h2>Condiciones</h2>
+<p>Las condiciones deben tener el siguiente estilo:</p>
+<pre><code>  if (x &gt; 0)
+  {
+      printf("x es positivo\n");
+  }
+      else if (x &lt; 0)
+  {
+      printf("x es negativo\n");
+  }
+  else
+  {
+      printf("x es cero\n");
+  }
+</code></pre>
+<p>Observa cómo:</p>
+<ul>
+<li>las llaves se alinean muy bien, cada una en su propia línea, dejando muy claro lo que hay dentro de la rama;</li>
+<li>hay un solo espacio después de cada <code>if</code>;</li>
+<li>cada llamada a <code>printf</code> está sangrada con 4 espacios;</li>
+<li>hay espacios sencillos alrededor de <code>&gt;</code> y alrededor de <code>&lt;</code>; y</li>
+<li>no hay ningún espacio inmediatamente después de cada <code>(</code> o inmediatamente antes de cada <code>)</code>.</li>
+</ul>
+<p>Para ahorrar espacio, a algunos programadores les gusta mantener las primeras llaves en la misma línea que la condición misma, pero no lo recomendamos, ya que es más difícil de leer, así que no hagas esto:</p>
+<pre><code>  if (x &lt; 0) {
+      printf("x es negativo\n");
+  } else if (x &lt; 0) {
+      printf("x es negativo\n");
+  }
+</code></pre>
+<p>Y definitivamente no hagas esto:</p>
+<pre><code>  if (x &lt; 0)
+      {
+      printf("x es negativo\n");
+      }
+  else
+      {
+      printf("x es negativo\n");
+      }
+</code></pre>
+<h2>Interruptores</h2>
+<p>Declara un <code>switch</code> de la siguiente manera:</p>
+<pre><code>  switch (n)
+  {
+      case -1:
+          printf("n es -1\n");
+          break;
+
+      case 1:
+          printf("n es 1\n");
+          break;
+
+      default:
+          printf("n no es -1 ni 1\n");
+          break;
+  }
+</code></pre>
+<p>Observa cómo:</p>
+<ul>
+<li>cada llave está en su propia línea;</li>
+<li>hay un solo espacio después de <code>switch</code>;</li>
+<li>no hay ningún espacio inmediatamente después de cada <code>(</code> o inmediatamente antes de cada <code>)</code>;</li>
+<li>los casos del switch están sangrados con 4 espacios;</li>
+<li>los cuerpos de los casos están sangrados aún más con 4 espacios; y</li>
+<li>cada <code>case</code> (incluido <code>default</code>) termina con un <code>break</code>.</li>
+</ul>
+<h2>Funciones</h2>
+<p>De acuerdo con <a href="http://en.wikipedia.org/wiki/C99">C99</a>, asegúrate de declarar <code>main</code> con:</p>
+<pre><code>  int main(void)
+  {
+
+  }
+</code></pre>
+<p>o, si utilizas la biblioteca CS50, con:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+
+  int main(int argc, string argv[])
+  {
+
+  }
+</code></pre>
+<p>o con:</p>
+<pre><code>  int main(int argc, char *argv[])
+  {
+
+  }
+</code></pre>
+<p>o incluso con:</p>
+<pre><code>  int main(int argc, char **argv)
+  {
+
+  }
+</code></pre>
+<p>No declares <code>main</code> con:</p>
+<pre><code>  int main()
+  {
+
+  }
+</code></pre>
+<p>o con:</p>
+<pre><code>  void main()
+  {
+
+  }
+</code></pre>
+<p>o con:</p>
+<pre><code>  main()
+  {
+
+  }
+</code></pre>
+<p>En cuanto a tus propias funciones, asegúrate de definirlas de manera similar, con cada llave en su propia línea y con el tipo de retorno en la misma línea que el nombre de la función, tal como lo hemos hecho con <code>main</code>.</p>
+<h2>Sangría</h2>
+<p>Sangra tu código cuatro espacios a la vez para dejar en claro qué bloques de código están dentro de otros. Si usas la tecla Tab de tu teclado para hacerlo, asegúrate de que tu editor de texto esté configurado para convertir tabulaciones (<code>\t</code>) en cuatro espacios; de lo contrario, es posible que tu código no se imprima o muestre correctamente en la computadora de otra persona, ya que <code>\t</code> se representa de manera diferente en diferentes editores. (Si utilizas <a href="https://ide.cs50.io/">CS50 IDE</a>, puedes usar la tecla Tab para sangrar, en lugar de presionar la barra espaciadora de tu teclado repetidamente, ya que lo hemos preconfigurado para convertir <code>\t</code> en cuatro espacios.)</p>
+<p>Aquí tienes un código bien sangrado:</p>
+<pre><code>  // Imprimir argumentos de línea de comandos uno por línea
+  printf("\n");
+  for (int i = 0; i &lt; argc; i++)
+  {
+      for (int j = 0, n = strlen(argv[i]); j &lt; n; j++)
+      {
+          printf("%c\n", argv[i][j]);
+      }
+      printf("\n");
+  }
+</code></pre>
+<h2>Bucles</h2>
+<h3>for</h3>
+<p>Cuando necesites variables temporales para iteraciones, utiliza <code>i</code>, luego <code>j</code>, después <code>k</code>, a menos que nombres más específicos hagan que el código sea legible:</p>
+<pre><code>  for (int i = 0; i &lt; LIMIT; i++)
+  {
+      for (int j = 0; j &lt; LIMIT; j++)
+      {
+          for (int k = 0; k &lt; LIMIT; k++)
+          {
+              // Hacer algo
+          }
+      }
+  }
+</code></pre>
+<p>¡Si necesitas más de tres variables para iteración, quizás sea hora de repensar el diseño!</p>
+<h3>while</h3>
+<p>Declara a los bucles <code>while</code> como se hace a continuación:</p>
+<pre><code>  while (condition)
+  {
+      // Hacer algo
+  }
+</code></pre>
+<p>Observa cómo:
+- cada llave está en su propia línea;
+- hay un único espacio después de <code>while</code>;
+- no hay ningún espacio inmediatamente después del <code>(</code> o inmediatamente antes del <code>)</code>;
+- el cuerpo del bucle (un comentario en este caso) tiene una sangría de 4 espacios.</p>
+<h3>do … while</h3>
+<p>Declara a los bucles <code>do...while</code> como se hace a continuación:</p>
+<pre><code>  do
+  {
+      // Hacer algo
+  }
+  while (condition);
+</code></pre>
+<p>Observa cómo:</p>
+<ul>
+<li>cada llave está en su propia línea;</li>
+<li>hay un único espacio después de <code>while</code>;</li>
+<li>no hay ningún espacio inmediatamente después del <code>(</code> o inmediatamente antes del <code>)</code>;</li>
+<li>el cuerpo del bucle (un comentario en este caso) tiene una sangría de 4 espacios.</li>
+</ul>
+<h2>Punteros</h2>
+<p>Cuando declares un puntero, escribe el <code>*</code> junto a la variable, como en:</p>
+<pre><code>  int *p;
+</code></pre>
+<p>No lo escribas junto al tipo, como en:</p>
+<pre><code>  int* p;
+</code></pre>
+<h2>Variables</h2>
+<p>Como CS50 utiliza <a href="http://en.wikipedia.org/wiki/C99">C99</a>, no definas todas las variables en la primera parte de las funciones, más bien hazlo cuando las necesites. Más aún, limita el alcance de las variables lo más posible. Por ejemplo, si <code>i</code> sólo es necesaria para un bucle, declara a <code>i</code> dentro del propio bucle:</p>
+<pre><code>  for (int i = 0; i &lt; LIMIT; i++)
+  {
+      printf("%i\n", i);
+  }
+</code></pre>
+<p>Aunque está bien utilizar variables como <code>i</code>, <code>j</code> y <code>k</code> para iteración, la mayoría de tus variables deberían tener nombres más específicos. Si estás sumando algunos valores, por ejemplo, llama a tu variable <code>sum</code> (suma). Si el nombre de tu variable requiere más de una palabra (p. ej., <code>is_ready</code>), coloca un guión bajo entre ellas, una convención popular en C aunque menos en otros lenguajes.</p>
+<p>Si quieres declarar múltiples variables del mismo tipo a la vez, está bien si las declaras juntas, como en:</p>
+<pre><code>  int quarters, dimes, nickels, pennies;
+</code></pre>
+<p>Sólo no inicialices algunas y no otras, como en:</p>
+<pre><code>  int quarters, dimes = 0, nickels = 0 , pennies;
+</code></pre>
+<p>También ten cuidado de declarar punteros separándolos de los no punteros, como en:</p>
+<pre><code>  int *p;
+  int n;
+</code></pre>
+<p>No declares punteros en la misma línea que los no punteros, como en:</p>
+<pre><code>  int *p, n;
+</code></pre>
+<h2>Estructuras</h2>
+<p>Declara un <code>struct</code> como tipo como se hace a continuación, con cada llave en su propia línea y los miembros en sangría, con el nombre del tipo también en su propia línea:</p>
+<pre><code>  typedef struct
+  {
+      string name;
+      string dorm;
+  }
+  student;
+</code></pre>
+<p>Si el <code>struct</code> contiene como miembro un puntero a otro de dicho <code>struct</code>, declara al <code>struct</code> con un nombre idéntico al tipo, sin utilizar guiones bajos:</p>
+<pre><code>  typedef struct node
+  {
+      int n;
+      struct node *next;
+  }
+  node;
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

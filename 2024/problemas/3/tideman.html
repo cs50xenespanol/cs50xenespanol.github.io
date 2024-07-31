@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Español</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: orangered">
+  <header>
+    <h1>
+      <a href="">CS50x en Español</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href="">Curso de Introducción a la Ciencia de la Computación de la Universidad de Harvard</a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semanas/0.html">Semana
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semanas/1.html">Semana
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semanas/2.html">Semana
+          2</a>
+        Arreglos
+      </li>
+      <li>
+        <a href="/2024/semanas/3.html">Semana
+          3</a>
+        Algoritmos
+      </li>
+      <li>
+        <a href="/2024/semanas/4.html">Semana
+          4</a>
+        Memoria
+      </li>
+      <li>
+        <a href="/2024/semanas/5.html">Semana
+          5</a>
+        Estructuras de Datos
+      </li>
+      <li>
+        <a href="/2024/semanas/6.html">Semana
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semanas/7.html">Semana
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semanas/8.html">Semana
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semanas/9.html">Semana
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semanas/10.html">Semana
+          10</a>
+        Ciberseguridad
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/proyecto.html">Proyecto Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honestidad.html">Honestidad Académica</a>
+      </li>
+      <li>
+        <a href="/2024/certificado.html">Certificado CS50</a>
+      </li>
+      <li>
+        <a href="/2024/preguntas_frecuentes.html">Preguntas Frecuentes</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Libro de Calificaciones</a>
+      </li>
+      <li>
+        <a href="/2024/personal.html">Equipo</a>
+      </li>
+      <li>
+        <a href="/2024/plan_de_estudios.html">Programa del Curso</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Manual del Programador</a>
+      </li>
+      <li>
+        <a href="/2024/estilo.html">Guía de Estilo</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h2>Tideman</h2>
+<h2>Problema a resolver</h2>
+<p>Ya conoces las elecciones de pluralidad, que siguen un algoritmo muy simple para determinar el ganador de una elección: cada votante obtiene un voto y el candidato con la mayor cantidad de votos gana.</p>
+<p>Pero el voto de pluralidad tiene algunas desventajas. ¿Qué pasa, por ejemplo, en una elección con tres candidatos y se emiten las siguientes papeletas?</p>
+<p><img alt="Cinco papeletas, empate entre Alice y Bob" src="https://cs50.harvard.edu/x/2024/psets/3/fptp_ballot_1.png" /></p>
+<p>Un voto de pluralidad declararía aquí un empate entre Alice y Bob, ya que cada uno tiene dos votos. Pero, ¿es ese el resultado correcto?</p>
+<p>Existe otro tipo de sistema de votación conocido como sistema de votación por orden de preferencia. En un sistema de votación por orden de preferencia, los votantes pueden votar por más de un candidato. En lugar de simplemente votar por su primera opción, pueden clasificar a los candidatos en orden de preferencia. Por lo tanto, las papeletas resultantes podrían verse como las siguientes.</p>
+<p><img alt="Cinco papeletas, con preferencias clasificadas" src="https://cs50.harvard.edu/x/2024/psets/3/ranked_ballot_1.png" /></p>
+<p>Aquí, cada votante, además de especificar su candidato de primera preferencia, también ha indicado sus segunda y tercera opciones. Y ahora, lo que antes era una elección empatada podría tener un ganador. La carrera inicialmente estaba empatada entre Alice y Bob. Pero el votante que eligió a Charlie prefirió a Alice en lugar de Bob, por lo que Alice podría ser declarada ganadora aquí.</p>
+<p>La votación preferencial también puede resolver otro posible inconveniente de la votación por pluralidad. Echa un vistazo a las siguientes papeletas.</p>
+<p><img alt="Nueve papeletas, con preferencias clasificadas" src="https://cs50.harvard.edu/x/2024/psets/3/condorcet_1.png" /></p>
+<p>¿Quién debería ganar esta elección? En una votación de pluralidad donde cada votante elige solo su primera preferencia, Charlie gana esta elección con cuatro votos en comparación con solo tres para Bob y dos para Alice. (Ten en cuenta que, si estás familiarizado con el sistema de votación por eliminación instantánea, Charlie también gana aquí bajo ese sistema). Sin embargo, Alice podría argumentar razonablemente que ella debería ser la ganadora de la elección en lugar de Charlie: después de todo, de los nueve votantes, una mayoría (cinco de ellos) prefirió a Alice sobre Charlie, por lo que la mayoría de las personas estaría más feliz con Alice como ganadora en lugar de Charlie.</p>
+<p>Alice es, en esta elección, la llamada "ganadora de Condorcet" de la elección: la persona que habría ganado cualquier enfrentamiento directo contra otro candidato. Si la elección hubiera sido solo entre Alice y Bob, o solo entre Alice y Charlie, Alice habría ganado.</p>
+<p>El método de votación de Tideman (también conocido como "pares clasificados") es un método de votación preferencial que garantiza que se produzca el ganador de Condorcet de la elección si existe. En un archivo llamado <code>tideman.c</code> en una carpeta llamada <code>tideman</code>, crea un programa para simular una elección mediante el método de votación de Tideman.</p>
+<h2>Demostración</h2>
+<script async="" data-autoplay="1" data-cols="100" data-loop="1" data-rows="12" id="asciicast-FWidrKAwqxtepXlN1T0l5hNnJ" src="https://asciinema.org/a/FWidrKAwqxtepXlN1T0l5hNnJ.js"></script>
+
+<h2>Código de distribución</h2>
+<p>Inicia sesión en <a href="https://cs50.dev/">cs50.dev</a>, haz clic en la ventana del terminal y ejecuta <code>cd</code> por sí solo. Verás que el indicador de la ventana de terminal se asemeja al siguiente:</p>
+<pre><code>  $
+</code></pre>
+<p>Luego, ejecuta</p>
+<pre><code>  wget https://cdn.cs50.net/2023/fall/psets/3/tideman.zip
+</code></pre>
+<p>para descargar un archivo ZIP llamado <code>tideman.zip</code> en tu espacio de códigos.</p>
+<p>Luego, ejecuta</p>
+<pre><code>  unzip tideman.zip
+</code></pre>
+<p>para crear una carpeta llamada <code>tideman</code>. Ya no necesitas el archivo ZIP, por lo que puedes ejecutar</p>
+<pre><code>  rm tideman.zip
+</code></pre>
+<p>y responder con "y" seguido de Enter en el indicador para eliminar el archivo ZIP que descargaste.</p>
+<p>Ahora, escribe</p>
+<pre><code>  cd tideman
+</code></pre>
+<p>seguido de Enter para moverte al directorio (es decir, abrirlo). Tu indicador ahora debería verse como el siguiente.</p>
+<pre><code>  tideman/ $
+</code></pre>
+<p>Si todo fue exitoso, deberías ejecutar</p>
+<pre><code>  ls
+</code></pre>
+<p>y ver un archivo llamado <code>tideman.c</code>. Al ejecutar <code>code tideman.c</code> deberías abrir el archivo donde escribirás tu código para este conjunto de problemas. Si no es así, ¡vuelve sobre tus pasos y trata de determinar dónde te equivocaste!</p>
+<h2>Antecedentes</h2>
+<p>En términos generales, el método de Tideman funciona mediante la construcción de un "gráfico" de candidatos, donde una flecha (es decir, un borde) del candidato A al candidato B indica que el candidato A gana contra el candidato B en una confrontación directa. Entonces, el gráfico para la elección anterior se vería como el que sigue.</p>
+<p><img alt="Nueve listas, con preferencias clasificadas" src="https://cs50.harvard.edu/x/2024/psets/3/condorcet_graph_1.png" /></p>
+<p>La flecha de Alice a Bob significa que más votantes prefieren a Alice que a Bob (5 prefieren a Alice, 4 prefieren a Bob). Del mismo modo, las otras flechas significan que más votantes prefieren a Alice que a Charlie, y más votantes prefieren a Charlie que a Bob.</p>
+<p>Al observar este gráfico, el método de Tideman establece que el ganador de la elección debería ser la "fuente" del gráfico (es decir, el candidato que no tiene ninguna flecha apuntándole). En este caso, la fuente es Alice: Alice es la única que no tiene flechas apuntándola, lo que significa que nadie es preferido en una confrontación directa sobre Alice. Por lo tanto, Alice es declarada ganadora de la elección.</p>
+<p>Sin embargo, es posible que cuando se dibujen las flechas, no haya un ganador de Condorcet. Considera las siguientes papeletas.</p>
+<p><img alt="Nueve listas, con preferencias clasificadas" src="https://cs50.harvard.edu/x/2024/psets/3/no_condorcet_1.png" /></p>
+<p>Entre Alice y Bob, Alice es preferida a Bob por un margen de 7 a 2. Entre Bob y Charlie, Bob es preferido sobre Charlie por un margen de 5 a 4. Pero entre Charlie y Alice, Charlie es preferido sobre Alice por un margen de 6 a 3. Si dibujamos el gráfico, ¡no hay fuente! Tenemos un ciclo de candidatos, donde Alice vence a Bob, quien vence a Charlie, quien vence a Alice (muy parecido a un juego de piedra-papel-tijera). En este caso, parece que no hay forma de elegir un ganador.</p>
+<p>Para manejar esto, el algoritmo de Tideman debe tener cuidado de evitar crear ciclos en el gráfico candidato. ¿Cómo lo hace? El algoritmo bloquea primero los bordes más fuertes, ya que posiblemente esos sean los más significativos. En particular, el algoritmo de Tideman especifica que los bordes de emparejamiento deben "bloquearse" en el gráfico uno a la vez, según la "fuerza" de la victoria (cuantas más personas prefieran a un candidato sobre su oponente, más fuerte será la victoria). Siempre que el borde se pueda bloquear en el gráfico sin crear un ciclo, se agrega el borde; de lo contrario, el borde se ignora.</p>
+<p>¿Cómo funcionaría esto en el caso de los votos anteriores? Bueno, el mayor margen de victoria para un par es Alice venciendo a Bob, ya que 7 votantes prefieren a Alice sobre Bob (ningún otro enfrentamiento tiene un ganador preferido por más de 7 votantes). Entonces, la flecha de Alice-Bob se bloquea primero en el gráfico. El siguiente mayor margen de victoria es la victoria de Charlie sobre Alice de 6 a 3, por lo que esa flecha se bloquea a continuación.</p>
+<p>El siguiente es la victoria de Bob sobre Charlie por 5 a 4. Pero fíjate: ¡si agregáramos una flecha de Bob a Charlie ahora, crearíamos un ciclo! Como el gráfico no permite ciclos, deberíamos omitir este borde y no agregarlo al gráfico en absoluto. Si hubiera más flechas a considerar, miraríamos esas a continuación, pero esa fue la última flecha, por lo que el gráfico está completo.</p>
+<p>Este proceso paso a paso se muestra a continuación, con el gráfico final a la derecha.</p>
+<p><img alt="Nueve listas, con preferencias clasificadas" src="https://cs50.harvard.edu/x/2024/psets/3/lockin.png" /></p>
+<p>Según el gráfico resultante, Charlie es la fuente (no hay ninguna flecha apuntando hacia Charlie), por lo que Charlie es declarado ganador de esta elección.</p>
+<p>Dicho de manera más formal, el método de votación de Tideman consta de tres partes:</p>
+<ul>
+<li><strong>Conteo</strong>: una vez que todos los votantes hayan indicado todas sus preferencias, determina, para cada par de candidatos, quién es el candidato preferido y por qué margen es preferido.</li>
+<li><strong>Clasificar</strong>: clasifica los pares de candidatos en orden decreciente de fuerza de victoria, donde la fuerza de victoria se define como el número de votantes que prefieren al candidato preferido.</li>
+<li><strong>Bloquear</strong>: comenzando con el par más fuerte, recorre los pares de candidatos en orden y "bloquea" cada par en el gráfico de candidatos, siempre que bloquear ese par no cree un ciclo en el gráfico.</li>
+</ul>
+<p>Una vez que se completa el gráfico, ¡la fuente del gráfico (la que no tiene bordes apuntando hacia ella) es la ganadora!</p>
+<h2>Entendiendo</h2>
+<p>Echemos un vistazo a <code>tideman.c</code>.</p>
+<p>Primero, observe la matriz bidimensional <code>preferencias</code>. El entero <code>preferencias[i][j]</code> representará el número de votantes que prefieren al candidato <code>i</code> sobre el candidato <code>j</code>.</p>
+<p>El archivo también define otra matriz bidimensional, llamada <code>bloqueada</code>, que representará el gráfico de candidatos. <code>bloqueada</code> es una matriz booleana, por lo que <code>bloqueada[i][j]</code> al ser <code>verdadero</code> representa la existencia de un borde que apunta del candidato <code>i</code> al candidato <code>j</code>; <code>falso</code> significa que no hay un borde. (Si tiene curiosidad, esta representación de un gráfico se conoce como una "matriz de adyacencia").</p>
+<p>Lo siguiente es un <code>struct</code> llamado <code>par</code>, usado para representar un par de candidatos: cada par incluye el índice de candidato del <code>ganador</code> y el índice de candidato del <code>perdedor</code>.</p>
+<p>Los candidatos mismos se almacenan en la matriz <code>candidatos</code>, la cual es una matriz de <code>cadenas</code> que representan los nombres de cada uno de los candidatos. También hay una matriz de <code>pares</code>, la cual representará todos los pares de candidatos (para los cuales uno es preferido sobre el otro) en la elección.</p>
+<p>El programa también tiene dos variables globales: <code>cantidad_pares</code> y <code>cantidad_candidatos</code>, representando la cantidad de pares y la cantidad de candidatos en las matrices <code>pares</code> y <code>candidatos</code>, respectivamente.</p>
+<p>Ahora en <code>main</code>. Observe que después de determinar la cantidad de candidatos, el programa recorre el gráfico <code>bloqueado</code> e inicialmente establece todos los valores en <code>falso</code>, lo que significa que nuestro gráfico inicial no tendrá bordes en él.</p>
+<p>Después, el programa recorre todos los votantes y recolecta sus preferencias en una matriz llamada <code>rangos</code> (mediante una llamada a <code>voto</code>), donde <code>rangos[i]</code> es el índice del candidato que es la preferencia <code>i</code> para el votante. Estos rangos son pasados a la función <code>registrar_preferencia</code>, cuyo trabajo es tomar esos rangos y actualizar la variable global <code>preferencias</code>.</p>
+<p>Una vez que todos los votos están dentro, los pares de candidatos se añaden a la matriz <code>pares</code> mediante una llamada a <code>añadir_pares</code>, clasificada mediante una llamada a <code>ordenar_pares</code> y bloqueada en el gráfico mediante una llamada a <code>bloquear_pares</code>. ¡Finalmente, se llama a <code>mostrar_ganador</code> para imprimir el nombre del ganador de la elección!</p>
+<p>Más abajo en el archivo, verá que las funciones <code>voto</code>, <code>registrar_preferencia</code>, <code>añadir_pares</code>, <code>ordenar_pares</code>, <code>bloquear_pares</code> y <code>mostrar_ganador</code> se dejan en blanco. ¡Eso depende de usted!</p>
+<h2>Especificaciones</h2>
+<p>Complete la implementación de <code>tideman.c</code> de tal manera que simule una elección de Tideman.</p>
+<ul>
+<li>Complete la función <code>voto</code>.<ul>
+<li>La función toma los argumentos <code>rango</code>, <code>nombre</code> y <code>rangos</code>. Si <code>nombre</code> coincide con el nombre de un candidato válido, entonces debe actualizar la matriz <code>rangos</code> para indicar que el votante tiene al candidato como su preferencia <code>rango</code> (donde <code>0</code> es la primera preferencia, <code>1</code> es la segunda preferencia, etc.).</li>
+<li>Recuerde que <code>rangos[i]</code> aquí representa la preferencia <code>i</code> del usuario.</li>
+<li>La función debe regresar <code>verdadero</code> si el rango se registró exitosamente, y <code>falso</code> de otra manera (si, por ejemplo, <code>nombre</code> no es el nombre de uno de los candidatos).</li>
+<li>Puede asumir que no hay dos candidatos con el mismo nombre.</li>
+</ul>
+</li>
+<li>Complete la función <code>registrar_preferencias</code>.<ul>
+<li>La función se llama una vez por cada votante, y toma como argumento la matriz <code>rangos</code>, (recuerde que <code>rangos[i]</code> es la preferencia <code>i</code> del votante, donde <code>rangos[0]</code> es la primera preferencia).</li>
+<li>La función debe actualizar la matriz global <code>preferencias</code> para añadir las preferencias del votante actual. Recuerde que <code>preferencias[i][j]</code> debe representar el número de votantes que prefieren al candidato <code>i</code> sobre el candidato <code>j</code>.</li>
+<li>Puede asumir que cada votante clasificará a cada uno de los candidatos.</li>
+</ul>
+</li>
+<li>Complete la función <code>añadir_pares</code>.<ul>
+<li>La función debe añadir todos los pares de candidatos donde un candidato es preferido a la matriz <code>pares</code>. Un par de candidatos que están empatados (uno no es preferido sobre el otro) no debe ser añadido a la matriz.</li>
+<li>La función debe actualizar la variable global <code>cantidad_pares</code> para que sea el número de pares de candidatos. (Los pares deben, por lo tanto, almacenarse todos entre <code>pares[0]</code> y <code>pares[cantidad_pares - 1]</code>, inclusive).</li>
+</ul>
+</li>
+<li>Complete la función <code>ordenar_pares</code>.<ul>
+<li>La función debe ordenar la matriz <code>pares</code> en orden decreciente de fuerza de victoria, donde la fuerza de victoria se define como el número de votantes que prefieren al candidato preferido. Si múltiples pares tienen la misma fuerza de victoria, puede asumir que el orden no importa.</li>
+</ul>
+</li>
+<li>Complete la función <code>bloquear_pares</code>.<ul>
+<li>La función debe crear el gráfico <code>bloqueado</code>, añadiendo todos los bordes en orden decreciente de fuerza de victoria siempre y cuando el borde no cree un ciclo.</li>
+</ul>
+</li>
+<li>Complete la función <code>mostrar_ganador</code>.<ul>
+<li>La función debe imprimir el nombre del candidato que es la fuente del gráfico. Puede asumir que no habrá más de una fuente.</li>
+</ul>
+</li>
+</ul>
+<p>No debe modificar nada más en <code>tideman.c</code> aparte de las implementaciones de las funciones <code>voto</code>, <code>registrar_preferencias</code>, <code>añadir_pares</code>, <code>ordenar_pares</code>, <code>bloquear_pares</code> y <code>mostrar_ganador</code> (y la inclusión de archivos de cabecera adicionales, si así lo desea). Se le permite añadir funciones adicionales a <code>tideman.c</code>, siempre y cuando no cambie las declaraciones de ninguna de las funciones existentes.</p>
+<h2>Tutorial</h2>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/kb83NwyYI68?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<h2>Cómo probar</h2>
+<p>Asegúrese de probar su código para asegurarse de que maneja...</p>
+<ul>
+<li>Una elección con cualquier número de candidatos (hasta el <code>MAX</code> de <code>9</code>)</li>
+<li>Votación por un candidato por nombre</li>
+<li>Votos inválidos para candidatos que no están en la boleta</li>
+<li>Impresión del ganador de la elección</li>
+</ul>
+<h3>Correctitud</h3>
+<pre><code>  check50 cs50/problems/2024/x/tideman
+</code></pre>
+<h3>Estilo</h3>
+<pre><code>  style50 tideman.c
+</code></pre>
+<h2>Cómo enviar</h2>
+<pre><code>  submit50 cs50/problems/2024/x/tideman
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

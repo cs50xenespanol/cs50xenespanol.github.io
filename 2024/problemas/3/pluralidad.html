@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Español</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: orangered">
+  <header>
+    <h1>
+      <a href="">CS50x en Español</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href="">Curso de Introducción a la Ciencia de la Computación de la Universidad de Harvard</a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semanas/0.html">Semana
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semanas/1.html">Semana
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semanas/2.html">Semana
+          2</a>
+        Arreglos
+      </li>
+      <li>
+        <a href="/2024/semanas/3.html">Semana
+          3</a>
+        Algoritmos
+      </li>
+      <li>
+        <a href="/2024/semanas/4.html">Semana
+          4</a>
+        Memoria
+      </li>
+      <li>
+        <a href="/2024/semanas/5.html">Semana
+          5</a>
+        Estructuras de Datos
+      </li>
+      <li>
+        <a href="/2024/semanas/6.html">Semana
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semanas/7.html">Semana
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semanas/8.html">Semana
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semanas/9.html">Semana
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semanas/10.html">Semana
+          10</a>
+        Ciberseguridad
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/proyecto.html">Proyecto Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honestidad.html">Honestidad Académica</a>
+      </li>
+      <li>
+        <a href="/2024/certificado.html">Certificado CS50</a>
+      </li>
+      <li>
+        <a href="/2024/preguntas_frecuentes.html">Preguntas Frecuentes</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Libro de Calificaciones</a>
+      </li>
+      <li>
+        <a href="/2024/personal.html">Equipo</a>
+      </li>
+      <li>
+        <a href="/2024/plan_de_estudios.html">Programa del Curso</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Manual del Programador</a>
+      </li>
+      <li>
+        <a href="/2024/estilo.html">Guía de Estilo</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <p><strong># Pluralidad</strong></p>
+<p><strong>## Problema a resolver</strong></p>
+<p>Las elecciones pueden ser de todo tipo y tamaño. En el Reino Unido, el <a href="https://www.parliament.uk/education/about-your-parliament/general-elections/">Primer Ministro</a> es designado oficialmente por el monarca, quien generalmente elige al líder del partido político que obtenga la mayor cantidad de escaños en la Cámara de los Comunes. Estados Unidos utiliza un proceso de <a href="https://www.archives.gov/federal-register/electoral-college/about.html">Colegio Electoral</a> multietapa en el que los ciudadanos votan sobre cómo debe asignar cada estado a los electores que luego eligen al Presidente.</p>
+<p>Quizás la forma más sencilla de celebrar una elección es mediante un método comúnmente conocido como "voto mayoritario" (también conocido como "el primero que pasa o el ganador se lo lleva todo"). En la votación por mayoría, cada votante puede votar por un candidato. Al final de la elección, el candidato que tenga la mayor cantidad de votos es declarado ganador de la elección.</p>
+<p>Para este problema, implementarás un programa que ejecuta una elección por mayoría, según lo establecido a continuación.</p>
+<p><strong>## Demostración</strong></p>
+<script async="" data-autoplay="1" data-cols="100" data-loop="1" data-rows="12" id="asciicast-o2EXEqiz7iqfDB31wYxBOWjs8" src="https://asciinema.org/a/o2EXEqiz7iqfDB31wYxBOWjs8.js"></script>
+
+<p><strong>## Código de distribución</strong></p>
+<p>Para este problema, ampliarás la funcionalidad del "código de distribución" que te proporcionó el personal de CS50.</p>
+<p><strong>### Descarga el código de distribución</strong></p>
+<p>Inicia sesión en <a href="https://cs50.dev/">cs50.dev</a>, haz clic en la ventana de tu terminal y ejecuta <code>cd</code> por sí mismo. Deberías encontrar que el símbolo del sistema de tu ventana de terminal se asemeja al siguiente:</p>
+<pre><code>  $
+</code></pre>
+<p>Luego ejecuta</p>
+<pre><code>  wget https://cdn.cs50.net/2023/fall/psets/3/plurality.zip
+</code></pre>
+<p>para descargar un ZIP llamado <code>plurality.zip</code> en tu espacio de códigos.</p>
+<p>Luego ejecuta</p>
+<pre><code>  unzip plurality.zip
+</code></pre>
+<p>para crear una carpeta llamada <code>plurality</code>. Ya no necesitas el archivo ZIP, por lo que puedes ejecutar</p>
+<pre><code>  rm plurality.zip
+</code></pre>
+<p>y responde con "y" seguido de Enter en el símbolo del sistema para eliminar el archivo ZIP que descargaste.</p>
+<p>Ahora escribe</p>
+<pre><code>  cd plurality
+</code></pre>
+<p>seguido de Enter para moverte (es decir, abrir) ese directorio. Tu símbolo del sistema ahora debería parecerse al siguiente.</p>
+<pre><code>  plurality/ $
+</code></pre>
+<p>Si todo fue exitoso, deberías ejecutar</p>
+<pre><code>  ls
+</code></pre>
+<p>y ver un archivo llamado <code>plurality.c</code>. Al ejecutar <code>code plurality.c</code> deberías abrir el archivo donde escribirás tu código para este conjunto de problemas. De lo contrario, ¡regresa sobre tus pasos e intenta determinar dónde te equivocaste!</p>
+<p><strong>### Comprende el código en <code>plurality.c</code></strong></p>
+<p>Siempre que amplíes la funcionalidad del código existente, es mejor asegurarte de que primero lo comprendas en su estado actual.</p>
+<p>Mira primero la parte superior del archivo. La línea <code>#define MAX 9</code> es una sintaxis que se usa aquí para indicar que <code>MAX</code> es una constante (igual a <code>9</code>) que se puede usar en todo el programa. Aquí, representa el número máximo de candidatos que puede tener una elección.</p>
+<pre><code>  // Número máximo de candidatos
+  #define MAX 9
+</code></pre>
+<p>Ten en cuenta que <code>plurality.c</code> luego usa esta constante para definir un arreglo global, es decir, un arreglo al que cualquier función puede acceder.</p>
+<pre><code>  // Arreglo de candidatos
+  candidate candidates[MAX];
+</code></pre>
+<p>Pero ¿qué es, en este caso, un <code>candidate</code>? En <code>plurality.c</code>, un <code>candidate</code> es una <code>struct</code>. Cada <code>candidate</code> tiene dos campos: una <code>string</code> llamada <code>name</code> que representa el nombre del candidato y un <code>int</code> llamado <code>votes</code> que representa el número de votos que tiene el candidato.</p>
+<pre><code>  // Los candidatos tienen nombre y recuento de votos
+  typedef struct
+  {
+      string name;
+      int votes;
+  }
+  candidate;
+</code></pre>
+<p>Ahora, observa la propia función <code>main</code>. Mira si puedes encontrar dónde el programa establece una variable global <code>candidate_count</code> que representa el número de candidatos en la elección.</p>
+<pre><code>  // Número de candidatos
+  int candidate_count;
+</code></pre>
+<p>¿Qué pasa con el lugar donde copia los argumentos de la línea de comandos en el arreglo <code>candidates</code>?</p>
+<pre><code>  // Llenar el arreglo de candidatos
+  candidate_count = argc - 1;
+  if (candidate_count &gt; MAX)
+  {
+      printf("El número máximo de candidatos es %i\n", MAX);
+      return 2;
+  }
+  for (int i = 0; i &lt; candidate_count; i++)
+  {
+      candidates[i].name = argv[i + 1];
+      candidates[i].votes = 0;
+  }
+</code></pre>
+<p>¿Y dónde le pide al usuario que escriba el número de votantes?</p>
+<pre><code>  int voter_count = get_int("Número de votantes: ");
+</code></pre>
+<p>Luego, el programa permite que cada votante escriba un voto, llamando a la función <code>vote</code> para cada candidato votado. Finalmente, <code>main</code> realiza una llamada a la función <code>print_winner</code> para imprimir el ganador (o ganadores) de la elección. Te dejaremos identificar el código que implementa esta funcionalidad.</p>
+<p>Sin embargo, si miras más abajo en el archivo, notarás que las funciones <code>vote</code> y <code>print_winner</code> se han dejado en blanco.</p>
+<pre><code>  // Actualizar los totales de votos dado un nuevo voto
+  bool vote(string name)
+  {
+      // TODO
+      return false;
+  }
+
+  // Imprimir el ganador (o ganadores) de la elección
+  void print_winner(void)
+  {
+      // TODO
+      return;
+  }
+</code></pre>
+<p>¡Esta parte depende de ti completarla! <strong>No debes modificar nada más en <code>plurality.c</code> aparte de las implementaciones de las funciones <code>vote</code> y <code>print_winner</code> (y la inclusión de archivos de encabezado adicionales, si lo deseas).</strong></p>
+<h2>Sugerencias</h2>
+<h3>Completa la función <code>vote</code></h3>
+<p>A continuación, completa la función <code>vote</code>.</p>
+<ul>
+<li>Considera que la firma de <code>vote</code>, <code>bool vote(string nombre)</code>, muestra que toma un único argumento, un <code>string</code> llamado <code>nombre</code>, que representa el nombre del candidato por el que se votó.</li>
+<li><code>vote</code> debe devolver un <code>bool</code>, donde <code>true</code> indica que se emitió un voto correctamente y <code>false</code> indica que no.</li>
+</ul>
+<p>Una forma de abordar este problema es hacer lo siguiente:</p>
+<ol>
+<li>Iterar sobre cada candidato
+    1. Comprobar si el nombre del candidato coincide con la entrada, <code>name</code>
+        1. Si es así, incrementar los votos de ese candidato y devolver <code>true</code>
+        2. Si no, seguir comprobando</li>
+<li>Si no hay coincidencias después de comprobar cada candidato, devolver <code>false</code></li>
+</ol>
+<p>Vamos a escribir un pseudo código para recordarte que hagas justo eso:</p>
+<pre><code>  // Actualizar los totales de votos dado un nuevo voto
+  bool vote(string nombre)
+  {
+      // Iterar sobre cada candidato
+          // Comprobar si el nombre del candidato coincide con el nombre dado
+              // Si es así, incrementar los votos del candidato y devolver true
+
+      // Si no hay coincidencia, devolver false
+  }
+</code></pre>
+<p>¡Sin embargo, dejaremos la implementación en código para ti!</p>
+<h3>Completa la función <code>print_winner</code></h3>
+<p>Finalmente, completa la función <code>print_winner</code>.</p>
+<ul>
+<li>La función debe imprimir el nombre del candidato que recibió más votos en las elecciones y, a continuación, imprimir una nueva línea.</li>
+<li>Las elecciones podrían terminar en empate si varios candidatos tienen el número máximo de votos. En ese caso, debes mostrar los nombres de cada uno de los candidatos ganadores, cada uno en una línea separada.</li>
+</ul>
+<p>Podrías pensar que un algoritmo de ordenación sería la mejor solución para este problema: imagina ordenar a los candidatos por sus totales de votos e imprimir el candidato (o candidatos) principal. Sin embargo, recuerda que ordenar puede ser costoso: incluso Merge Sort, uno de los algoritmos de ordenación más rápidos, se ejecuta en \(O(N \space log(N))\).</p>
+<p>Considera que solo necesitas dos fragmentos de información para resolver este problema:</p>
+<ol>
+<li>El número máximo de votos</li>
+<li>El candidato (o candidatos) con ese número de votos</li>
+</ol>
+<p>Como tal, una buena solución podría requerir solo dos búsquedas. Escribe un pseudo código para recordarte que hagas justo eso:</p>
+<pre><code>  // Imprimir el ganador (o ganadores) de las elecciones
+  void print_winner(void)
+  {
+      // Encontrar el número máximo de votos
+
+      // Imprimir el candidato (o candidatos) con el máximo de votos
+
+  }
+</code></pre>
+<p>¡Sin embargo, dejaremos el código para ti!</p>
+<h2>Tutorial</h2>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/ftOapzDjEb8?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<h2>Cómo realizar pruebas</h2>
+<p>Asegúrate de probar tu código para comprobar que gestiona...</p>
+<ul>
+<li>Unas elecciones con cualquier número de candidatos (hasta el <code>MAX</code> de <code>9</code>)</li>
+<li>Votar por un candidato por su nombre</li>
+<li>Votos no válidos para candidatos que no están en la papeleta</li>
+<li>Imprimir el ganador de las elecciones si solo hay uno</li>
+<li>Imprimir al ganador de las elecciones si hay varios ganadores</li>
+</ul>
+<h3>Corrección</h3>
+<pre><code>  check50 cs50/problems/2024/x/plurality
+</code></pre>
+<h3>Estilo</h3>
+<pre><code>  style50 plurality.c
+</code></pre>
+<h2>Cómo enviar</h2>
+<pre><code>  submit50 cs50/problems/2024/x/plurality
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

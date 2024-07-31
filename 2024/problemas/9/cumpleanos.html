@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Español</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: orangered">
+  <header>
+    <h1>
+      <a href="">CS50x en Español</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href="">Curso de Introducción a la Ciencia de la Computación de la Universidad de Harvard</a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semanas/0.html">Semana
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semanas/1.html">Semana
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semanas/2.html">Semana
+          2</a>
+        Arreglos
+      </li>
+      <li>
+        <a href="/2024/semanas/3.html">Semana
+          3</a>
+        Algoritmos
+      </li>
+      <li>
+        <a href="/2024/semanas/4.html">Semana
+          4</a>
+        Memoria
+      </li>
+      <li>
+        <a href="/2024/semanas/5.html">Semana
+          5</a>
+        Estructuras de Datos
+      </li>
+      <li>
+        <a href="/2024/semanas/6.html">Semana
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semanas/7.html">Semana
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semanas/8.html">Semana
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semanas/9.html">Semana
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semanas/10.html">Semana
+          10</a>
+        Ciberseguridad
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/proyecto.html">Proyecto Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honestidad.html">Honestidad Académica</a>
+      </li>
+      <li>
+        <a href="/2024/certificado.html">Certificado CS50</a>
+      </li>
+      <li>
+        <a href="/2024/preguntas_frecuentes.html">Preguntas Frecuentes</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Libro de Calificaciones</a>
+      </li>
+      <li>
+        <a href="/2024/personal.html">Equipo</a>
+      </li>
+      <li>
+        <a href="/2024/plan_de_estudios.html">Programa del Curso</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Manual del Programador</a>
+      </li>
+      <li>
+        <a href="/2024/estilo.html">Guía de Estilo</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h2>Cumpleaños</h2>
+<p><img alt="captura de pantalla de sitio web de cumpleaños" src="https://cs50.harvard.edu/x/2024/psets/9/birthdays/birthdays.png" /></p>
+<h2>Problema a resolver</h2>
+<p>Crea una aplicación web para llevar un registro de los cumpleaños de tus amigos.</p>
+<h2>Empezar</h2>
+<p>Abre <a href="https://cs50.dev/">VS Code</a>.</p>
+<p>Comienza haciendo clic dentro de la ventana del terminal y, a continuación, ejecutando <code>cd</code> por sí solo. Deberías encontrar que su "indicación" se asemeja a la siguiente.</p>
+<pre><code>  $
+</code></pre>
+<p>Haz clic dentro de esa ventana del terminal y, a continuación, ejecuta</p>
+<pre><code>  wget https://cdn.cs50.net/2023/fall/psets/9/birthdays.zip
+</code></pre>
+<p>seguido de Intro para descargar un archivo ZIP llamado <code>birthdays.zip</code> en tu espacio de códigos. ¡Ten cuidado de no pasar por alto el espacio entre <code>wget</code> y la siguiente URL, ni ningún otro carácter!</p>
+<p>Ahora ejecuta</p>
+<pre><code>  unzip birthdays.zip
+</code></pre>
+<p>para crear una carpeta llamada <code>birthdays</code>. Ya no necesitas el archivo ZIP, por lo que puedes ejecutar</p>
+<pre><code>  rm birthdays.zip
+</code></pre>
+<p>y responder con "y" seguido de Intro en el aviso para eliminar el archivo ZIP que descargaste.</p>
+<p>Ahora escribe</p>
+<pre><code>  cd birthdays
+</code></pre>
+<p>seguido de Intro para moverte a (es decir, abrir) ese directorio. Tu aviso ahora debería parecerse a lo siguiente.</p>
+<pre><code>  birthdays/ $
+</code></pre>
+<p>Si todo fue exitoso, deberías ejecutar</p>
+<pre><code>  ls
+</code></pre>
+<p>y deberías ver los siguientes archivos y carpetas:</p>
+<pre><code>  app.py  birthdays.db  static/  templates/
+</code></pre>
+<p>Si tienes algún problema, sigue estos mismos pasos de nuevo y observa si puedes determinar dónde te equivocaste.</p>
+<h2>Entendimiento</h2>
+<p>En <code>app.py</code>, encontrarás el inicio de una aplicación web Flask. La aplicación tiene una ruta (<code>/</code>) que acepta tanto solicitudes <code>POST</code> (después del <code>if</code>) como solicitudes <code>GET</code> (después del <code>else</code>). Actualmente, cuando se solicita la ruta <code>/</code> a través de <code>GET</code>, se procesa la plantilla <code>index.html</code>. Cuando se solicita la ruta <code>/</code> a través de <code>POST</code>, el usuario es redirigido de vuelta a <code>/</code> a través de <code>GET</code>.</p>
+<p><code>birthdays.db</code> es una base de datos SQLite con una tabla, <code>birthdays</code>, que tiene cuatro columnas: <code>id</code>, <code>name</code>, <code>month</code> y <code>day</code>. Ya hay algunas filas en esta tabla, aunque en última instancia tu aplicación web admitirá la capacidad de insertar filas en esta tabla.</p>
+<p>En el directorio <code>static</code> hay un archivo <code>styles.css</code> que contiene el código CSS para esta aplicación web. No es necesario editar este archivo, ¡aunque puedes hacerlo si lo deseas!</p>
+<p>En el directorio <code>templates</code> hay un archivo <code>index.html</code> que se procesará cuando el usuario vea tu aplicación web.</p>
+<h2>Detalles de la implementación</h2>
+<p>Completa la implementación de una aplicación web que permita a los usuarios almacenar y llevar un registro de los cumpleaños.</p>
+<ul>
+<li>Cuando se solicita la ruta <code>/</code> a través de <code>GET</code>, tu aplicación web debe mostrar, en una tabla, todas las personas de tu base de datos junto con sus cumpleaños.</li>
+<li>Primero, en <code>app.py</code>, agrega lógica en el manejo de tu solicitud <code>GET</code> para consultar la base de datos <code>birthdays.db</code> para todos los cumpleaños. Pasa todos esos datos a tu plantilla <code>index.html</code>.</li>
+<li>Luego, en <code>index.html</code>, agrega lógica para procesar cada cumpleaños como una fila en la tabla. Cada fila debe tener dos columnas: una columna para el nombre de la persona y otra columna para el cumpleaños de la persona.</li>
+<li>Cuando se solicita la ruta <code>/</code> a través de <code>POST</code>, tu aplicación web debe agregar un nuevo cumpleaños a tu base de datos y luego volver a procesar la página de índice.</li>
+<li>Primero, en <code>index.html</code>, agrega un formulario HTML. El formulario debe permitir a los usuarios escribir un nombre, un mes de cumpleaños y un día de cumpleaños. Asegúrate de que el formulario se envíe a <code>/</code> (su "acción") con un método de <code>post</code>.</li>
+<li>Luego, en <code>app.py</code>, agrega lógica en el manejo de tu solicitud <code>POST</code> para <code>INSERTAR</code> una nueva fila en la tabla <code>birthdays</code> basada en los datos proporcionados por el usuario.</li>
+</ul>
+<p>Opcionalmente, también puedes:</p>
+<ul>
+<li>Agregar la capacidad de eliminar o editar entradas de cumpleaños.</li>
+<li>¡Agregar cualquier función adicional que elijas!</li>
+</ul>
+<h2>Pistas</h2>
+<h3>Crea un formulario a través del cual los usuarios pueden enviar cumpleaños</h3>
+<p>En <code>index.html</code>, observa la siguiente tarea pendiente:</p>
+<pre><code>  &lt;!-- TODO: Crear un formulario para que los usuarios envíen un nombre, un mes y un día --&gt;
+</code></pre>
+<p>Recuerda que, para crear un formulario, puedes utilizar el elemento HTML <code>form</code>. Puedes crear un elemento HTML <code>form</code> con las siguientes etiquetas de apertura y cierre:</p>
+<pre><code>  &lt;form&gt;
+  &lt;/form&gt;
+</code></pre>
+<p>Por supuesto, un formulario aún necesita campos de entrada (¡y un botón a través del cual el usuario puede enviar el formulario!). Recuerda que los elementos HTML <code>input</code> crean, entre otras cosas, cuadros de entrada dentro de un formulario. Puedes especificar su atributo <code>type</code> para permitirles aceptar <code>text</code> o <code>numbers</code>. También proporciona a los elementos <code>input</code> un atributo <code>name</code> para que puedas diferenciarlos.</p>
+<pre><code>  &lt;form&gt;
+      &lt;input name="name" type="text"&gt;
+      &lt;input name="month" type="number"&gt;
+      &lt;input name="day" type="number"&gt;
+  &lt;/form&gt;
+</code></pre>
+<p>Tu formulario podría beneficiarse de un botón en el que el usuario pudiera hacer clic para enviar sus datos. Agrega un elemento <code>input</code> de tipo <code>submit</code>, que permitirá al usuario hacer precisamente eso. Si deseas que el botón tenga un texto explicativo, intenta configurar el atributo <code>value</code>.</p>
+<pre><code>  &lt;form&gt;
+      &lt;input name="name" type="text"&gt;
+      &lt;input name="month" type="number"&gt;
+      &lt;input name="day" type="number"&gt;
+      &lt;input type="submit" value="Agregar cumpleaños"&gt;
+  &lt;/form&gt;
+</code></pre>
+<p>¿Dónde se enviarán los datos del usuario? ¡Actualmente, a ninguna parte! Recuerda que puedes especificar el atributo <code>action</code> de un formulario para dictar qué ruta debe solicitarse después de que se envíe el formulario. Los datos del formulario se enviarán junto con la solicitud resultante. El atributo <code>method</code> especifica qué método de solicitud HTTP utilizar al enviar el formulario.</p>
+<pre><code>  &lt;form action="/" method="post"&gt;
+      &lt;input name="name" type="text"&gt;
+      &lt;input name="month" type="number"&gt;
+      &lt;input name="day" type="number"&gt;
+      &lt;input type="submit" value="Agregar cumpleaños"&gt;
+  &lt;/form&gt;
+</code></pre>
+<p>Con eso, tu formulario debería ser perfectamente funcional, ¡aunque aún podría mejorarse! Considera agregar valores <code>placeholder</code> para arreglar un poco las cosas:</p>
+<pre><code>  &lt;form action="/" method="post"&gt;
+      &lt;input name="name" placeholder="Nombre" type="text"&gt;
+      &lt;input name="month" placeholder="Mes" type="number"&gt;
+      &lt;input name="day" placeholder="Día" type="number"&gt;
+      &lt;input type="submit" value="Agregar cumpleaños"&gt;
+  &lt;/form&gt;
+</code></pre>
+<p>Y considera agregar algo de validación del lado del cliente para garantizar que el usuario coopere con la intención de tu formulario. Por ejemplo, un campo <code>input</code> de tipo <code>number</code> también puede tener un atributo <code>min</code> y <code>max</code> especificado, que determinan el valor mínimo y máximo que un usuario puede ingresar.</p>
+<pre><code>  &lt;form action="/" method="post"&gt;
+      &lt;input name="name" placeholder="Nombre" type="text"&gt;
+      &lt;input name="month" placeholder="Mes" type="number" min="1" max="12"&gt;
+      &lt;input name="day" placeholder="Día" type="number" min="1" max="31"&gt;
+      &lt;input type="submit" value="Agregar cumpleaños"&gt;
+  &lt;/form&gt;
+</code></pre>
+<h3>Agrega el envío de datos de un formulario de usuario a la base de datos</h3>
+<p>En <code>app.py</code>, nota el siguiente TODO:</p>
+<pre><code>  # TODO: Agrega la entrada del usuario a la base de datos
+</code></pre>
+<p>Recuerda que Flask tiene métodos prácticos para acceder a datos de formulario enviados mediante <code>POST</code>. En particular:</p>
+<pre><code>  # Accede a datos de formulario
+  request.form.get(NAME)
+</code></pre>
+<p>donde <code>NAME</code> se refiere al atributo <code>name</code> del elemento <code>input</code> particular con los datos enviados. Si tus elementos <code>input</code> fueron nombrados <code>name</code>, <code>month</code> y <code>day</code>, podrías acceder a sus valores y almacenarlos con los siguientes:</p>
+<pre><code>  # Accede a datos de formulario
+  name = request.form.get("name")
+  month = request.form.get("month")
+  day = request.form.get("day")
+</code></pre>
+<p>Ahora los valores enviados por el usuario en los elementos de entrada <code>name</code>, <code>month</code> y <code>day</code> están disponibles para ti como variables de Python.</p>
+<p>¡El siguiente paso es agregar estos valores a tu base de datos! Gracias a esta línea en particular</p>
+<pre><code>  db = SQL("sqlite:///birthdays.db")
+</code></pre>
+<p><code>app.py</code> ya estableció una conexión a <code>birthdays.db</code> con el nombre <code>db</code>. Ahora puedes ejecutar consultas SQL llamando a <code>db.execute</code> con una consulta SQL válida. Si quisieras agregar el cumpleaños de Carter el 1 de enero, podrías ejecutar la siguiente declaración SQL:</p>
+<pre><code>  INSERT INTO birthdays (name, month, day) VALUES('Carter', 1, 1);
+</code></pre>
+<p>Configura <code>app.py</code> para ejecutar esa misma consulta, pero con marcadores de posición para los valores a insertar, de la siguiente manera:</p>
+<pre><code>  # Accede a datos de formulario
+  name = request.form.get("name")
+  month = request.form.get("month")
+  day = request.form.get("day")
+
+  # Inserta datos en la base de datos
+  db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
+</code></pre>
+<p>¡Y eso debería ser todo! Intenta enviar el formulario, abriendo <code>birthdays.db</code> y usando una consulta <code>SELECT</code> para ver el contenido de la tabla <code>birthdays</code>. Deberías ver los datos del formulario enviado disponibles para ti.</p>
+<p>A medida que crees aplicaciones más avanzadas, también querrás agregar <em>validación de lado del servidor</em>, es decir, una forma de verificar si los datos del usuario son válidos <em>antes</em> de hacer cualquier otra cosa. Una de las primeras validaciones que podrías hacer es si el usuario envió algún dato. Si intentas recuperar datos de formulario con <code>request.form.get</code> cuando el usuario no envió nada, <code>request.form.get</code> devolverá una cadena vacía. Puedes verificar este valor en Python de la siguiente manera:</p>
+<pre><code>  # Accede a datos de formulario
+  name = request.form.get("name")
+  if not name:
+      return redirect("/")
+
+  month = request.form.get("month")
+  if not month:
+      return redirect("/")
+
+  day = request.form.get("day")
+  if not day:
+      return redirect("/")
+
+  # Inserta datos en la base de datos
+  db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
+</code></pre>
+<p>Ahora no insertarás una fila hasta que estés seguro de que el usuario haya proporcionado todos los datos que necesitas.</p>
+<p>¡Todavía podrían pasar algunas cosas más! ¿Qué pasa si el usuario no proporciona un valor numérico para <code>month</code> o <code>day</code>? Una forma de comprobarlo es <code>intentar</code> convertir el valor a un entero con <code>int</code> y, si la conversión falla, redirigir al usuario a la página de inicio.</p>
+<pre><code>  # Accede a datos de formulario
+  name = request.form.get("name")
+  if not name:
+      return redirect("/")
+
+  month = request.form.get("month")
+  if not month:
+      return redirect("/")
+  try:
+      month = int(month)
+  except ValueError:
+      return redirect("/")
+
+  day = request.form.get("day")
+  if not day:
+      return redirect("/")
+  try:
+      day = int(day)
+  except ValueError:
+      return redirect("/")
+
+  # Inserta datos en la base de datos
+  db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
+</code></pre>
+<p>E incluso si el usuario ha ingresado un número, ¡es mejor verificar que esté en el rango correcto!</p>
+<pre><code>  # Accede a datos de formulario
+  name = request.form.get("name")
+  if not name:
+      return redirect("/")
+
+  month = request.form.get("month")
+  if not month:
+      return redirect("/")
+  try:
+      month = int(month)
+  except ValueError:
+      return redirect("/")
+  if month &lt; 1 or month &gt; 12:
+      return redirect("/")
+
+  day = request.form.get("day")
+  if not day:
+      return redirect("/")
+  try:
+      day = int(day)
+  except ValueError:
+      return redirect("/")
+  if day &lt; 1 or day &gt; 31:
+      return redirect("/")
+
+  # Inserta datos en la base de datos
+  db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
+</code></pre>
+<h3>Renderizar cumpleaños en <code>birthdays.db</code></h3>
+<p>Una vez que un usuario pueda enviar cumpleaños y almacenarlos en <code>birthdays.db</code>, tu siguiente tarea es asegurarte de que esos cumpleaños se rendericen en <code>index.html</code>.</p>
+<p>Primero, necesitarás recuperar todos los cumpleaños de <code>birthdays.db</code>. Podrías hacerlo con la consulta SQL:</p>
+<pre><code>  SELECT * FROM birthdays;
+</code></pre>
+<p>Mira el siguiente TODO en <code>app.py</code>:</p>
+<pre><code>  # TODO: Muestra las entradas en la base de datos en index.html
+</code></pre>
+<p>Considera la posibilidad de configurar <code>app.py</code> para que ejecute esta consulta SQL cada vez que se cargue la página con una solicitud <code>GET</code>:</p>
+<pre><code>  # Consulta para todos los cumpleaños
+  birthdays = db.execute("SELECT * FROM birthdays")
+</code></pre>
+<p>Ahora, todos los cumpleaños en la tabla <code>birthdays</code> de <code>birthdays.db</code> están disponibles para ti en una variable Python llamada <code>birthdays</code>. En particular, los resultados de la consulta SQL se almacenan como una lista de diccionarios. Cada diccionario representa una fila devuelta por la consulta, y cada clave en el diccionario corresponde a un nombre de columna de la tabla <code>birthdays</code> (es decir, "nombre", "mes" y "día").</p>
+<p>Para renderizar estos cumpleaños en <code>index.html</code>, puedes confiar en la función <code>render_template</code> de Flask. Puedes especificar que <code>index.html</code> debe renderizarse con la variable <code>birthdays</code> especificando un argumento de palabra clave, también llamado <code>birthdays</code>, y estableciéndolo igual a la variable <code>birthdays</code> que acabas de crear.</p>
+<pre><code>  # Consulta para todos los cumpleaños
+  birthdays = db.execute("SELECT * FROM birthdays")
+
+  # Renderiza la página de cumpleaños
+  return render_template("index.html", birthdays=birthdays)
+</code></pre>
+<p>Para ser claros, el nombre en el lado izquierdo del <code>=</code>, <code>birthdays</code>, es el nombre bajo el cual puedes acceder a los datos de cumpleaños dentro del propio <code>index.html</code>.</p>
+<p>Ahora que se está renderizando <code>index.html</code> con acceso a los datos de los cumpleaños, puedes usar Jinja para renderizar los datos correctamente. Jinja, como Python, puede recorrer los elementos de una lista. Y Jinja, como Python, puede acceder a los elementos de un diccionario mediante sus claves. En este caso, la sintaxis de Jinja para hacerlo es el nombre del diccionario, seguido de un <code>.</code>, luego el nombre de la clave para acceder.</p>
+<pre><code>  {% for birthday in birthdays %}
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;/&lt;/td&gt;
+      &lt;/tr&gt;
+  {% endfor %}
+</code></pre>
+<p>¡Y eso es todo! Intenta recargar la página para ver los cumpleaños renderizados.</p>
+<h3>Tutorial</h3>
+<div class="alert alert-primary" data-alert="primary" role="alert"><p>¡Este video fue grabado cuando el curso todavía usaba CS50 IDE para escribir código. Aunque la interfaz puede parecer diferente de tu espacio de códigos ¡el comportamiento de los dos entornos debería ser muy similar!</p></div>
+
+<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://video.cs50.io/HXwvj8x1Fcs"></iframe>
+
+<details><summary> ¿No estás seguro de cómo resolverlo?</summary><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://video.cs50.io/lVwv4o8vmvI"></iframe></details>
+
+<h3>Pruebas</h3>
+<p>¡No hay <code>check50</code> para este conjunto de problemas! Pero asegúrate de probar tu aplicación web agregando algunos cumpleaños y asegurándote de que los datos aparezcan en tu tabla como se esperaba.</p>
+<p>Ejecuta <code>flask run</code> en tu terminal mientras estás en tu directorio <code>birthdays</code> para iniciar un servidor web que ejecute tu aplicación Flask.</p>
+<h2>Cómo Enviar</h2>
+<pre><code>  submit50 cs50/problems/2024/x/birthdays
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

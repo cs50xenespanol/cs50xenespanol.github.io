@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Español</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: orangered">
+  <header>
+    <h1>
+      <a href="">CS50x en Español</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href="">Curso de Introducción a la Ciencia de la Computación de la Universidad de Harvard</a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semanas/0.html">Semana
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semanas/1.html">Semana
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semanas/2.html">Semana
+          2</a>
+        Arreglos
+      </li>
+      <li>
+        <a href="/2024/semanas/3.html">Semana
+          3</a>
+        Algoritmos
+      </li>
+      <li>
+        <a href="/2024/semanas/4.html">Semana
+          4</a>
+        Memoria
+      </li>
+      <li>
+        <a href="/2024/semanas/5.html">Semana
+          5</a>
+        Estructuras de Datos
+      </li>
+      <li>
+        <a href="/2024/semanas/6.html">Semana
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semanas/7.html">Semana
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semanas/8.html">Semana
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semanas/9.html">Semana
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semanas/10.html">Semana
+          10</a>
+        Ciberseguridad
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/proyecto.html">Proyecto Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honestidad.html">Honestidad Académica</a>
+      </li>
+      <li>
+        <a href="/2024/certificado.html">Certificado CS50</a>
+      </li>
+      <li>
+        <a href="/2024/preguntas_frecuentes.html">Preguntas Frecuentes</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Libro de Calificaciones</a>
+      </li>
+      <li>
+        <a href="/2024/personal.html">Equipo</a>
+      </li>
+      <li>
+        <a href="/2024/plan_de_estudios.html">Programa del Curso</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Manual del Programador</a>
+      </li>
+      <li>
+        <a href="/2024/estilo.html">Guía de Estilo</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Fiftyville</h1>
+<h2>Problema a resolver</h2>
+<p>¡El pato de CS50 fue robado! La ciudad de Fiftyville ha pedido tu ayuda para resolver el misterio del pato robado. Las autoridades creen que el ladrón robó el pato y, poco después, salió de la ciudad en un vuelo con la ayuda de un cómplice. Tu objetivo es identificar:</p>
+<ul>
+<li>Quién es el ladrón,</li>
+<li>A qué ciudad escapó el ladrón y</li>
+<li>Quién es el cómplice del ladrón que lo ayudó a escapar</li>
+</ul>
+<p>Todo lo que sabes es que el robo <strong>sucedió el 28 de julio de 2023</strong> y que <strong>sucedió en Humphrey Street</strong>.</p>
+<p>¿Cómo vas a resolver este misterio? Las autoridades de Fiftyville han tomado algunos de los registros de la ciudad de la época del robo y han preparado una base de datos SQLite para ti, <code>fiftyville.db</code>, que contiene tablas de datos de alrededor de la ciudad. Puedes consultar esa tabla usando consultas SQL <code>SELECT</code> para acceder a los datos que te interesan. Usando solo la información en la base de datos, tu tarea es resolver el misterio.</p>
+<h2>Demostración</h2>
+<script async="" data-autoplay="1" data-cols="100" data-loop="1" data-rows="12" id="asciicast-YgI5fyTP939jINCZm7l3o7WCY" src="https://asciinema.org/a/YgI5fyTP939jINCZm7l3o7WCY.js"></script>
+
+<h2>Comenzando</h2>
+<p>Para este problema, utilizarás una base de datos que te proporcionará el personal de CS50.</p>
+<p>Inicia sesión en <a href="https://cs50.dev/">cs50.dev</a>, haz clic en tu ventana de terminal y ejecuta <code>cd</code> por sí mismo. Deberías encontrar que el indicador de tu ventana de terminal se asemeja al siguiente:</p>
+<pre><code>  $
+</code></pre>
+<p>Luego ejecuta</p>
+<pre><code>  wget https://cdn.cs50.net/2023/fall/psets/7/fiftyville.zip
+</code></pre>
+<p>para descargar un ZIP llamado <code>fiftyville.zip</code> en tu codespace.</p>
+<p>Luego ejecuta</p>
+<pre><code>  unzip fiftyville.zip
+</code></pre>
+<p>para crear una carpeta llamada <code>fiftyville</code>. Ya no necesitas el archivo ZIP, por lo que puedes ejecutar</p>
+<pre><code>  rm fiftyville.zip
+</code></pre>
+<p>y responde con "y" seguido de Enter en el indicador para eliminar el archivo ZIP que descargaste.</p>
+<p>Ahora escribe</p>
+<pre><code>  cd fiftyville
+</code></pre>
+<p>seguido de Enter para moverte a (es decir, abrir) ese directorio. Tu indicador ahora debería parecerse al siguiente.</p>
+<pre><code>  fiftyville/ $
+</code></pre>
+<p>Ejecuta <code>ls</code> por sí mismo y deberías ver algunos archivos:</p>
+<pre><code>  answers.txt  fiftyville.db  log.sql
+</code></pre>
+<p>Si tienes algún problema, sigue estos mismos pasos nuevamente y observa si puedes determinar dónde te equivocaste.</p>
+<h2>Especificación</h2>
+<p>Para este problema, tan importante como resolver el misterio en sí es el proceso que utilizas para resolver el misterio. En <code>log.sql</code>, mantén un registro de todas las consultas SQL que ejecutas en la base de datos. Encima de cada consulta, etiqueta cada una con un comentario (en SQL, los comentarios son cualquier línea que comienza con <code>--</code>) que describa por qué estás ejecutando la consulta y/o qué información esperas obtener de esa consulta en particular. Puedes utilizar comentarios en el archivo de registro para agregar notas adicionales sobre tu proceso de pensamiento a medida que resuelves el misterio: en última instancia, este archivo debería servir como evidencia del proceso que utilizaste para identificar al ladrón.</p>
+<p>A medida que escribes tus consultas, puedes notar que algunas de ellas pueden volverse bastante complejas. Para ayudar a que tus consultas sean legibles, consulta los principios de buen estilo en <a href="https://www.sqlstyle.guide">sqlstyle.guide</a>. ¡La sección <a href="https://www.sqlstyle.guide/#indentation">sangría</a> puede ser particularmente útil!</p>
+<p>Una vez que resuelvas el misterio, completa cada una de las líneas en <code>answers.txt</code> completando el nombre del ladrón, la ciudad a la que escapó el ladrón y el nombre del cómplice del ladrón que lo ayudó a escapar de la ciudad. (¡Asegúrate de no cambiar el texto existente en el archivo ni agregar ninguna otra línea al archivo!)</p>
+<p>Finalmente, debes enviar tus archivos <code>log.sql</code> y <code>answers.txt</code>.</p>
+<h2>Tutorial</h2>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/YHhgEoJMDnU?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<h2>Sugerencias</h2>
+<ul>
+<li>Ejecuta <code>sqlite3 fiftyville.db</code> para comenzar a ejecutar consultas en la base de datos.<ul>
+<li>Mientras ejecutas <code>sqlite3</code>, ejecutando <code>.tables</code> se mostrarán todas las tablas en la base de datos.</li>
+<li>Mientras ejecutas <code>sqlite3</code>, ejecutando <code>.schema TABLE_NAME</code>, donde <code>TABLE_NAME</code> es el nombre de una tabla en la base de datos, te mostrará el comando <code>CREATE TABLE</code> utilizado para crear la tabla. ¡Esto puede ser útil para saber qué columnas consultar!</li>
+</ul>
+</li>
+<li>Puede resultarte útil comenzar con la tabla <code>crime_scene_reports</code>. Comienza buscando un informe de escena del crimen que coincida con la fecha y el lugar del crimen.</li>
+<li>Consulta <a href="https://www.w3schools.com/sql/sql_ref_keywords.asp">esta referencia de palabras clave SQL</a> para conocer algunas sintaxis SQL que pueden ser útiles.</li>
+</ul>
+<h2>Cómo probar</h2>
+<h3>Corrección</h3>
+<pre><code>  check50 cs50/problems/2024/x/fiftyville
+</code></pre>
+<h2>Cómo enviar</h2>
+<pre><code>  submit50 cs50/problems/2024/x/fiftyville
+</code></pre>
+<h2>Reconocimientos</h2>
+<p>Inspirado en otro caso en <a href="https://mystery.knightlab.com/">SQL City</a>.</p>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Español</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: orangered">
+  <header>
+    <h1>
+      <a href="">CS50x en Español</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href="">Curso de Introducción a la Ciencia de la Computación de la Universidad de Harvard</a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semanas/0.html">Semana
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semanas/1.html">Semana
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semanas/2.html">Semana
+          2</a>
+        Arreglos
+      </li>
+      <li>
+        <a href="/2024/semanas/3.html">Semana
+          3</a>
+        Algoritmos
+      </li>
+      <li>
+        <a href="/2024/semanas/4.html">Semana
+          4</a>
+        Memoria
+      </li>
+      <li>
+        <a href="/2024/semanas/5.html">Semana
+          5</a>
+        Estructuras de Datos
+      </li>
+      <li>
+        <a href="/2024/semanas/6.html">Semana
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semanas/7.html">Semana
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semanas/8.html">Semana
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semanas/9.html">Semana
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semanas/10.html">Semana
+          10</a>
+        Ciberseguridad
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/proyecto.html">Proyecto Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honestidad.html">Honestidad Académica</a>
+      </li>
+      <li>
+        <a href="/2024/certificado.html">Certificado CS50</a>
+      </li>
+      <li>
+        <a href="/2024/preguntas_frecuentes.html">Preguntas Frecuentes</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Libro de Calificaciones</a>
+      </li>
+      <li>
+        <a href="/2024/personal.html">Equipo</a>
+      </li>
+      <li>
+        <a href="/2024/plan_de_estudios.html">Programa del Curso</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Manual del Programador</a>
+      </li>
+      <li>
+        <a href="/2024/estilo.html">Guía de Estilo</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Lección 0</h1>
+<ul>
+<li><a href="#welcome">Bienvenida</a></li>
+<li><a href="#what-is-computer-science">¿Qué es la informática?</a></li>
+<li><a href="#binary">Binario</a></li>
+<li><a href="#representing-data">Representación de datos</a></li>
+<li><a href="#algorithms">Algoritmos</a></li>
+<li><a href="#pseudocode">Pseudocódigo</a></li>
+<li><a href="#scratch">Scratch</a></li>
+</ul>
+<h2>Bienvenida</h2>
+<ul>
+<li>Cuando David era un estudiante de primer año, se sentía muy intimidado para tomar algún curso de informática. Para cuando era estudiante de segundo año, encontró el coraje para tomar el equivalente de CS50, aunque solo para aprobar/reprobar.</li>
+<li>De hecho, dos tercios de los estudiantes de CS50 nunca han tomado un curso de informática antes.</li>
+<li>
+<p>E igual de importante también:</p>
+<blockquote>
+<p>Lo que importa en última instancia en este curso no es tanto en dónde terminas en relación con tus compañeros de clase, sino en dónde terminas en relación con en dónde comenzaste</p>
+</blockquote>
+</li>
+</ul>
+<h2>¿Qué es la informática?</h2>
+<ul>
+<li>La informática es fundamentalmente la resolución de problemas.</li>
+<li>Podemos pensar en la resolución de problemas como el proceso de tomar algún dato de entrada (detalles acerca de nuestro problema) y generar algún dato de salida (la solución a nuestro problema). La "caja negra" en el medio es la informática.<br />
+<img alt="palabra &quot;entrada&quot;, flecha hacia una caja, flecha fuera de la caja, palabra &quot;salida&quot;" src="https://cs50.harvard.edu/x/2020/notes/0/input_output.png" /></li>
+<li>Necesitamos una forma de representar los datos de entrada, de manera que podamos almacenar y trabajar con información de una forma estándar.</li>
+</ul>
+<h2>Binario</h2>
+<ul>
+<li>Una computadora, en el nivel más básico, almacena datos en binario, un sistema numérico en el que solo hay dos dígitos, 0 y 1.</li>
+<li>Cuando aprendimos a contar por primera vez, es posible que hayamos usado un dedo para representar una cosa. Ese sistema se conoce como unario. Cuando aprendimos a escribir números con los dígitos del 0 al 9, aprendimos a usar el decimal.</li>
+<li>Por ejemplo, sabemos que lo siguiente representa ciento veintitrés.</li>
+</ul>
+<pre>
+    1 2 3
+</pre>
+
+<ul>
+<li>El <code>3</code> está en la columna de las unidades, el <code>2</code> está en la columna de las decenas y el <code>1</code> está en la columna de las centenas.</li>
+<li>Entonces, <code>123</code> es 100×1 + 10×2 + 1×3 = 100 + 20 + 3 = 123.</li>
+<li>
+<p>Cada lugar para un dígito representa una potencia de diez, ya que hay diez dígitos posibles para cada lugar.</p>
+</li>
+<li>
+<p>En binario, con solo dos dígitos, tenemos potencias de dos para cada valor posicional:</p>
+</li>
+</ul>
+<pre>
+    4 2 1
+    <b>0 0 0</b>
+</pre>
+
+<ul>
+<li>
+<p>Este todavía sería igual a 0.</p>
+</li>
+<li>
+<p>Ahora, si cambiamos el valor binario a, por ejemplo, <code>0 1 1</code>, el valor decimal sería 3.</p>
+</li>
+</ul>
+<pre>
+    4 2 1
+    <b>0 1 1</b>
+</pre>
+<ul>
+<li>Si quisieramos representar 8, necesitaríamos otro dígito:</li>
+</ul>
+<pre>
+    8 4 2 1
+    <b>1 0 0 0</b>
+</pre>
+
+<ul>
+<li>Y el binario tiene sentido para las computadoras porque las alimentamos con electricidad, que puede estar encendida o apagada, por lo que cada bit solo necesita estar encendido o apagado. En una computadora, hay millones o miles de millones de interruptores llamados transistores que pueden almacenar electricidad y representar un bit al estar "encendidos" o "apagados".</li>
+<li>Con suficientes bits, o dígitos binarios, las computadoras pueden contar cualquier número.</li>
+<li>8 bits conforman un <strong>byte</strong>.</li>
+</ul>
+<h2>Representación de datos</h2>
+<ul>
+<li>Para representar letras, todo lo que necesitamos hacer es decidir cómo los números se relacionan con las letras. Algunas personas, hace muchos años, decidieron colectivamente una relación estándar llamada <a href="https://es.wikipedia.org/wiki/ASCII">ASCII</a>. La letra "A", por ejemplo, es el número 65, y "B" es 66, y así sucesivamente. La relación también incluye puntuación y otros símbolos. Otros caracteres, como las letras con tildes y los emojis, son parte de un estándar llamado <a href="https://es.wikipedia.org/wiki/Unicode">Unicode</a> que usa más bits que ASCII para acomodar todos estos caracteres.<ul>
+<li>Cuando recibimos un emoji, nuestra computadora en realidad solo está recibiendo un número decimal como <code>128514</code> (<code>11111011000000010</code> en binario, si te resulta más fácil leer eso) que luego relaciona con la imagen del emoji.</li>
+</ul>
+</li>
+<li>Una imagen, también, está compuesta por muchos puntos cuadrados más pequeños, o píxeles, cada uno de los cuales puede representarse en binario con un sistema llamado RGB, con valores para luz roja, verde y azul en cada píxel. Al mezclar diferentes cantidades de cada color, podemos representar millones de colores:<br />
+<img alt="cuadrado rojo etiquetado con 72, cuadrado verde etiquetado con 73, cuadrado azul etiquetado con 33" src="https://cs50.harvard.edu/x/2020/notes/0/rgb.png" /><ul>
+<li>Los valores de rojo, verde y azul se combinan para obtener un color amarillo claro:<br />
+<img alt="cuadrado amarillo claro" src="https://cs50.harvard.edu/x/2020/notes/0/rgb_combined.png" /></li>
+</ul>
+</li>
+<li>Podemos ver esto en un emoji si hacemos suficiente zoom: <img alt="emoji de lágrimas de alegría de risa con cuadrados de píxeles distinguibles" src="https://cs50.harvard.edu/x/2020/notes/0/emoji_zoomed.png" /></li>
+<li>Y los programas de computadora saben, según el contexto de su código, si los números binarios deben interpretarse como números, o letras, o píxeles.</li>
+<li>Y los videos son solo muchas, muchas imágenes mostradas una tras otra, a una cierta cantidad de cuadros por segundo. La música, también, puede representarse mediante las notas que se están reproduciendo, su duración y su volumen.</li>
+</ul>
+<h2>Algoritmos</h2>
+<ul>
+<li>Entonces podemos representar entradas y salidas. La caja negra anterior contendrá <strong>algoritmos</strong>, instructivos paso a paso para resolver un problema:
+  <img alt="caja con la palabra &quot;algoritmos&quot;" src="https://cs50.harvard.edu/x/2020/notes/0/algorithms.png" /></li>
+<li>Digamos que queremos encontrar a un amigo, Mike Smith, en una guía telefónica.<ul>
+<li>Podríamos empezar revisando el libro, una página a la vez, hasta encontrar a Mike Smith o llegar al final del libro.</li>
+<li>También podríamos revisar dos páginas a la vez, pero si vamos demasiado lejos, tendremos que saber cómo regresar una página.</li>
+<li>Pero una forma incluso más eficiente sería abrir la guía telefónica en el medio, decidir si Mike estará en la mitad izquierda o derecha del libro (porque el libro está en orden alfabético) y descartar inmediatamente la mitad del problema. Podemos repetir esto, dividiendo el problema a la mitad cada vez. Con 1024 páginas para empezar, solo necesitaríamos 10 pasos de dividir a la mitad antes de que solo nos quede una página para revisar.</li>
+</ul>
+</li>
+<li>De hecho, podemos representar la eficacia de cada uno de esos algoritmos con una gráfica:
+  <img alt="gráfico con: &quot;tamaño del problema&quot; como eje x; &quot;tiempo para resolver&quot; como eje y; línea recta roja y pronunciada desde el origen a la parte superior de la gráfica etiquetada &quot;n&quot;; línea recta amarilla, menos pronunciada, desde el origen a la parte superior de la gráfica etiquetada &quot;n/2&quot;; línea curva verde que se hace cada vez menos pronunciada desde el origen hacia la derecha de la gráfica etiquetada &quot;log n&quot;" src="https://cs50.harvard.edu/x/2020/notes/0/running_time.png" /><ul>
+<li>Nuestra primera solución, una página a la vez, es como la línea roja: nuestro tiempo para resolver aumenta linealmente a medida que aumenta el tamaño del problema.</li>
+<li>La segunda solución, dos páginas a la vez, es como la línea amarilla: nuestra pendiente es menos pronunciada, pero sigue siendo lineal.</li>
+<li>Nuestra solución final es como la línea verde: logarítmica, ya que nuestro tiempo para resolver aumenta cada vez más lentamente a medida que aumenta el tamaño del problema. En otras palabras, si la guía telefónica pasara de 1000 a 2000 páginas, necesitaríamos un paso más para encontrar a Mike. Si el tamaño se duplicara nuevamente de 2000 a 4000 páginas, todavía solo necesitaríamos un paso más.</li>
+</ul>
+</li>
+</ul>
+<h2>Pseudocódigo</h2>
+<ul>
+<li>
+<p>Podemos escribir <em>pseudocódigo</em>, una sintaxis informal que es sólo una versión más específica del inglés (u otro idioma humano) que representa nuestro algoritmo:</p>
+<pre><code>    1  Toma la guía telefónica
+    2  Abre la guía telefónica por la mitad
+    3  Mira la página
+    4  Si Smith está en la página
+    5      Llama a Mike
+    6  De lo contrario, si Smith está antes en la guía
+    7      Abre la mitad izquierda de la guía por la mitad
+    8      Vuelve a la línea 3
+    9  De lo contrario, si Smith está más tarde en la guía
+    10     Abre la mitad derecha de la guía por la mitad
+    11     Vuelve a la línea 3
+    12 De lo contrario
+    13     Termina
+</code></pre>
+</li>
+<li>
+<p>Algunas de estas líneas comienzan con verbos o acciones. Comenzaremos a llamarlas <em>funciones</em>:</p>
+</li>
+</ul>
+<pre>
+    1  <b>Toma</b> la guía telefónica
+    2  <b>Abre</b> la guía telefónica por la mitad
+    3  <b>Mira</b> la página
+    4  Si Smith está en la página  
+    5      <b>Llama</b> a Mike
+    6  De lo contrario, si Smith está antes en la guía
+    7      <b>Abre</b> la mitad izquierda de la guía por la mitad
+    8      Vuelve a la línea 3
+    9  De lo contrario, si Smith está más tarde en la guía
+    10     <b>Abre</b> la mitad derecha de la guía por la mitad
+    11     Vuelve a la línea 3
+    12 De lo contrario
+    13     <b>Termina</b>
+</pre>
+
+<ul>
+<li>También tenemos ramas que conducen a caminos diferentes, como bifurcaciones en el camino, que llamaremos <em>condiciones</em>:</li>
+</ul>
+<pre>
+    1  Toma la guía telefónica
+    2  Abre la guía telefónica por la mitad
+    3  Mira la página
+    4  <b>Si</b> Smith está en la página
+    5      Llama a Mike
+    6  <b>De lo contrario, si</b> Smith está antes en la guía
+    7      Abre la mitad izquierda de la guía por la mitad
+    8      Vuelve a la línea 3
+    9  <b>De lo contrario, si</b> Smith está más tarde en la guía
+    10     Abre la mitad derecha de la guía por la mitad
+    11     Vuelve a la línea 3
+    12 <b>De lo contrario</b>
+    13     Termina
+</pre>
+
+<ul>
+<li>Y las preguntas que deciden a dónde vamos se llaman <em>expresiones booleanas</em>, que eventualmente resultan en un valor verdadero o falso:</li>
+</ul>
+<pre>
+    1  Toma la guía telefónica
+    2  Abre la guía telefónica por la mitad
+    3  Mira la página
+    4  Si <b>Smith está en la página</b>
+    5      Llama a Mike
+    6  De lo contrario, si <b>Smith está antes en la guía</b>
+    7      Abre la mitad izquierda de la guía por la mitad
+    8      Vuelve a la línea 3
+    9  De lo contrario, si <b>Smith está más tarde en la guía</b>
+    10     Abre la mitad derecha de la guía por la mitad
+    11     Vuelve a la línea 3
+    12 De lo contrario
+    13     Termina
+</pre>
+
+<ul>
+<li>Finalmente, tenemos palabras que conducen a ciclos, donde podemos repetir partes de nuestro programa, llamados <em>bucles</em>:</li>
+</ul>
+<pre>
+    1  Toma la guía telefónica
+    2  Abre la guía telefónica por la mitad
+    3  Mira la página
+    4  Si Smith está en la página
+    5      Llama a Mike
+    6  De lo contrario, si Smith está antes en la guía
+    7      Abre la mitad izquierda de la guía por la mitad
+    8      <b>Vuelve a la línea 3</b>
+    9  De lo contrario, si Smith está más tarde en la guía
+    10     Abre la mitad derecha de la guía por la mitad
+    11     <b>Vuelve a la línea 3</b>
+    12 De lo contrario
+    13     Termina
+</pre>
+
+<h2>Scratch</h2>
+<ul>
+<li>Podemos escribir programas con los bloques de construcción que acabamos de descubrir:<ul>
+<li>funciones</li>
+<li>condiciones</li>
+<li>expresiones booleanas</li>
+<li>bucles</li>
+</ul>
+</li>
+<li>Utilizaremos un lenguaje de programación gráfico denominado <a href="https://scratch.mit.edu/">Scratch</a>, en el que arrastraremos y soltaremos bloques que contienen instrucciones.</li>
+<li>Más adelante en nuestro curso, pasaremos a lenguajes de programación de texto como C, Python y JavaScript. Todos estos lenguajes, incluido Scratch, tienen características más potentes, como:<ul>
+<li>variables<ul>
+<li>la capacidad de almacenar valores y cambiarlos</li>
+</ul>
+</li>
+<li>subprocesos<ul>
+<li>la capacidad para que nuestro programa haga varias cosas a la vez</li>
+</ul>
+</li>
+<li>eventos<ul>
+<li>la capacidad de responder a los cambios en nuestro programa o entradas</li>
+</ul>
+</li>
+<li>…</li>
+</ul>
+</li>
+<li>Así es el entorno de programación para Scratch:<br />
+<img alt="captura de pantalla de Scratch" src="https://cs50.harvard.edu/x/2020/notes/0/scratch.png" /><ul>
+<li>A la izquierda, tenemos piezas de rompecabezas que representan funciones o variables, u otros conceptos, que podemos arrastrar y soltar en nuestra área de instrucciones en el centro.</li>
+<li>A la derecha, tenemos un escenario que nuestro programa mostrará a un ser humano, donde podemos agregar o cambiar fondos, personajes (llamados sprites en Scratch) y más.</li>
+</ul>
+</li>
+<li>Podemos arrastrar algunos bloques para hacer que Scratch diga "hola, mundo":<br />
+<img alt="captura de pantalla de hola, mundo" src="https://cs50.harvard.edu/x/2020/notes/0/hello_world.png" /><ul>
+<li>El bloque "cuando se hace clic en la bandera verde" es el inicio de nuestro programa, y debajo, hemos encajado un bloque "decir" y hemos escrito "hola, mundo"</li>
+</ul>
+</li>
+<li>También podemos arrastrar el bloque "preguntar y esperar", con una pregunta como "¿Cuál es tu nombre?", y combinarlo con un bloque "decir" para obtener la respuesta:<br />
+<img alt="captura de pantalla de pregunta y respuesta" src="https://cs50.harvard.edu/x/2020/notes/0/answer.png" /></li>
+<li>Pero no esperamos después de decir "Hola" con el primer bloque, por lo que podemos utilizar el bloque "decir () durante () segundos":<br />
+<img alt="captura de pantalla de bloques con decir durante 2 segundos" src="https://cs50.harvard.edu/x/2020/notes/0/wait.png" /></li>
+<li>Podemos utilizar el bloque "unir" para combinar dos frases para que Scratch pueda decir "hola, David":<br />
+<img alt="captura de pantalla de unir" src="https://cs50.harvard.edu/x/2020/notes/0/join.png" /><ul>
+<li>Fíjate que podemos anidar instrucciones y variables.</li>
+</ul>
+</li>
+<li>De hecho, el bloque "decir" en sí es como un algoritmo, en el que proporcionamos una entrada de "hola, mundo" y produjo la salida de Scratch (el gato) "diciendo" esa frase:<br />
+<img alt="decir como algoritmo con &quot;hola, mundo&quot; como entrada y gato como salida" src="https://cs50.harvard.edu/x/2020/notes/0/say_algorithm.png" /></li>
+<li>El bloque "preguntar", también, toma una entrada (la pregunta que queremos hacer) y produce la salida del bloque "respuesta":<br />
+<img alt="preguntar como algoritmo con &quot;¿Cuál es tu nombre?&quot; como entrada y bloque de respuesta como salida" src="https://cs50.harvard.edu/x/2020/notes/0/ask_algorithm.png" /></li>
+<li>Luego, podemos usar el bloque "respuesta" junto con nuestro propio texto, "hola, ", como dos entradas al algoritmo de unión ...<br />
+<img alt="unir como algoritmo con &quot;hola, &quot; y &quot;respuesta&quot; como entrada y &quot;¡hola, David!&quot; como salida" src="https://cs50.harvard.edu/x/2020/notes/0/join_algorithm.png" /></li>
+<li>… que pasamos como entrada nuevamente al bloque "decir":<br />
+<img alt="decir como algoritmo con &quot;¡hola, David!&quot; como entrada y gato como salida" src="https://cs50.harvard.edu/x/2020/notes/0/say_again.png" /></li>
+<li>Podemos intentar hacer que Scratch (el nombre del gato) diga miau:<br />
+<img alt="Bloques etiquetados &quot;para siempre&quot; con &quot;reproducido sonido Miau hasta que termine&quot; anidado dentro" src="https://cs50.harvard.edu/x/2020/notes/0/forever_meow.png" /><ul>
+<li>Pero cuando hacemos clic en la bandera verde, escuchamos el sonido del maullido una y otra vez de inmediato. ¡Nuestro primer error o equivocación! Podemos agregar un bloque para esperar, para que los maullidos suenen más normales.<br />
+<img alt="Bloques etiquetados &quot;para siempre&quot; con &quot;reproduced sonido Miau hasta que termine&quot; y &quot;esperar 1 segundo&quot; anidados dentro" src="https://cs50.harvard.edu/x/2020/notes/0/forever_meow_wait.png" /></li>
+</ul>
+</li>
+<li>Podemos hacer que Scratch apunte hacia el mouse y se mueva hacia él:<br />
+<img alt="Bloques etiquetados &quot;para siempre&quot; con &quot;apuntar hacia el puntero del mouse&quot; y &quot;mover 10 pasos&quot; anidados dentro" src="https://cs50.harvard.edu/x/2020/notes/0/point_towards.png" /></li>
+<li>Veremos una oveja que puede contar:<br />
+<img alt="Bloques etiquetados como &quot;establecer contador de 1&quot; y &quot;para siempre&quot; con &quot;decir contador durante 1 segundo&quot;, &quot;esperar 1 segundo&quot; y &quot;cambiar contador por 1&quot; anidados dentro" src="https://cs50.harvard.edu/x/2020/notes/0/count.png" /><ul>
+<li>Aquí, <code>contador</code> es una variable, cuyo valor podemos establecer, usar y cambiar.</li>
+</ul>
+</li>
+<li>También podemos hacer que Scratch maulle si lo tocamos con el puntero del mouse:<br />
+<img alt="Bloques etiquetados &quot;para siempre&quot; con &quot;si está tocando el puntero del mouse entonces&quot; y &quot;reproducido sonido Miau hasta que termine&quot; anidados dentro" src="https://cs50.harvard.edu/x/2020/notes/0/pet0.png" /></li>
+<li>Alternativamente, podemos hacer que Scratch ruja si lo hacemos:<br />
+<img alt="Bloques etiquetados como &quot;para siempre&quot; con &quot;si está tocando el puntero del mouse entonces&quot; y &quot;reproducido sonido rugido hasta que termine&quot; anidados dentro, y &quot;de lo contrario&quot;, &quot;reproducido sonido Miau hasta que termine&quot;, &quot;esperar 1 segundo&quot;" src="https: //cs50.harvard.edu/x/2020/notes/0/pet1.png" /><ul>
+<li>Aquí, tenemos dos ramas o condiciones diferentes que se repetirán para siempre. Si el ratón lo está tocando, Scratch "rugirá", de lo contrario, solo maullará.</li>
+</ul>
+</li>
+<li>
+<p>Podemos hacer que Scratch se mueva hacia adelante y hacia atrás en la pantalla con algunos bloques más que podemos descubrir mirando alrededor:<br />
+<img alt="Bloques etiquetados como &quot;establecer estilo de rotación izquierda-derecha&quot; y &quot;para siempre&quot; con &quot;mover 10 pasos&quot;, &quot;si está tocando un borde entonces&quot; y &quot;reproducido sonido auh hasta que termine&quot;, &quot;girar 180 grados&quot;" src="https://cs50.harvard.edu/x/2020/ notes/0/ouch.png" /></p>
+<ul>
+<li>Incluso podemos grabar nuestro propio sonido para reproducir.</li>
+</ul>
+</li>
+<li>
+<p>Con dos "disfraces" o imágenes diferentes de Scratch con sus patas en posiciones diferentes, podemos incluso simular un movimiento de caminata animado:
+  ![bloques etiquetados como "establecer estilo de rotación izquierda-derecha" y "para siempre" con "mover 10 pasos", "si toca el borde? entonces" con "reproducir hasta terminar el sonido ouch", "girar 180 grados" anidado dentro, y "siguiente disfraz"}(https://cs50.harvard.edu/x/2020/notes/0/bounce.png)</p>
+</li>
+<li>Observamos otro programa, bark, donde podemos usar la barra espaciadora para silenciar un león marino:<br />
+<img alt="bloques etiquetados como &quot;establecer silenciado en falso&quot; y &quot;para siempre&quot; con si se presionó la tecla espacio? entonces&quot; con &quot;si silenciado = verdadero entonces&quot; y &quot;establecer silenciado en falso&quot; y &quot;de lo contrario&quot; y &quot;establecer silenciado en verdadero&quot; anidado dentro, y &quot;esperar 1 segundo&quot;" src="https://cs50.harvard.edu/x/2020/notes/0/bark.png" /><ul>
+<li>Tenemos una variable, <code>silenciado</code>, que es <code>falso</code> de forma predeterminada. Y nuestro programa comprobará constantemente si se presiona la barra espaciadora y establecerá silenciado en <code>falso</code> si es <code>verdadero</code> o <code>verdadero</code> si no. De esta manera, podemos alternar si se reproduce el sonido o no, ya que nuestro otro conjunto de bloques para el león marino verifica la variable <code>silenciado</code>:<br />
+<img alt="bloques etiquetados como &quot;para siempre&quot; con si silenciado = falso entonces&quot; con &quot;iniciar sonido SeaLion&quot; y &quot;pensar hola hola hola durante 2 segundos&quot; anidados dentro, y &quot;esperar 1 segundo&quot;" src="https://cs50.harvard.edu/x/2020/notes/0/bark1.png" /></li>
+</ul>
+</li>
+<li>Con múltiples sprites o personajes, podemos tener diferentes conjuntos de bloques para cada uno de ellos:<br />
+<img alt="bloques etiquetados como &quot;para siempre&quot; con si se presiona la tecla espacio? entonces&quot; con &quot;decir ¡Marco! durante 2 segundos&quot; y &quot;difundir evento&quot; anidados dentro" src="https://cs50.harvard.edu/x/2020/notes/0/marco.png" /><ul>
+<li>Para una marioneta, tenemos estos bloques que dicen "¡Marco!", y luego un bloque "evento de difusión". Este "evento" se utiliza para que nuestros dos sprites se comuniquen entre sí, como enviar un mensaje secreto. Por lo tanto, nuestra otra marioneta puede esperar este evento para decir "¡Polo!":<br />
+<img alt="bloques etiquetados como &quot;cuando recibo un evento&quot;, &quot;decir ¡Polo! durante 2 segundos&quot;" src="https://cs50.harvard.edu/x/2020/notes/0/polo.png" /></li>
+</ul>
+</li>
+<li>Ahora que conocemos algunos conceptos básicos, podemos pensar en el diseño o la calidad de nuestros programas. Por ejemplo, es posible que queramos hacer que Scratch tosa tres veces repitiendo algunos bloques:<br />
+<img alt="bloques etiquetados como &quot;decir toser durante 1 segundo&quot;, &quot;esperar 1 segundo&quot;, &quot;decir toser durante 1 segundo&quot;, &quot;esperar 1 segundo&quot;, &quot;decir toser durante 1 segundo&quot;, &quot;esperar 1 segundo&quot;" src="https://cs50.harvard.edu/x/2020/notes/0/cough0.png" /></li>
+<li>Si bien esto es correcto, podemos evitar repetir bloques con un bucle:<br />
+<img alt="bloques etiquetados como &quot;repetir 3&quot; con &quot;decir toser durante 1 segundo&quot;, &quot;esperar 1 segundo&quot; anidados dentro" src="https://cs50.harvard.edu/x/2020/notes/0/cough1.png" /></li>
+<li>El siguiente paso es abstraer parte de nuestro código en una función o hacerlo reutilizable de diferentes maneras. Podemos crear un bloque llamado "tos" y poner algunos bloques dentro de él:<br />
+<img alt="dos conjuntos de bloques. el primer conjunto de bloques es: &quot;definir tos&quot;, &quot;decir toser durante 1 segundo&quot;, &quot;esperar 1 segundo&quot;. el segundo conjunto es: &quot;cuando se hace clic en la bandera verde&quot;, &quot;repetir 3&quot;, &quot;toser&quot;" src="https://cs50.harvard.edu/x/2020/notes/0/cough_function.png" /><ul>
+<li>Ahora, todos nuestros sprites pueden usar el mismo bloque "tos", en tantos lugares como queramos.</li>
+</ul>
+</li>
+<li>Incluso podemos poner una cantidad de veces en nuestra función de tos, por lo que solo necesitamos un solo bloque para toser cualquier cantidad de veces:<br />
+<img alt="dos conjuntos de bloques. el primer conjunto de bloques es: &quot;definir tos n veces&quot;, &quot;repetir n&quot;, decir tos durante 1 segundo&quot;, &quot;esperar 1 segundo&quot;. el segundo conjunto es: &quot;cuando se hace clic en la bandera verde&quot;, &quot;toser 3 veces&quot;" src="https://cs50.harvard.edu/x/2020/notes/0/cough_function_2.png" /></li>
+<li>Observamos algunos ejemplos y analizamos cómo podríamos implementar componentes de ellos con diferentes sprites que siguen el cursor del mouse o hacen que suceda algo más en el escenario.</li>
+<li>¡Bienvenidos a bordo!</li>
+</ul>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Español</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: orangered">
+  <header>
+    <h1>
+      <a href="">CS50x en Español</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href="">Curso de Introducción a la Ciencia de la Computación de la Universidad de Harvard</a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semanas/0.html">Semana
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semanas/1.html">Semana
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semanas/2.html">Semana
+          2</a>
+        Arreglos
+      </li>
+      <li>
+        <a href="/2024/semanas/3.html">Semana
+          3</a>
+        Algoritmos
+      </li>
+      <li>
+        <a href="/2024/semanas/4.html">Semana
+          4</a>
+        Memoria
+      </li>
+      <li>
+        <a href="/2024/semanas/5.html">Semana
+          5</a>
+        Estructuras de Datos
+      </li>
+      <li>
+        <a href="/2024/semanas/6.html">Semana
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semanas/7.html">Semana
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semanas/8.html">Semana
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semanas/9.html">Semana
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semanas/10.html">Semana
+          10</a>
+        Ciberseguridad
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/proyecto.html">Proyecto Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honestidad.html">Honestidad Académica</a>
+      </li>
+      <li>
+        <a href="/2024/certificado.html">Certificado CS50</a>
+      </li>
+      <li>
+        <a href="/2024/preguntas_frecuentes.html">Preguntas Frecuentes</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Libro de Calificaciones</a>
+      </li>
+      <li>
+        <a href="/2024/personal.html">Equipo</a>
+      </li>
+      <li>
+        <a href="/2024/plan_de_estudios.html">Programa del Curso</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Manual del Programador</a>
+      </li>
+      <li>
+        <a href="/2024/estilo.html">Guía de Estilo</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Scrabble</h1>
+<p><img alt="Tablero de Scrabble" src="https://cs50.harvard.edu/x/2024/psets/2/scrabble/scrabble.png" /></p>
+<h2>Problema a resolver</h2>
+<p>En el juego de <a href="https://scrabble.hasbro.com/en-us/rules">Scrabble</a>, los jugadores crean palabras para obtener puntos, y el número de puntos es la suma de los valores de puntos de cada letra en la palabra.</p>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+<th>H</th>
+<th>I</th>
+<th>J</th>
+<th>K</th>
+<th>L</th>
+<th>M</th>
+<th>N</th>
+<th>O</th>
+<th>P</th>
+<th>Q</th>
+<th>R</th>
+<th>S</th>
+<th>T</th>
+<th>U</th>
+<th>V</th>
+<th>W</th>
+<th>X</th>
+<th>Y</th>
+<th>Z</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td>2</td>
+<td>4</td>
+<td>1</td>
+<td>8</td>
+<td>5</td>
+<td>1</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+<td>10</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>8</td>
+<td>4</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>Por ejemplo, si quisiéramos puntuar la palabra “CODE”, notaríamos que la ‘C’ vale 3 puntos, la ‘O’ vale 1 punto, la ‘D’ vale 2 puntos y la ‘E’ vale 1 punto. Sumando, obtenemos que “CODE” vale 7 puntos.</p>
+<p>En un archivo llamado <code>scrabble.c</code> en una carpeta llamada <code>scrabble</code>, implementa un programa en C que determine el ganador de un juego corto similar al Scrabble. Tu programa debe solicitar la entrada dos veces: una para el “Jugador 1” para que ingrese su palabra y otra para que el “Jugador 2” ingrese su palabra. Luego, según qué jugador obtenga más puntos, tu programa debe imprimir “¡Jugador 1 gana!”, “¡Jugador 2 gana!” o “¡Empate!” (en caso de que ambos jugadores obtengan la misma cantidad de puntos).</p>
+<h2>Demostración</h2>
+<script async="" data-autoplay="1" data-cols="80" data-loop="1" data-rows="12" id="asciicast-74B4kq3ftleKe6AdN0NxFV8CN" src="https://asciinema.org/a/74B4kq3ftleKe6AdN0NxFV8CN.js"></script>
+
+<h2>Recomendaciones</h2>
+<h3>Escribe código que sepas que se compilará</h3>
+<pre><code>  #include &lt;ctype.h&gt;
+  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int main(void)
+  {
+
+  }
+</code></pre>
+<p>Ten en cuenta que has incluido algunos archivos de encabezado que te darán acceso a funciones que pueden ayudarte a resolver este problema.</p>
+<h3>Escribe pseudocódigo antes de escribir más código</h3>
+<p>Si no estás seguro de cómo resolver el problema en sí, divídelo en problemas más pequeños que probablemente puedas resolver primero. Por ejemplo, este problema es en realidad solo un puñado de problemas:</p>
+<ol>
+<li>Solicitar al usuario dos palabras</li>
+<li>Calcular la puntuación de cada palabra</li>
+<li>Imprimir al ganador</li>
+</ol>
+<p>Escribamos un pseudocódigo como comentarios para recordarte que hagas precisamente eso:</p>
+<pre><code>  #include &lt;ctype.h&gt;
+  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int main(void)
+  {
+      // Solicitar al usuario dos palabras
+
+      // Calcular la puntuación de cada palabra
+
+      // Imprimir al ganador
+  }
+</code></pre>
+<div class="alert alert-warning" data-alert="warning" role="alert"><p>Algunos problemas en conjuntos de problemas, como este, pueden contener spoilers (como el siguiente) que finalmente te guían a través de toda la solución. Si bien tienes permitido usar este código, ¡te recomendamos encarecidamente que primero pruebes las cosas por ti mismo! Los demás problemas del conjunto de problemas no tendrán este tipo de tutorial y, por lo general, el problema que contiene el “spoiler completo” es una versión de calentamiento del problema más grande que luego deberás abordar.</p></div>
+
+<h3>Convierte el pseudocódigo a código</h3>
+<p>Primero, considera cómo podrías solicitar al usuario dos palabras. Recuerda que <code>get_string</code>, una función de la biblioteca CS50, puede solicitar al usuario una string.</p>
+<pre><code>  #include &lt;ctype.h&gt;
+  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int main(void)
+  {
+      // Solicitar al usuario dos palabras
+      string palabra1 = get_string("Jugador 1: ");
+      string palabra2 = get_string("Jugador 2: ");
+
+      // Calcular la puntuación de cada palabra
+
+      // Imprimir al ganador
+  }
+</code></pre>
+<p>A continuación, considera cómo calcular la puntuación de cada palabra. Como se aplica el mismo algoritmo de puntuación a ambas palabras, tienes una buena oportunidad de <em>abstracción</em>. Aquí definiremos una función llamada <code>compute_score</code> que toma una string, llamada <code>word</code>, como entrada y luego devuelve la puntuación de <code>word</code> como <code>int</code>.</p>
+<pre><code>  #include &lt;ctype.h&gt;
+  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int compute_score(string word);
+
+  int main(void)
+  {
+      // Solicitar al usuario dos palabras
+      string palabra1 = get_string("Jugador 1: ");
+      string palabra2 = get_string("Jugador 2: ");
+
+      // Calcular la puntuación de cada palabra
+      int punctuation1 = compute_score(palabra1);
+      int punctuation2 = compute_score(palabra2);
+
+      // Imprimir al ganador
+  }
+
+  int compute_score(string word)
+  {
+      // Calcular y devolver puntuación para palabra
+  }
+</code></pre>
+<p>Ahora pase a implementar <code>compute_score</code>. Para calcular la puntuación de una palabra, necesita conocer el valor en puntos de cada letra de la palabra. Puede asociar las letras y sus valores en puntos con un <em>array</em>. Imagine un array de 26 <code>int</code> llamados <code>POINTS</code>, en el que el primer número es el valor en puntos para 'A', el segundo número es el valor en puntos para 'B' y así sucesivamente. Al declarar e inicializar un array de este tipo fuera de cualquier función particular, puede asegurarse de que este array sea accesible para cualquier función, incluido <code>compute_score</code>.</p>
+<pre><code>  #include &lt;ctype.h&gt;
+  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  // Puntos asignados a cada letra del alfabeto
+  int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+
+  int compute_score(string word);
+
+  int main(void)
+  {
+      // Solicite al usuario dos palabras
+      string word1 = get_string("Jugador 1: ");
+      string word2 = get_string("Jugador 2: ");
+
+      // Calcule la puntuación de cada palabra
+      int score1 = compute_score(word1);
+      int score2 = compute_score(word2);
+
+      // Imprima el ganador
+  }
+
+  int compute_score(string word)
+  {
+      // Calcule y devuelva la puntuación de la palabra
+  }
+</code></pre>
+<p>Para implementar <code>compute_score</code>, primero intente encontrar el valor en puntos de una sola letra en <code>word</code>.</p>
+<ul>
+<li>Recuerde que para encontrar el carácter en el n-ésimo índice de una cadena, <code>s</code>, puede escribir <code>s[n]</code>. Por lo tanto, <code>word[0]</code>, por ejemplo, le dará el primer carácter de <code>word</code>.</li>
+<li>Ahora, recuerde que las computadoras representan caracteres usando <a href="http://asciitable.com/">ASCII</a>, un estándar que representa cada carácter como un número.</li>
+<li>Recuerde también que el índice 0 de <code>POINTS</code>, <code>POINTS[0]</code>, le da el valor en puntos de 'A'. Piense en cómo podría transformar la representación numérica de 'A' en el índice de su valor en puntos. Ahora, ¿qué pasa con 'a'? Necesitará aplicar diferentes transformaciones a letras mayúsculas y minúsculas, por lo que puede encontrar útiles las funciones <a href="https://manual.cs50.io/3/isupper"><code>isupper</code></a> y <a href="https: //manual.cs50.io/3/islower"><code>islower</code></a> para ti.</li>
+<li>Tenga en cuenta que los caracteres que <em>no</em> son letras deben recibir cero puntos. Por ejemplo, <code>!</code> vale 0 puntos.</li>
+</ul>
+<p>Si puede calcular correctamente el valor de <em>un</em> carácter en <code>words</code>, es probable que pueda usar un bucle para sumar los puntos de los demás caracteres. Una vez que haya probado lo anterior por su cuenta, considere esta sugerencia (¡bastante reveladora!) a continuación.</p>
+<pre><code>  #include &lt;ctype.h&gt;
+  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  // Puntos asignados a cada letra del alfabeto
+  int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+
+  int compute_score(string word);
+
+  int main(void)
+  {
+      // Solicite al usuario dos palabras
+      string word1 = get_string("Jugador 1: ");
+      string word2 = get_string("Jugador 2: ");
+
+      // Calcule la puntuación de cada palabra
+      int score1 = compute_score(word1);
+      int score2 = compute_score(word2);
+
+      // Imprima el ganador
+  }
+
+  int compute_score(string word)
+  {
+      // Mantenga un registro de la puntuación
+      int score = 0;
+
+      // Calcule la puntuación para cada carácter
+      for (int i = 0, len = strlen(word); i &lt; len; i++)
+      {
+          if (isupper(word[i]))
+          {
+              score += POINTS[word[i] - 'A'];
+          }
+          else if (islower(word[i]))
+          {
+              score += POINTS[word[i] - 'a'];
+          }
+      }
+
+      return score;
+  }
+</code></pre>
+<p>Finalmente, termina el último paso de tu seudo código: imprime al ganador. Recuerda que una declaración <code>if</code> puede usarse para verificar si una condición es verdadera, y que el uso adicional de <code>else if</code> o <code>else</code> puede verificar otras condiciones (exclusivas).</p>
+<pre><code>  if (/* El Jugador 1 gana */)
+  {
+      // ...
+  }
+  else if (/* El Jugador 2 gana */)
+  {
+      // ...
+  }
+  else
+  {
+      // ...
+  }
+</code></pre>
+<p>Y una vez que lo hayas intentado, siéntete libre de echar un vistazo a la pista (o, mejor dicho, ¡a la solución completa!) a continuación.</p>
+<pre><code>  #include &lt;ctype.h&gt;
+  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  // Puntos asignados a cada letra del alfabeto
+  int PUNTOS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+
+  int calcula_puntuacion(string palabra);
+
+  int main(void)
+  {
+      // Solicita al usuario dos palabras
+      string palabra1 = get_string("Jugador 1: ");
+      string palabra2 = get_string("Jugador 2: ");
+
+      // Calcula la puntuación de cada palabra
+      int puntuacion1 = calcula_puntuacion(palabra1);
+      int puntuacion2 = calcula_puntuacion(palabra2);
+
+      // Imprime el ganador
+      if (puntuacion1 &gt; puntuacion2)
+      {
+          printf("¡El Jugador 1 gana!\n");
+      }
+      else if (puntuacion1 &lt; puntuacion2)
+      {
+          printf("¡El Jugador 2 gana!\n");
+      }
+      else
+      {
+          printf("¡Empate!\n");
+      }
+  }
+
+  int calcula_puntuacion(string palabra)
+  {
+      // Lleva un registro de la puntuación
+      int puntuacion = 0;
+
+      // Calcula la puntuación de cada caracter
+      for (int i = 0, longitud = strlen(palabra); i &lt; longitud; i++)
+      {
+          if (isupper(palabra[i]))
+          {
+              puntuacion += PUNTOS[palabra[i] - 'A'];
+          }
+          else if (islower(palabra[i]))
+          {
+              puntuacion += PUNTOS[palabra[i] - 'a'];
+          }
+      }
+
+      return puntuacion;
+  }
+</code></pre>
+<h2>Cómo probar</h2>
+<p>Tu programa debe comportarse según los ejemplos a continuación.</p>
+<pre><code>  $ ./scrabble
+  Jugador 1: Question?
+  Jugador 2: Question!
+  ¡Empate!
+
+
+  $ ./scrabble
+  Jugador 1: red
+  Jugador 2: wheelbarrow
+  ¡El Jugador 2 gana!
+
+
+  $ ./scrabble
+  Jugador 1: COMPUTER
+  Jugador 2: science
+  ¡El Jugador 1 gana!
+
+
+  $ ./scrabble
+  Jugador 1: Scrabble
+  Jugador 2: wiNNeR
+  ¡El Jugador 1 gana!
+</code></pre>
+<h3>Corrección</h3>
+<p>En tu terminal, ejecuta lo siguiente para verificar la corrección de tu trabajo.</p>
+<pre><code>  check50 cs50/problems/2024/x/scrabble
+</code></pre>
+<h3>Estilo</h3>
+<p>Ejecuta lo siguiente para evaluar el estilo de tu código usando <code>style50</code>.</p>
+<pre><code>  style50 scrabble.c
+</code></pre>
+<h2>Cómo entregar</h2>
+<p>En tu terminal, ejecuta lo siguiente para entregar tu trabajo.</p>
+<pre><code>  submit50 cs50/problems/2024/x/scrabble
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

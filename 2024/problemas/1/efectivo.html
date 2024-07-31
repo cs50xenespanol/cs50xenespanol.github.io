@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Español</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: orangered">
+  <header>
+    <h1>
+      <a href="">CS50x en Español</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href="">Curso de Introducción a la Ciencia de la Computación de la Universidad de Harvard</a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semanas/0.html">Semana
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semanas/1.html">Semana
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semanas/2.html">Semana
+          2</a>
+        Arreglos
+      </li>
+      <li>
+        <a href="/2024/semanas/3.html">Semana
+          3</a>
+        Algoritmos
+      </li>
+      <li>
+        <a href="/2024/semanas/4.html">Semana
+          4</a>
+        Memoria
+      </li>
+      <li>
+        <a href="/2024/semanas/5.html">Semana
+          5</a>
+        Estructuras de Datos
+      </li>
+      <li>
+        <a href="/2024/semanas/6.html">Semana
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semanas/7.html">Semana
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semanas/8.html">Semana
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semanas/9.html">Semana
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semanas/10.html">Semana
+          10</a>
+        Ciberseguridad
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/proyecto.html">Proyecto Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honestidad.html">Honestidad Académica</a>
+      </li>
+      <li>
+        <a href="/2024/certificado.html">Certificado CS50</a>
+      </li>
+      <li>
+        <a href="/2024/preguntas_frecuentes.html">Preguntas Frecuentes</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Libro de Calificaciones</a>
+      </li>
+      <li>
+        <a href="/2024/personal.html">Equipo</a>
+      </li>
+      <li>
+        <a href="/2024/plan_de_estudios.html">Programa del Curso</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Manual del Programador</a>
+      </li>
+      <li>
+        <a href="/2024/estilo.html">Guía de Estilo</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Efectivo</h1>
+<p><img alt="Monedas estadounidenses" src="https://cs50.harvard.edu/x/2024/psets/1/cash/coins.jpg" /></p>
+<h2>Problema a resolver</h2>
+<p>Supongamos que trabajas en una tienda y un cliente te da 1,00 $ (100 centavos) por unas golosinas que cuestan 0,50 $ (50 centavos). Necesitarás darle el "cambio", la cantidad sobrante después de pagar el coste de las golosinas. Al dar el cambio, es probable que quieras minimizar el número de monedas que entregas a cada cliente, ¡para no quedarte sin ellas (o molestar al cliente!). En un archivo llamado <code>cash.c</code> en una carpeta llamada <code>cash</code>, implementa un programa en C que imprima la cantidad mínima de monedas necesarias para dar el cambio de una cantidad determinada, en centavos, como en el siguiente ejemplo:</p>
+<pre><code>  Cambio adeudado: 25
+  1
+</code></pre>
+<p>Pero pide al usuario un <code>int</code> mayor que 0, para que el programa funcione para cualquier cantidad de cambio:</p>
+<pre><code>  Cambio adeudado: 70
+  4
+</code></pre>
+<p>Vuelve a pedir al usuario que introduzca un número, tantas veces como sea necesario, si su entrada no es mayor o igual que 0 (¡o si su entrada no es un <code>int</code> en absoluto!).</p>
+<h2>Demostración</h2>
+<script async="" data-autoplay="1" data-cols="80" data-loop="1" data-rows="12" id="asciicast-p6PlFqQgSWNWn4ggpIIaBOvIq" src="https://asciinema.org/a/p6PlFqQgSWNWn4ggpIIaBOvIq.js"></script>
+
+<h2>Algoritmos voraces</h2>
+<p>Afortunadamente, la informática ha proporcionado a los cajeros de todo el mundo formas de minimizar el número de monedas adeudadas: algoritmos voraces.</p>
+<p>Según el Instituto Nacional de Normas y Tecnología (NIST), un algoritmo voraz es aquel "que siempre toma la mejor solución inmediata o local al encontrar una respuesta". Los algoritmos voraces encuentran la solución general u óptima global para algunos problemas de optimización, pero pueden encontrar soluciones menos que óptimas para algunos casos de otros problemas.</p>
+<p>¿Qué significa todo eso? Bueno, supongamos que un cajero debe dar cambio a un cliente y en el cajón de ese cajero hay monedas de 25¢ (cuartos de dólar), 10¢ (monedas de diez centavos), 5¢ (níqueles) y 1¢ (peniques). El problema a resolver es decidir qué monedas y cuántas de cada una entregar al cliente. Piensa en un cajero "voraz" como alguien que quiere dar el bocado más grande posible a este problema con cada moneda que saca del cajón. Por ejemplo, si un cliente tiene que pagar 41¢, el bocado más grande (es decir, la mejor solución inmediata o local) que se puede dar es de 25¢. (Ese bocado es "mejor" en la medida en que nos acerca a 0¢ más rápido que cualquier otra moneda). Ten en cuenta que un bocado de este tamaño reduciría el problema de 41¢ a un problema de 16¢, ya que 41 - 25 = 16. Es decir, el resto es un problema similar pero más pequeño. No hace falta decir que otro bocado de 25¢ sería demasiado grande (asumiendo que el cajero prefiere no perder dinero), por lo que nuestro cajero voraz pasaría a un bocado de 10¢, dejándole un problema de 6¢. En ese momento, la voracidad pide un bocado de 5¢ seguido de un bocado de 1¢, momento en el que el problema está resuelto. El cliente recibe un cuarto de dólar, una moneda de diez centavos, un níquel y un centavo: cuatro monedas en total.</p>
+<p>Resulta que este enfoque voraz (es decir, algoritmo) no sólo es óptimo localmente sino también globalmente para la moneda estadounidense (y también para la Unión Europea). Es decir, siempre que un cajero tenga suficientes monedas de cada tipo, este enfoque de mayor a menor proporcionará el menor número de monedas posible. ¿Cuántas? ¡Eso lo decides tú!</p>
+<h2>Consejos</h2>
+<h3>Escribe código que sepas que se compilará</h3>
+<p>Aunque este programa no haga nada, ¡al menos debería compilarse con <code>make</code>!</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+
+  }
+</code></pre>
+<p>Ten en cuenta que ahora has incluido <code>cs50.h</code> y <code>stdio.h</code>, dos "archivos de cabecera" que te darán acceso a funciones que podrían ayudarte a resolver este problema.</p>
+<h3>Escribe pseudocódigo antes de escribir más código</h3>
+<p>Si no estás seguro de cómo resolver el problema en sí, divídelo en problemas más pequeños que probablemente puedas resolver primero. Por ejemplo, este problema es en realidad sólo un puñado de problemas:</p>
+<ol>
+<li>Pide al usuario el cambio adeudado, en centavos.</li>
+<li>Calcula cuántos <em>cuartos de dólar</em> debes dar al cliente. Resta el valor de esos cuartos de dólar de los centavos.</li>
+<li>Calcula cuántas <em>monedas de diez centavos</em> debes dar al cliente. Resta el valor de esas monedas de diez centavos de los centavos restantes.</li>
+<li>Calcula cuántos <em>níqueles</em> debes dar al cliente. Resta el valor de esos níqueles de los centavos restantes.</li>
+<li>Calcula cuántos <em>peniques</em> debes dar al cliente. Resta el valor de esos peniques de los centavos restantes.</li>
+<li>Suma el número de cuartos de dólar, monedas de diez centavos, níqueles y peniques utilizados.</li>
+<li>Imprime esa suma.</li>
+</ol>
+<p>Este es el algoritmo voraz que puedes utilizar para resolver este problema, así que escribamos algo de pseudocódigo como comentarios para recordarte que hagas именно eso:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Pide al usuario el cambio adeudado, en centavos
+
+      // Calcula cuántos cuartos de dólar debes dar al cliente
+      // Resta el valor de esos cuartos de dólar de los centavos
+
+      // Calcula cuántas monedas de diez centavos debes dar al cliente
+      // Resta el valor de esas monedas de diez centavos de los centavos restantes
+
+      // Calcula cuántos níqueles debes dar al cliente
+      // Resta el valor de esos níqueles de los centavos restantes
+
+      // Calcula cuántos peniques debes dar al cliente
+      // Resta el valor de esos peniques de los centavos restantes
+
+      // Suma el número de cuartos de dólar, monedas de diez centavos, níqueles y peniques utilizados
+      // Imprime esa suma
+  }
+</code></pre>
+<h3>Convertir el pseudocódigo a código</h3>
+<p>Primero, considera cómo podrías solicitar al usuario los centavos que se le deben. Recuerda que un bucle <code>do while</code> es útil cuando quieres hacer algo al menos una vez, y posiblemente una y otra vez, como en el siguiente ejemplo:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Solicita al usuario el cambio adeudado, en centavos
+      int cents;
+      do
+      {
+          cents = get_int("Cambio adeudado: ");
+      }
+      while (cents &lt; 0);
+  }
+</code></pre>
+<p>Es aconsejable parar aquí y generar tu programa. Prueba para asegurarte de que tu programa se compila y de que te vuelve a solicitar la información si introduces menos de 0 centavos (o si introduces una entrada como "gato").</p>
+<p>A continuación, considera cómo calcular cuántas monedas de veinticinco centavos debes darle al cliente. Como estamos utilizando un algoritmo greedy, esta pregunta se convierte en "¿cuál es el <em>mayor</em> número de monedas de veinticinco centavos que podrías darle?". <em>Podrías</em> escribir una solución a este problema en tu función <code>main</code>. Pero, podría aclarar tu pensamiento escribir una nueva función: una llamada <code>calculate_quarters</code>. De esa manera, puedes centrarte mejor en la lógica para calcular las monedas de veinticinco centavos. Más tarde, puedes integrar esta función en tu solución más amplia.</p>
+<pre><code>  int calculate_quarters(int cents)
+  {
+      // Calcula cuántas monedas de veinticinco centavos debes darle al cliente
+  }
+</code></pre>
+<p>Observa que esta función se llama <code>calculate_quarters</code>. Por <code>int cents</code> entre paréntesis, toma un <code>int</code> llamado <code>cents</code> como entrada. Y, por el <code>int</code> delante de su nombre, también debería "devolver" un <code>int</code>. Es decir, la salida de esta función es un entero: el número de monedas de veinticinco centavos que caben en centavos. Si tienes curiosidad sobre esta idea, recuerda que hay varios programas de muestra en el Código fuente de la Semana 1 <a href="https://github.com/cs50/lectures/tree/2023/fall/1/src1">Source Code</a> que ilustran cómo las funciones pueden devolver un valor.</p>
+<p>Ahora considera esta forma de implementar <code>calculate_quarters</code> sumando al número de cuartos hasta que nos quedemos sin centavos para convertir en cuartos:</p>
+<pre><code>  int calculate_quarters(int cents)
+  {
+      // Calcula cuántas monedas de veinticinco centavos debes darle al cliente
+      int quarters = 0;
+      while (cents &gt;= 25)
+      {
+          quarters++;
+          cents = cents - 25;
+      }
+      return quarters;
+  }
+</code></pre>
+<p>Concedido, hay al menos una forma más sencilla de resolver este problema <code>calculate_quarters</code>. ¡Pero te dejaremos que lo descubras!</p>
+<p>Con <code>calculate_quarters</code> funcionando según lo previsto, puedes integrar esta función en tu programa. Ten cuidado de "declarar" la "firma" de la función (es decir, <code>int calculate_quarters(int cents)</code>) encima de tu función <code>main</code>, para que puedas utilizar <code>calculate_quarters</code> allí mientras la defines más tarde, debajo de <code>main</code>.</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int calculate_quarters(int cents);
+
+  int main(void)
+  {
+      // Solicita al usuario el cambio adeudado, en centavos
+      int cents;
+      do
+      {
+          cents = get_int("Cambio adeudado: ");
+      }
+      while (cents &lt; 0);
+
+      // Calcula cuántas monedas de veinticinco centavos debes darle al cliente
+      int quarters = calculate_quarters(cents);
+
+      // Resta el valor de esas monedas de veinticinco centavos de cents
+      cents = cents - (quarters * 25);
+  }
+
+  int calculate_quarters(int cents)
+  {
+      // Calcula cuántas monedas de veinticinco centavos debes darle al cliente
+      int quarters = 0;
+      while (cents &gt;= 25)
+      {
+          quarters++;
+          cents = cents - 25;
+      }
+      return quarters;
+  }
+</code></pre>
+<p>¡Algunos problemas resueltos y algunos más por resolver! ¿Observas un patrón que podrías reutilizar aquí?</p>
+<h2>Cómo probar</h2>
+<p>Para este programa, intenta probar tu código manualmente. Es una buena práctica:</p>
+<ul>
+<li>Si introduces <code>-1</code>, ¿tu programa te vuelve a preguntar?</li>
+<li>Si introduces <code>0</code>, ¿tu programa muestra <code>0</code>?</li>
+<li>Si introduces <code>1</code>, ¿tu programa muestra <code>1</code> (es decir, un centavo)?</li>
+<li>Si introduces <code>4</code>, ¿tu programa muestra <code>4</code> (es decir, cuatro centavos)?</li>
+<li>Si introduces <code>5</code>, ¿tu programa muestra <code>1</code> (es decir, un níquel)?</li>
+<li>Si introduces <code>24</code>, ¿tu programa muestra <code>6</code> (es decir, dos monedas de diez centavos y cuatro centavos)?</li>
+<li>Si introduces <code>25</code>, ¿tu programa muestra <code>1</code> (es decir, una moneda de veinticinco centavos)?</li>
+<li>Si introduces <code>26</code>, ¿tu programa muestra <code>2</code> (es decir, una moneda de veinticinco centavos y un centavo)?</li>
+<li>Si introduces <code>99</code>, ¿tu programa muestra <code>9</code> (es decir, tres monedas de veinticinco centavos, dos monedas de diez centavos y cuatro centavos)?</li>
+</ul>
+<h3>Corrección</h3>
+<p>En tu terminal, ejecuta el siguiente código para comprobar la corrección de tu trabajo.</p>
+<pre><code>  check50 cs50/problems/2024/x/cash
+</code></pre>
+<h3>Estilo</h3>
+<p>Ejecuta el siguiente código para evaluar el estilo de tu código utilizando <code>style50</code>.</p>
+<pre><code>  style50 cash.c
+</code></pre>
+<h2>Cómo enviar</h2>
+<p>En tu terminal, ejecuta el siguiente código para enviar tu trabajo.</p>
+<pre><code>  submit50 cs50/problems/2024/x/cash
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

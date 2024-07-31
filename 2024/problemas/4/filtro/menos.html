@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Español</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: orangered">
+  <header>
+    <h1>
+      <a href="">CS50x en Español</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href="">Curso de Introducción a la Ciencia de la Computación de la Universidad de Harvard</a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semanas/0.html">Semana
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semanas/1.html">Semana
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semanas/2.html">Semana
+          2</a>
+        Arreglos
+      </li>
+      <li>
+        <a href="/2024/semanas/3.html">Semana
+          3</a>
+        Algoritmos
+      </li>
+      <li>
+        <a href="/2024/semanas/4.html">Semana
+          4</a>
+        Memoria
+      </li>
+      <li>
+        <a href="/2024/semanas/5.html">Semana
+          5</a>
+        Estructuras de Datos
+      </li>
+      <li>
+        <a href="/2024/semanas/6.html">Semana
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semanas/7.html">Semana
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semanas/8.html">Semana
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semanas/9.html">Semana
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semanas/10.html">Semana
+          10</a>
+        Ciberseguridad
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/proyecto.html">Proyecto Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honestidad.html">Honestidad Académica</a>
+      </li>
+      <li>
+        <a href="/2024/certificado.html">Certificado CS50</a>
+      </li>
+      <li>
+        <a href="/2024/preguntas_frecuentes.html">Preguntas Frecuentes</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Libro de Calificaciones</a>
+      </li>
+      <li>
+        <a href="/2024/personal.html">Equipo</a>
+      </li>
+      <li>
+        <a href="/2024/plan_de_estudios.html">Programa del Curso</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Manual del Programador</a>
+      </li>
+      <li>
+        <a href="/2024/estilo.html">Guía de Estilo</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Filtro</h1>
+<p><img alt="Harvard Yard en escala de grises" src="https://cs50.harvard.edu/x/2024/psets/4/filter/less/yard-grayscale.bmp" /></p>
+<h2>Problema a Resolver</h2>
+<p>Quizás la forma más simple de representar una imagen sea con una cuadrícula de píxeles (es decir, puntos), cada uno de los cuales puede tener un color diferente. Para imágenes en blanco y negro, necesitamos 1 bit por píxel, donde 0 podría representar negro y 1 podría representar blanco, como se muestra a continuación.</p>
+<p><img alt="un mapa de bits simple" src="https://cs50.harvard.edu/x/2024/psets/4/filter/less/bitmap.png" /></p>
+<p>En este sentido, una imagen es simplemente un mapa de bits (bitmap). Para imágenes más coloridas, se necesitan más bits por píxel. Un formato de archivo (como <a href="https://es.wikipedia.org/wiki/BMP">BMP</a>, <a href="https://es.wikipedia.org/wiki/JPEG">JPEG</a> o <a href="https://es.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a>) que soporta "color de 24 bits" utiliza 24 bits por píxel. (BMP en realidad soporta colores de 1, 4, 8, 16, 24 y 32 bits).</p>
+<p>Un BMP de 24 bits utiliza 8 bits para indicar la cantidad de rojo en el color de un píxel, 8 bits para indicar la cantidad de verde y 8 bits para indicar la cantidad de azul. Si alguna vez has oído hablar del color RGB, bueno, aquí lo tienes: rojo, verde, azul.</p>
+<p>Si los valores R, G y B de algún píxel en un BMP son, por ejemplo, <code>0xff</code>, <code>0x00</code> y <code>0x00</code> en hexadecimal, ese píxel es completamente rojo, ya que <code>0xff</code> (también conocido como <code>255</code> en decimal) implica "mucho rojo", mientras que <code>0x00</code> y <code>0x00</code> implican "ningún verde" y "ningún azul", respectivamente. En este problema, manipularás estos valores R, G y B de los píxeles individuales, creando tus propios filtros de imagen.</p>
+<p>En un archivo llamado <code>helpers.c</code> en una carpeta llamada <code>filter-less</code>, escribe un programa para aplicar filtros a BMPs.</p>
+<h2>Demostración</h2>
+<script async="" data-autoplay="1" data-cols="100" data-loop="1" data-rows="12" id="asciicast-QnLel70SPmbW9nswXTb9Yu9ZD" src="https://asciinema.org/a/QnLel70SPmbW9nswXTb9Yu9ZD.js"></script>
+
+<h2>Código de Distribución</h2>
+<p>Para este problema, extenderás la funcionalidad del código proporcionado por el personal de CS50.</p>
+<p>Inicia sesión en <a href="https://cs50.dev/">cs50.dev</a>, haz clic en tu ventana de terminal y ejecuta <code>cd</code> por sí solo. Deberías ver que el indicador de tu ventana de terminal se parece al siguiente:</p>
+<pre><code>  $
+</code></pre>
+<p>Luego ejecuta</p>
+<pre><code>  wget https://cdn.cs50.net/2023/fall/psets/4/filter-less.zip
+</code></pre>
+<p>para descargar un archivo ZIP llamado <code>filter-less.zip</code> en tu espacio de trabajo.</p>
+<p>Después ejecuta</p>
+<pre><code>  unzip filter-less.zip
+</code></pre>
+<p>para crear una carpeta llamada <code>filter-less</code>. Ya no necesitas el archivo ZIP, así que ejecuta</p>
+<pre><code>  rm filter-less.zip
+</code></pre>
+<p>y responde "y" seguido de Enter en el prompt para eliminar el archivo ZIP que descargaste.</p>
+<p>Ahora escribe</p>
+<pre><code>  cd filter-less
+</code></pre>
+<p>seguido de Enter para moverte (es decir, abrir) ese directorio. Tu prompt ahora debería parecerse al siguiente:</p>
+<pre><code>  filter-less/ $
+</code></pre>
+<p>Ejecuta <code>ls</code> por sí solo y deberías ver algunos archivos: <code>bmp.h</code>, <code>filter.c</code>, <code>helpers.h</code>, <code>helpers.c</code> y <code>Makefile</code>. También deberías ver una carpeta llamada <code>images/</code> con cuatro archivos BMP. Si encuentras algún problema, sigue estos mismos pasos nuevamente y trata de determinar dónde te equivocaste.</p>
+<h2>Antecedentes</h2>
+<h3>Un Poco Más Técnico Acerca de los Bit(mapas)</h3>
+<p>Recuerda que un archivo es simplemente una secuencia de bits organizados de alguna manera. Un archivo BMP de 24 bits, entonces, es esencialmente una secuencia de bits, donde casi cada 24 bits representan el color de algún píxel. Pero un archivo BMP también contiene algunos "metadatos", información como la altura y anchura de una imagen. Estos metadatos se almacenan al principio del archivo en forma de dos estructuras de datos generalmente conocidas como "encabezados", no deben confundirse con los archivos de encabezado de C. (Por cierto, estos encabezados han evolucionado con el tiempo. Este problema utiliza la versión más reciente del formato BMP de Microsoft, 4.0, que debutó con Windows 95.)</p>
+<p>El primero de estos encabezados, llamado <code>BITMAPFILEHEADER</code>, tiene una longitud de 14 bytes. (Recuerda que 1 byte equivale a 8 bits.) El segundo de estos encabezados, llamado <code>BITMAPINFOHEADER</code>, tiene una longitud de 40 bytes. Inmediatamente después de estos encabezados está el mapa de bits real: un array de bytes, triples de los cuales representan el color de un píxel. Sin embargo, BMP almacena estos triples al revés (es decir, como BGR), con 8 bits para azul, seguidos de 8 bits para verde, y finalmente 8 bits para rojo. (Algunos BMP también almacenan todo el mapa de bits al revés, con la fila superior de una imagen al final del archivo BMP. Pero hemos almacenado los BMP de este conjunto de problemas como se describe aquí, con la primera fila de cada mapa de bits al principio y la última fila al final.) En otras palabras, si convirtiéramos el smiley de 1 bit anterior a un smiley de 24 bits, sustituyendo el negro por rojo, un BMP de 24 bits almacenaría este mapa de bits de la siguiente manera, donde <code>0000ff</code> representa rojo y <code>ffffff</code> representa blanco; hemos resaltado en rojo todas las instancias de <code>0000ff</code>.</p>
+<p><img alt="sonrisa roja" src="https://cs50.harvard.edu/x/2024/psets/4/filter/less/red_smile.png" /></p>
+<p>Debido a que hemos presentado estos bits de izquierda a derecha, de arriba hacia abajo, en 8 columnas, puedes ver realmente la sonrisa roja si das un paso atrás.</p>
+<p>Para ser claro, recuerda que un dígito hexadecimal representa 4 bits. Por lo tanto, <code>ffffff</code> en hexadecimal realmente significa <code>111111111111111111111111</code> en binario.</p>
+<p>Observa que podrías representar un mapa de bits como una matriz bidimensional de píxeles: donde la imagen es un array de filas, cada fila es un array de píxeles. De hecho, así es como hemos elegido representar imágenes de mapa de bits en este problema.</p>
+<h3>Filtrado de Imágenes</h3>
+<p>¿Qué significa filtrar una imagen? Puedes pensar en filtrar una imagen como tomar los píxeles de una imagen original y modificar cada píxel de tal manera que un efecto particular sea evidente en la imagen resultante.</p>
+<h2>Comprensión</h2>
+<p>Ahora veamos algunos de los archivos proporcionados como código de distribución para entender qué contienen.</p>
+<h3><code>bmp.h</code></h3>
+<p>Abre <code>bmp.h</code> (doble clic en él en el navegador de archivos) y échale un vistazo.</p>
+<p>Verás las definiciones de los encabezados que mencionamos (<code>BITMAPINFOHEADER</code> y <code>BITMAPFILEHEADER</code>). Además, este archivo define <code>BYTE</code>, <code>DWORD</code>, <code>LONG</code> y <code>WORD</code>, tipos de datos que normalmente se encuentran en el mundo de la programación de Windows. Observa cómo son simplemente alias para los tipos primitivos con los que ya estás (esperamos) familiarizado. Parece que <code>BITMAPFILEHEADER</code> y <code>BITMAPINFOHEADER</code> utilizan estos tipos.</p>
+<p>Quizás lo más importante para ti, este archivo también define una <code>struct</code> llamada <code>RGBTRIPLE</code> que, simplemente, "encapsula" tres bytes: uno azul, uno verde y uno rojo (el orden, recuerda, en el que esperamos encontrar triples RGB en disco).</p>
+<p>¿Por qué son útiles estas <code>struct</code>s? Bueno, recuerda que un archivo es simplemente una secuencia de bytes (o, en última instancia, bits) en disco. Pero esos bytes generalmente están ordenados de tal manera que los primeros representan algo, los siguientes representan otra cosa y así sucesivamente. Los "formatos de archivo" existen porque el mundo ha estandarizado qué bytes significan qué cosas. Ahora, podríamos leer un archivo desde el disco en RAM como un gran array de bytes. Y podríamos recordar que el byte en <code>array[i]</code> representa una cosa, mientras que el byte en <code>array[j]</code> representa otra. Pero ¿por qué no darle nombres a algunos de esos bytes para que podamos recuperarlos de la memoria más fácilmente? Eso es precisamente lo que permiten hacer las <code>struct</code>s en <code>bmp.h</code>. En lugar de pensar en un archivo como una larga secuencia de bytes, podemos pensar en él como una secuencia de <code>struct</code>s.</p>
+<h3><code>filter.c</code></h3>
+<p>Ahora, abre <code>filter.c</code>. Este archivo ya ha sido escrito para ti, pero hay algunos puntos importantes que vale la pena destacar aquí.</p>
+<p>Primero, observa la definición de <code>filters</code> en la línea 10. Esa cadena le dice al programa cuáles son los argumentos permitidos desde la línea de comandos: <code>b</code>, <code>g</code>, <code>r</code> y <code>s</code>. Cada uno de ellos especifica un filtro diferente que podemos aplicar a nuestras imágenes: desenfoque, escala de grises, reflexión y sepia.</p>
+<p>Las siguientes líneas abren un archivo de imagen, se aseguran de que sea realmente un archivo BMP y leen toda la información de píxeles en una matriz bidimensional llamada <code>image</code>.</p>
+<p>Desplázate hacia abajo hasta la declaración <code>switch</code> que comienza en la línea 101. Observa que, dependiendo del <code>filtro</code> que hayamos elegido, se llama a una función diferente: si el usuario elige el filtro <code>b</code>, el programa llama a la función <code>blur</code>; si es <code>g</code>, llama a <code>grayscale</code>; si es <code>r</code>, llama a <code>reflect</code>; y si es <code>s</code>, llama a <code>sepia</code>. Además, cada una de estas funciones recibe como argumentos la altura de la imagen, la anchura de la imagen y la matriz bidimensional de píxeles.</p>
+<p>Estas son las funciones que implementarás pronto. Como puedes imaginar, el objetivo es que cada una de estas funciones edite la matriz bidimensional de píxeles de tal manera que se aplique el filtro deseado a la imagen.</p>
+<p>Las líneas restantes del programa toman la imagen resultante y la escriben en un nuevo archivo de imagen.</p>
+<h3><code>helpers.h</code></h3>
+<p>A continuación, echa un vistazo a <code>helpers.h</code>. Este archivo es bastante corto y simplemente proporciona los prototipos de las funciones que viste anteriormente.</p>
+<p>Aquí, ten en cuenta que cada función toma como argumento una matriz bidimensional llamada <code>image</code>, donde <code>image</code> es un array de <code>height</code> filas y cada fila es a su vez otro array de <code>width</code> estructuras <code>RGBTRIPLE</code>. Por lo tanto, si <code>image</code> representa toda la imagen, entonces <code>image[0]</code> representa la primera fila y <code>image[0][0]</code> representa el píxel en la esquina superior izquierda de la imagen.</p>
+<h3><code>helpers.c</code></h3>
+<p>Ahora, abre <code>helpers.c</code>. Aquí es donde pertenece la implementación de las funciones declaradas en <code>helpers.h</code>. Pero ten en cuenta que ¡las implementaciones actualmente faltan! Esta parte depende de ti.</p>
+<h3><code>Makefile</code></h3>
+<p>Finalmente, echemos un vistazo a <code>Makefile</code>. Este archivo especifica qué debe ocurrir cuando ejecutamos un comando en la terminal como <code>make filter</code>. Mientras que los programas que podrías haber escrito antes estaban confinados a un solo archivo, <code>filter</code> parece usar varios archivos: <code>filter.c</code> y <code>helpers.c</code>. Por lo tanto, debemos decirle a <code>make</code> cómo compilar este archivo.</p>
+<p>Intenta compilar <code>filter</code> por ti mismo yendo a tu terminal y ejecutando</p>
+<pre><code>  $ make filter
+</code></pre>
+<p>Luego, puedes ejecutar el programa escribiendo:</p>
+<pre><code>  $ ./filter -g images/yard.bmp out.bmp
+</code></pre>
+<p>lo cual toma la imagen en <code>images/yard.bmp</code> y genera una nueva imagen llamada <code>out.bmp</code> después de pasar los píxeles a través de la función <code>grayscale</code>. Aunque la función <code>grayscale</code> aún no hace nada, por lo que la imagen de salida debería lucir igual que la imagen original del jardín.</p>
+<h2>Especificación</h2>
+<p>Implementa las funciones en <code>helpers.c</code> de manera que el usuario pueda aplicar filtros de escala de grises, sepia, reflexión o desenfoque a sus imágenes.</p>
+<ul>
+<li>La función <code>grayscale</code> debe tomar una imagen y convertirla en una versión en blanco y negro de la misma.</li>
+<li>La función <code>sepia</code> debe tomar una imagen y convertirla en una versión sepia de la misma.</li>
+<li>La función <code>reflect</code> debe tomar una imagen y reflejarla horizontalmente.</li>
+<li>Finalmente, la función <code>blur</code> debe tomar una imagen y convertirla en una versión desenfocada.</li>
+</ul>
+<p>No debes modificar ninguna de las firmas de las funciones, ni tampoco debes modificar otros archivos aparte de <code>helpers.c</code>.</p>
+<h2>Pistas</h2>
+<h3>Implementar <code>grayscale</code></h3>
+<p>Un filtro común es el filtro de "escala de grises", donde tomamos una imagen y queremos convertirla a blanco y negro. ¿Cómo funciona esto?</p>
+<ul>
+<li>Recuerda que si los valores de rojo, verde y azul están todos configurados en <code>0x00</code> (hexadecimal para <code>0</code>), entonces el píxel es negro. Y si todos los valores están configurados en <code>0xff</code> (hexadecimal para <code>255</code>), entonces el píxel es blanco. Mientras más altos sean los valores de rojo, verde y azul, más claro será el tono de gris (más cercano al blanco) y mientras más bajos sean, más oscuro será el tono de gris (más cercano al negro).</li>
+<li>Entonces, para convertir un píxel a escala de grises, solo necesitas asegurarte de que los valores de rojo, verde y azul sean todos iguales. Pero ¿cómo sabes qué valor hacerles? Bueno, probablemente sea razonable esperar que si los valores originales de rojo, verde y azul eran bastante altos, entonces el nuevo valor también debería ser bastante alto. Y si los valores originales eran bajos, entonces el nuevo valor también debería ser bajo.</li>
+<li>De hecho, para asegurarte de que cada píxel de la nueva imagen tenga la misma luminosidad o oscuridad general que la imagen original, puedes tomar el <strong>promedio</strong> de los valores de rojo, verde y azul para determinar qué tono de gris hacer el nuevo píxel.</li>
+</ul>
+<p>Si aplicas el algoritmo anterior a cada píxel de la imagen, el resultado será una imagen convertida a escala de grises. Escribe un pseudocódigo para ayudarte a resolver este problema.</p>
+<pre><code>  void grayscale(int height, int width, RGBTRIPLE image[height][width])
+  {
+      // Recorrer todos los píxeles
+
+          // Tomar el promedio de rojo, verde y azul
+
+          // Actualizar los valores del píxel
+  }
+</code></pre>
+<p>Primero, ¿cómo podrías recorrer todos los píxeles? Recuerda que los píxeles de la imagen están almacenados en el array bidimensional <code>image</code>. Para iterar sobre un array bidimensional, necesitarás dos bucles, uno dentro del otro.</p>
+<pre><code>  void grayscale(int height, int width, RGBTRIPLE image[height][width])
+  {
+      // Recorrer todos los píxeles
+      for (int i = 0; i &lt; height; i++)
+      {
+          for (int j = 0; j &lt; width; j++)
+          {
+              // Tomar el promedio de rojo, verde y azul
+
+              // Actualizar los valores del píxel
+          }
+      }
+  }
+</code></pre>
+<p>Ahora, puedes usar <code>image[i][j]</code> para acceder a cualquier píxel individual de la imagen. Pero ¿cómo tomar el promedio de los elementos rojo, verde y azul? Recuerda que cada elemento de <code>image</code> es un <code>RGBTRIPLE</code>, que es la <code>struct</code> definida en <code>bmp.h</code> para representar un píxel. La sintaxis usual para acceder a los miembros de una <code>struct</code> se aplica aquí, donde <code>image[i][j].rgbtRed</code> te dará acceso al valor rojo de <code>RGBTRIPLE</code>, <code>image[i][j].rgbtGreen</code> te dará acceso a su valor verde, y así sucesivamente.</p>
+<p>Cuando calcules el promedio de los valores de rojo, verde y azul del píxel en un color gris resultante, ten en cuenta que los valores de los componentes <code>rgbtRed</code>, <code>rgbtGreen</code> y <code>rgbtBlue</code> de un píxel son todos enteros. ¡Así que asegúrate de <a href="https://manual.cs50.io/3/round">redondear</a> cualquier número de punto flotante al entero más cercano al asignarlos al valor del píxel! Y ¿por qué podrías querer dividir la suma de estos enteros por 3.0 y no por 3?</p>
+<p>Una vez que hayas promediado los valores de rojo, verde y azul del píxel en un color gris resultante, procede y actualiza los valores de rojo, verde y azul del píxel. ¡A estas alturas, ya estás familiarizado con la sintaxis para la asignación!</p>
+<h3>Implementar <code>sepia</code></h3>
+<p>La mayoría de los programas de edición de imágenes soportan un filtro de "sepia", que hace que las imágenes luzcan antiguas al teñir toda la imagen de un tono marrón rojizo.</p>
+<ul>
+<li>Una imagen se puede convertir a sepia al tomar cada píxel y calcular nuevos valores de rojo, verde y azul basados en los valores originales de los tres.</li>
+<li>
+<p>Hay varios algoritmos para convertir una imagen a sepia, pero para este problema, te pediremos que uses el siguiente algoritmo. Para cada píxel, los valores de color sepia deben calcularse basados en los valores de color originales según los siguientes.
+  sepiaRed = .393 _ originalRed + .769 _ originalGreen + .189 _ originalBlue
+  sepiaGreen = .349 _ originalRed + .686 _ originalGreen + .168 _ originalBlue
+  sepiaBlue = .272 _ originalRed + .534 _ originalGreen + .131 * originalBlue</p>
+</li>
+<li>
+<p>Por supuesto, el resultado de cada una de estas fórmulas podría no ser un entero, pero cada valor podría redondearse al entero más cercano. También es posible que el resultado de la fórmula sea un número más grande que 255, el valor máximo para un valor de color de 8 bits. En ese caso, los valores de rojo, verde y azul deben limitarse a 255. Como resultado, podemos garantizar que los valores resultantes de rojo, verde y azul serán números enteros entre 0 y 255, inclusive.</p>
+</li>
+</ul>
+<p>Escribe un pseudocódigo para ayudarte a resolver este problema y recuerda el uso de bucles <code>for</code> anidados para visitar cada píxel.</p>
+<pre><code>  void sepia(int height, int width, RGBTRIPLE image[height][width])
+  {
+      // Recorrer todos los pixeles
+      for (int i = 0; i &lt; height; i++)
+      {
+          for (int j = 0; j &lt; width; j++)
+          {
+              // Calcular los valores sepia
+
+              // Actualizar el píxel con los valores sepia
+          }
+      }
+  }
+</code></pre>
+<p>Para calcular los valores <code>sepia</code>, revisa los puntos anteriores. Tienes una fórmula para calcular los valores sepia, pero todavía hay algunos detalles. En particular, necesitarás...</p>
+<ul>
+<li>Redondear el resultado de cada cálculo al entero más cercano</li>
+<li>Asegurar que el valor resultante no sea superior a 255</li>
+</ul>
+<p>¿Cómo podría ser útil una función que devuelve el menor de dos enteros al implementar <code>sepia</code>, particularmente cuando necesitas asegurarte de que el valor de un color no sea superior a 255? ¡Eres bienvenido, pero no es obligatorio, a escribir una función auxiliar propia para hacer eso!</p>
+<h3>Implementar <code>reflect</code></h3>
+<p>Algunos filtros también podrían mover los píxeles. Reflejar una imagen, por ejemplo, es un filtro donde la imagen resultante es lo que se obtendría al colocar la imagen original frente a un espejo.</p>
+<ul>
+<li>Cualquier píxel en el lado izquierdo de la imagen debe terminar en el derecho, y viceversa.</li>
+<li>Ten en cuenta que todos los píxeles originales de la imagen original todavía estarán presentes en la imagen reflejada, solo que esos píxeles pueden haber sido reorganizados para estar en un lugar diferente en la imagen.</li>
+</ul>
+<p>Entonces, en la función <code>reflect</code>, necesitarás intercambiar los valores de los píxeles en lados opuestos de una fila. Escribe un pseudocódigo para ayudarte a comenzar:</p>
+<pre><code>  void reflect(int height, int width, RGBTRIPLE image[height][width])
+  {
+      // Recorrer todos los pixeles
+      for (int i = 0; i &lt; height; i++)
+      {
+          for (int j = 0; j &lt; width; j++)
+          {
+              // Intercambiar pixeles
+          }
+      }
+  }
+</code></pre>
+<p>Recuerda de la clase cómo implementamos el intercambio de dos valores con una variable temporal. ¡No es necesario usar una función separada para el intercambio a menos que lo desees!</p>
+<p>Y ahora es un buen momento para pensar en tus bucles <code>for</code> anidados. El bucle <code>for</code> externo itera sobre cada fila, mientras que el bucle <code>for</code> interno itera sobre cada píxel en esa fila. Sin embargo, para reflejar con éxito una fila, ¿necesitas iterar sobre cada píxel en ella?</p>
+<h3>Implementa <code>blur</code></h3>
+<p>Hay varias formas de crear el efecto de desenfoque o suavizar una imagen. Para este problema, utilizaremos el "desenfoque por caja", que funciona tomando cada píxel y, para cada valor de color, dándole un nuevo valor al promediar los valores de color de píxeles vecinos.</p>
+<ul>
+<li>Considera la siguiente cuadrícula de píxeles, donde hemos numerado cada píxel.
+  <img alt="una cuadrícula de píxeles" src="grid.png" /></li>
+<li>El nuevo valor de cada píxel sería el promedio de los valores de todos los píxeles que están dentro de 1 fila y columna del píxel original (formando una caja de 3x3). Por ejemplo, cada uno de los valores de color para el píxel 6 se obtendría promediando los valores de color originales de píxeles 1, 2, 3, 5, 6, 7, 9, 10 y 11 (ten en cuenta que el propio píxel 6 está incluido en el promedio). Del mismo modo, los valores de color para el píxel 11 se obtendrían promediando los valores de color de píxeles 6, 7, 8, 10, 11, 12, 14, 15 y 16.</li>
+<li>Para un píxel a lo largo del borde o esquina, como el píxel 15, aún buscaríamos todos los píxeles dentro de 1 fila y columna: en este caso, los píxeles 10, 11, 12, 14, 15 y 16.</li>
+</ul>
+<p>Al implementar la función <code>blur</code>, es posible que descubras que el desenfoque de un píxel termina afectando el desenfoque de otro píxel. Podría ser mejor crear una copia de <code>image</code> declarando una nueva matriz bidimensional con código como <code>RGBTRIPLE copy[height][width];</code>. Luego copia <code>image</code> en <code>copy</code>, píxel por píxel, con bucles <code>for</code> anidados, como se muestra a continuación:</p>
+<pre><code>  void blur(int height, int width, RGBTRIPLE image[height][width])
+  {
+      // Crea una copia de image
+      RGBTRIPLE copy[height][width];
+      for (int i = 0; i &lt; height; i++)
+      {
+          for (int j = 0; j &lt; width; j++)
+          {
+              copy[i][j] = image[i][j];
+          }
+      }
+  }
+</code></pre>
+<p>¡Ahora, puedes leer los colores de los píxeles desde <code>copy</code> pero escribir (es decir, cambiar) los colores de los píxeles en <code>image</code>!</p>
+<h2>Tutorial</h2>
+<p><strong>Ten en cuenta que hay 5 videos en esta lista de reproducción.</strong></p>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/K0v9byp9jd0?modestbranding=0&amp;rel=0&amp;showinfo=1&amp;list=PLhQjrBD2T3837jmUt0ep7Tpmnxdv9NVut"></iframe></div>
+
+<h2>Cómo probar</h2>
+<p>¡Asegúrate de probar todos tus filtros en los archivos de mapa de bits de muestra proporcionados!</p>
+<h3>Corrección</h3>
+<pre><code>  check50 cs50/problems/2024/x/filter/less
+</code></pre>
+<h3>Estilo</h3>
+<pre><code>  style50 helpers.c
+</code></pre>
+<h2>Cómo enviar</h2>
+<pre><code>  submit50 cs50/problems/2024/x/filter/less
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

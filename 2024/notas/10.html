@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Español</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: orangered">
+  <header>
+    <h1>
+      <a href="">CS50x en Español</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href="">Curso de Introducción a la Ciencia de la Computación de la Universidad de Harvard</a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semanas/0.html">Semana
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semanas/1.html">Semana
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semanas/2.html">Semana
+          2</a>
+        Arreglos
+      </li>
+      <li>
+        <a href="/2024/semanas/3.html">Semana
+          3</a>
+        Algoritmos
+      </li>
+      <li>
+        <a href="/2024/semanas/4.html">Semana
+          4</a>
+        Memoria
+      </li>
+      <li>
+        <a href="/2024/semanas/5.html">Semana
+          5</a>
+        Estructuras de Datos
+      </li>
+      <li>
+        <a href="/2024/semanas/6.html">Semana
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semanas/7.html">Semana
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semanas/8.html">Semana
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semanas/9.html">Semana
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semanas/10.html">Semana
+          10</a>
+        Ciberseguridad
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/proyecto.html">Proyecto Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honestidad.html">Honestidad Académica</a>
+      </li>
+      <li>
+        <a href="/2024/certificado.html">Certificado CS50</a>
+      </li>
+      <li>
+        <a href="/2024/preguntas_frecuentes.html">Preguntas Frecuentes</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Libro de Calificaciones</a>
+      </li>
+      <li>
+        <a href="/2024/personal.html">Equipo</a>
+      </li>
+      <li>
+        <a href="/2024/plan_de_estudios.html">Programa del Curso</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Manual del Programador</a>
+      </li>
+      <li>
+        <a href="/2024/estilo.html">Guía de Estilo</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h2>Ciberseguridad</h2>
+<ul>
+<li><a href="#recap">Resumen</a></li>
+<li><a href="#looking-ahead">Mirando hacia adelante</a></li>
+<li><a href="#cybersecurity-1">Ciberseguridad</a></li>
+<li><a href="#passwords">Contraseñas</a></li>
+<li><a href="#phone-security">Seguridad del teléfono</a></li>
+<li><a href="#password-managers">Administradores de contraseñas</a></li>
+<li><a href="#two-factor-authentication">Autenticación de dos factores</a></li>
+<li><a href="#hashing">Hashing</a></li>
+<li><a href="#cryptography">Criptografía</a></li>
+<li><a href="#passkeys">Claves de acceso</a></li>
+<li><a href="#encryption">Cifrado</a></li>
+<li><a href="#deletion">Eliminación</a></li>
+<li><a href="#summing-up">Resumen</a></li>
+</ul>
+<h2>Resumen</h2>
+<ul>
+<li>Durante las últimas diez semanas, has estado aprendiendo sin parar.</li>
+<li>En este curso, aprendiste a programar en muchos lenguajes de programación; de hecho, nuestra gran esperanza es que hayas aprendido a programar en todos ellos, independientemente del lenguaje de programación.</li>
+<li>Además, esperamos que hayas aprendido a resolver problemas por encima de todo.</li>
+</ul>
+<h2>Mirando hacia adelante</h2>
+<ul>
+<li>A medida que avanzas desde el trabajo de este curso al mundo exterior de CS50, es posible que desees tomar una serie de pasos para prepararte.</li>
+<li>Para poder ejecutar comandos en la terminal, como lo hiciste en <a href="https://cs50.dev">CS50.dev</a>, puedes instalar herramientas de línea de comandos en tu <a href="https://developer.apple.com/xcode/">Mac</a> o <a href="https://learn.microsoft.com/en-us/windows/wsl/about">PC</a>.</li>
+<li>Puedes aprender más sobre <a href="https://youtu.be/MJUJ4wbFm_A">Git</a>.</li>
+<li>Puedes <a href="https://code.visualstudio.com/">descargar</a> y <a href="https://cs50.readthedocs.io/cs50.dev/">aprender</a> sobre VS Code.</li>
+<li>Puedes alojar un sitio web usando <a href="https://pages.github.com/">GitHub</a> o <a href="https://www.netlify.com/">Netlify</a>.</li>
+<li>Puedes alojar una aplicación web usando <a href="https://aws.amazon.com/education/awseducate/">AWS</a>, <a href="https://azure.microsoft.com/en-us/free/students/">Azure</a>, o <a href="https://cloud.google.com/edu/students">Google Cloud</a>.</li>
+<li>Puedes hacer preguntas en comunidades en línea relevantes.</li>
+<li>Puedes hacer preguntas usando herramientas basadas en IA como <a href="https://chat.openai.com/">OpenAI</a> y <a href="https://github.com/features/copilot">GitHub Copilot</a>.</li>
+<li>Puedes tomar cualquiera de nuestros otros cursos de CS50.</li>
+<li>Puedes unirte a una de nuestras muchas <a href="https://cs50.harvard.edu/communities">comunidades</a>.</li>
+</ul>
+<h2>Ciberseguridad</h2>
+<ul>
+<li>Hoy tendremos una descripción general de alto nivel de algunos de los temas relacionados con la ciberseguridad.</li>
+<li>La ciberseguridad consiste en comprender cómo nuestros datos están <em>protegidos</em> o <em>no protegidos</em>.</li>
+</ul>
+<h2>Contraseñas</h2>
+<ul>
+<li>Una de las preocupaciones de la ciberseguridad tiene que ver con nuestras contraseñas.</li>
+<li>Las contraseñas son un método que se utiliza para proteger los datos en línea.</li>
+<li>
+<p>Hay contraseñas comunes que la gente utiliza:</p>
+<pre><code>  1. 123456
+  2. admin
+  3. 12345678
+  4. 123456789
+  5. 1234
+  6. 12345
+  7. password
+  8. 123
+  9. Aa123456
+  10. 1234567890
+</code></pre>
+</li>
+<li>
+<p>Si tienes una de las contraseñas anteriores, ¡lo más probable es que millones de personas tengan la misma contraseña que tú!</p>
+</li>
+<li>Los adversarios del mundo comenzarán con esta lista.</li>
+<li>Los malos también pueden adivinar la mayoría de las heurísticas que utilizas para añadir símbolos a tu contraseña.</li>
+<li>Los adversarios pueden utilizar <em>ataques de fuerza bruta</em>, utilizando un diccionario de contraseñas para probar simplemente todas las contraseñas posibles.</li>
+<li>Es probable que tu contraseña no sea tan segura como crees.</li>
+</ul>
+<h2>Seguridad del teléfono</h2>
+<ul>
+<li>Muchos teléfonos se protegen con un código de cuatro dígitos.</li>
+<li>La forma más simple de ataque sería el intento de fuerza bruta de todas las contraseñas posibles.</li>
+<li>Hay 10,000 contraseñas posibles cuando se usa un código de cuatro dígitos.</li>
+<li>Si se necesita una conjetura por segundo, se tardará 10,000 segundos en descifrar la contraseña.</li>
+<li>
+<p>Sin embargo, si un programador crea un programa para generar todos los códigos posibles, el tiempo requerido sería mínimo. Considere el siguiente código en Python:</p>
+<pre><code>  from string import digits
+  from itertools import product
+
+  for passcode in product(digits, repeat=4):
+      print(passcode)
+</code></pre>
+</li>
+<li>
+<p>Debería ser bastante desconcertante que el código anterior solo tome unos segundos (¡como máximo!) para descubrir su contraseña.</p>
+</li>
+<li>Podríamos mejorar nuestra seguridad cambiando a una contraseña de cuatro letras. Esto resultaría en 7,311,616 contraseñas posibles.</li>
+<li>Incluir caracteres en mayúsculas y minúsculas crearía más de 78 millones de posibilidades.</li>
+<li>
+<p>Considere cómo podríamos modificar su código para descubrir estas contraseñas:</p>
+<pre><code>  from string import ascii_letters
+  from itertools import product
+
+  for passcode in product(ascii_letters, repeat=4):
+      print(passcode)
+</code></pre>
+</li>
+<li>
+<p>Incluso podríamos agregar la capacidad de ver todas las contraseñas posibles de ocho dígitos con letras, números y signos de puntuación:</p>
+<pre><code>  from string import ascii_letters, digits, punctuation
+  from itertools import product
+
+  for passcode in product(ascii_letters + digits + punctuation, repeat=8):
+      print(passcode)
+</code></pre>
+</li>
+<li>
+<p>La expansión a ocho caracteres, incluidas letras mayúsculas y minúsculas, números y símbolos, daría como resultado 6,095,689,385,410,816 combinaciones posibles.</p>
+</li>
+<li>En el mundo digital, simplemente desea que su contraseña sea mejor que las contraseñas de otras personas para que otras personas sean atacadas mucho antes que usted, ya que es un objetivo mucho menos conveniente.</li>
+<li>Una desventaja de usar una contraseña tan larga es la desventaja de tener que recordarla.</li>
+<li>En consecuencia, existen otras defensas que podrían emplearse para frenar a un atacante. Por ejemplo, algunos fabricantes de teléfonos bloquean a quienes ingresan una contraseña incorrectamente.</li>
+<li>La seguridad consiste en encontrar un "punto óptimo" entre las compensaciones de seguridad mejorada y el mantenimiento de la comodidad.</li>
+</ul>
+<h2>Administradores de contraseñas</h2>
+<ul>
+<li>Los administradores de contraseñas pueden usarse para crear contraseñas muy complejas y recordarlas por ti.</li>
+<li>La probabilidad de que una contraseña protegida por un administrador de contraseñas se descifre es muy, muy baja.</li>
+<li>Esperarías que estos administradores de contraseñas fueran seguros. Sin embargo, si alguien obtiene acceso a tu administrador de contraseñas, tendrá acceso a todas tus contraseñas.</li>
+<li>Al final, es mucho menos probable que corras riesgo por las personas con las que vives, y mucho más probable que corras riesgo de los miles de millones de personas en internet.</li>
+<li>Como se mencionó anteriormente, puedes tomar una decisión basada en el equilibrio entre seguridad y conveniencia.</li>
+</ul>
+<h2>Autenticación de dos factores</h2>
+<ul>
+<li>Agregar otro medio mediante el cual debes autenticarte agrega más seguridad. Sin embargo, hay un costo humano ya que es posible que no tengas acceso a tu segundo factor.</li>
+<li>Estos se implementan como una especie de contraseñas de un solo uso que se envían a un correo electrónico, dispositivo o número de teléfono.</li>
+<li>Las políticas de seguridad siempre intentan equilibrar las necesidades de seguridad y la conveniencia humana.</li>
+</ul>
+<h2>Hash</h2>
+<ul>
+<li>La información de tu cuenta y otros datos confidenciales no deben almacenarse como texto sin formato en una base de datos en línea.</li>
+<li>Si una base de datos se ve comprometida y todas las credenciales se almacenan en texto sin formato, también es probable que las credenciales para otros servicios en otros sitios web se vean comprometidas.</li>
+<li>Por lo tanto, los algoritmos hash, como se discutió anteriormente en este curso, se usan para almacenar solo valores hash de contraseñas.</li>
+<li>El hash unidireccional permite que los servicios en línea <em>nunca</em> almacenen realmente la contraseña original escrita por el usuario: solo el valor hash de estas contraseñas. Por lo tanto, si hay una violación, solo se conocerá el valor hash.</li>
+<li>Las <em>tablas arcoíris</em> son enormes diccionarios que los adversarios usan para intentar pre-hashear las posibles contraseñas como un medio para intentar romper el algoritmo hash.</li>
+<li>
+<p>Como un proceso adicional para una mayor seguridad, los programadores a veces pueden introducir el <em>salazón</em> donde es poco probable que varios usuarios tengan el mismo valor hash para representar sus contraseñas. Puedes imaginar esto de la siguiente manera:</p>
+<p><img alt="salt y contraseña que se introducen en un algoritmo que genera un hash" src="https://cs50.harvard.edu/x/2024/notes/cybersecurity/cs50Week10Slide106.png" /></p>
+</li>
+</ul>
+<h2>Criptografia</h2>
+<ul>
+<li>Al igual que el hash, un algoritmo de cifrado puede usar una <em>clave pública</em> y texto para crear texto cifrado.</li>
+<li>A su vez, una <em>clave privada</em> y el texto cifrado pueden ser introducidos al algoritmo para descifrar el texto.</li>
+</ul>
+<h2>Claves de acceso</h2>
+<ul>
+<li>Las claves de acceso son una tecnología nueva que ha surgido en los últimos meses.</li>
+<li>
+<p>A través de claves privadas y un desafío que se alimenta a un algoritmo, los sitios web pueden autenticarlo a través de la firma única creada por su dispositivo.</p>
+<p><img alt="Clave pública y desafío que se proporciona a un algoritmo dando como resultado una firma" src="https://cs50.harvard.edu/x/2024/notes/cybersecurity/cs50Week10Slide125.png" /></p>
+</li>
+<li>
+<p>Por lo tanto, las contraseñas y los nombres de usuario pueden quedar obsoletos pronto.</p>
+</li>
+</ul>
+<h2>Encriptación</h2>
+<ul>
+<li>El cifrado es una forma por la cual los datos se oscurecen de manera que solo el remitente y el receptor previsto puedan leerlos.</li>
+<li>A principios de este curso, aprendimos un algoritmo muy simple para "desplazar" el texto por uno o más caracteres como una forma rudimentaria de cifrado.</li>
+<li><em>Cifrado de extremo a extremo</em> es una forma por la cual el cifrado y el descifrado ocurren en el mismo sistema sin un intermediario. Esto evita que el intermediario o un actor malicioso puedan husmear en tus datos. Zoom y Mensajes de Apple pueden utilizar cifrado de extremo a extremo.</li>
+</ul>
+<h2>Eliminación</h2>
+<ul>
+<li>Tirar un archivo a la papelera de tu ordenador o vaciar la papelera no elimina realmente los bits reales del archivo en tu ordenador.</li>
+<li>
+<p>En cambio, quedan restos de los archivos.</p>
+<p><img alt="Restos de un archivo en un disco duro" src="https://cs50.harvard.edu/x/2024/notes/cybersecurity/cs50Week10Slide136.png" /></p>
+</li>
+<li>
+<p><em>Eliminación segura</em> es donde los restos de esos archivos se convierten en ceros y unos.</p>
+</li>
+<li>Aun así, pueden quedar algunos restos debido a lo que el sistema operativo no puede acceder.</li>
+<li><em>Cifrado de disco completo</em> permite que todo tu disco duro sea cifrado. Por lo tanto, tus archivos eliminados son menos accesibles para los adversarios.</li>
+<li>Considerando el cifrado, es esta misma tecnología la que los adversarios usan para crear <em>ransomware</em> que puede, literalmente, mantener tu disco duro como rehén.</li>
+</ul>
+<h2>Resumen</h2>
+<ul>
+<li>Usa un gestor de contraseñas.</li>
+<li>Usa autenticación de dos factores.</li>
+<li>Usa cifrado (de extremo a extremo).</li>
+</ul>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

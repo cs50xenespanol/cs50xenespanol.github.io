@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Español</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: orangered">
+  <header>
+    <h1>
+      <a href="">CS50x en Español</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href="">Curso de Introducción a la Ciencia de la Computación de la Universidad de Harvard</a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semanas/0.html">Semana
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semanas/1.html">Semana
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semanas/2.html">Semana
+          2</a>
+        Arreglos
+      </li>
+      <li>
+        <a href="/2024/semanas/3.html">Semana
+          3</a>
+        Algoritmos
+      </li>
+      <li>
+        <a href="/2024/semanas/4.html">Semana
+          4</a>
+        Memoria
+      </li>
+      <li>
+        <a href="/2024/semanas/5.html">Semana
+          5</a>
+        Estructuras de Datos
+      </li>
+      <li>
+        <a href="/2024/semanas/6.html">Semana
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semanas/7.html">Semana
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semanas/8.html">Semana
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semanas/9.html">Semana
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semanas/10.html">Semana
+          10</a>
+        Ciberseguridad
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/proyecto.html">Proyecto Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honestidad.html">Honestidad Académica</a>
+      </li>
+      <li>
+        <a href="/2024/certificado.html">Certificado CS50</a>
+      </li>
+      <li>
+        <a href="/2024/preguntas_frecuentes.html">Preguntas Frecuentes</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Libro de Calificaciones</a>
+      </li>
+      <li>
+        <a href="/2024/personal.html">Equipo</a>
+      </li>
+      <li>
+        <a href="/2024/plan_de_estudios.html">Programa del Curso</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Manual del Programador</a>
+      </li>
+      <li>
+        <a href="/2024/estilo.html">Guía de Estilo</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h2>Crédito</h2>
+<h2>Problema a resolver</h2>
+<p>En un archivo llamado <code>crédito.py</code> en una carpeta llamada <code>sentimental-crédito</code>, escribe un programa que le pida al usuario un numero de tarjeta de crédito y luego informe (a través de <code>print</code>) si es un número válido de American Express, MasterCard o Visa, exactamente como lo hiciste en <a href="../../1/">Problema Establecido 1</a>. ¡Esta vez, tu programa debe estar escrito en Python!</p>
+<h2>Demostración</h2>
+<script async="" data-autoplay="1" data-cols="100" data-loop="1" data-rows="12" id="asciicast-QYLr1R1RDLO9QkPF2XFODLkq4" src="https://asciinema.org/a/QYLr1R1RDLO9QkPF2XFODLkq4.js"></script>
+
+<h2>Especificaciones</h2>
+<ul>
+<li>Para que podamos automatizar algunas pruebas de tu código, solicitamos que la última línea de salida de tu programa sea <code>AMEX\n</code> o <code>MASTERCARD\n</code> o <code>VISA\n</code> o <code>INVÁLIDO\n</code>, nada más ni nada menos.</li>
+<li>Para simplificar, puedes asumir que la entrada del usuario será completamente numérica (es decir, sin guiones, como podría estar impresa en una tarjeta real).</li>
+<li>Es mejor utilizar <code>get_int</code> o <code>get_string</code> de la librería de CS50 para obtener la entrada de los usuarios, dependiendo de cómo decidas implementar ésta.</li>
+</ul>
+<h2>Sugerencias</h2>
+<ul>
+<li>Es posible utilizar expresiones regulares para validar la entrada del usuario. Puedes utilizar el módulo <a href="https://docs.python.org/3/library/re.html"><code>re</code></a> de Python, por ejemplo, para verificar si la entrada del usuario es, de hecho, una secuencia de dígitos de la longitud correcta.</li>
+</ul>
+<h2>Cómo probar</h2>
+<p>Si bien <code>check50</code> está disponible para este problema, te recomendamos que primero pruebes tu código por tu cuenta para cada uno de los siguientes elementos:
+- Ejecuta tu programa como <code>python crédito.py</code> y espera una indicación de entrada. Escribe <code>378282246310005</code> y presiona enter. Tu programa debe mostrar como salida <code>AMEX</code>.
+- Ejecuta tu programa como <code>python crédito.py</code> y espera una indicación de entrada. Escribe <code>371449635398431</code> y presiona enter. Tu programa debe mostrar como salida <code>AMEX</code>.
+- Ejecuta tu programa como <code>python crédito.py</code> y espera una indicación de entrada. Escribe <code>5555555555554444</code> y presiona enter. Tu programa debe mostrar como salida <code>MASTERCARD</code>.
+- Ejecuta tu programa como <code>python crédito.py</code> y espera una indicación de entrada. Escribe <code>5105105105105100</code> y presiona enter. Tu programa debe mostrar como salida <code>MASTERCARD</code>.
+- Ejecuta tu programa como <code>python crédito.py</code> y espera una indicación de entrada. Escribe <code>4111111111111111</code> y presiona enter. Tu programa debe mostrar como salida <code>VISA</code>.
+- Ejecuta tu programa como <code>python crédito.py</code> y espera una indicación de entrada. Escribe <code>4012888888881881</code> y presiona enter. Tu programa debe mostrar como salida <code>VISA</code>.
+- Ejecuta tu programa como <code>python crédito.py</code> y espera una indicación de entrada. Escribe <code>1234567890</code> y presiona enter. Tu programa debe mostrar como salida <code>INVÁLIDO</code>.</p>
+<h3>Corrección</h3>
+<pre><code>  check50 cs50/problems/2024/x/sentimental/crédito
+</code></pre>
+<h3>Estilo</h3>
+<pre><code>  style50 crédito.py
+</code></pre>
+<h2>Cómo enviar</h2>
+<pre><code>  submit50 cs50/problems/2024/x/sentimental/crédito
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

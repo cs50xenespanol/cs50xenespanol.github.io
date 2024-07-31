@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Español</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: orangered">
+  <header>
+    <h1>
+      <a href="">CS50x en Español</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href="">Curso de Introducción a la Ciencia de la Computación de la Universidad de Harvard</a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semanas/0.html">Semana
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semanas/1.html">Semana
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semanas/2.html">Semana
+          2</a>
+        Arreglos
+      </li>
+      <li>
+        <a href="/2024/semanas/3.html">Semana
+          3</a>
+        Algoritmos
+      </li>
+      <li>
+        <a href="/2024/semanas/4.html">Semana
+          4</a>
+        Memoria
+      </li>
+      <li>
+        <a href="/2024/semanas/5.html">Semana
+          5</a>
+        Estructuras de Datos
+      </li>
+      <li>
+        <a href="/2024/semanas/6.html">Semana
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semanas/7.html">Semana
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semanas/8.html">Semana
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semanas/9.html">Semana
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semanas/10.html">Semana
+          10</a>
+        Ciberseguridad
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/proyecto.html">Proyecto Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honestidad.html">Honestidad Académica</a>
+      </li>
+      <li>
+        <a href="/2024/certificado.html">Certificado CS50</a>
+      </li>
+      <li>
+        <a href="/2024/preguntas_frecuentes.html">Preguntas Frecuentes</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Libro de Calificaciones</a>
+      </li>
+      <li>
+        <a href="/2024/personal.html">Equipo</a>
+      </li>
+      <li>
+        <a href="/2024/plan_de_estudios.html">Programa del Curso</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Manual del Programador</a>
+      </li>
+      <li>
+        <a href="/2024/estilo.html">Guía de Estilo</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h2>Clase 3</h2>
+<ul>
+<li><a href="#searching">Búsqueda</a></li>
+<li><a href="#big-o">Big O</a></li>
+<li><a href="#linear-search">Búsqueda lineal</a></li>
+<li><a href="#structs">Estructuras</a></li>
+<li><a href="#sorting">Ordenación</a></li>
+<li><a href="#selection-sort">Ordenación por selección</a></li>
+<li><a href="#recursion">Recursión</a></li>
+<li><a href="#merge-sort">Ordenación por mezcla</a></li>
+</ul>
+<h2>Búsqueda</h2>
+<ul>
+<li>La última vez, hablamos sobre la memoria en un ordenador, o RAM, y sobre cómo nuestros datos se pueden almacenar como variables individuales o como matrices de muchos elementos o elementos.</li>
+<li>Podemos pensar en una matriz con una serie de elementos como una fila de casilleros, donde un ordenador solo puede abrir un casillero para mirar un elemento, uno a la vez.</li>
+<li>Por ejemplo, si queremos comprobar si un número está en una matriz, con un algoritmo que toma una matriz como entrada y produce un booleano como resultado, podríamos:<ul>
+<li>mirar en cada casillero, o en cada elemento, uno a la vez, de principio a fin.<ul>
+<li>Esto se llama <strong>búsqueda lineal</strong>, donde nos movemos en una línea, ya que nuestra matriz no está ordenada.</li>
+</ul>
+</li>
+<li>empezar en el medio y movernos a la izquierda o a la derecha dependiendo de lo que estemos buscando, si nuestra matriz de elementos está ordenada.<ul>
+<li>Esto se llama <strong>búsqueda binaria</strong>, ya que podemos dividir nuestro problema en dos con cada paso, como hizo David con la guía telefónica en la semana 0.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Podríamos escribir pseudocódigo para la búsqueda lineal:</p>
+<pre><code>    Para i de 0 a n-1
+        Si el elemento i-ésimo es 50
+            Devolver verdadero
+    Devolver falso
+</code></pre>
+<ul>
+<li>Podemos etiquetar cada uno de los <code>n</code> casilleros de <code>0</code> a <code>n-1</code> y comprobar cada uno de ellos en orden.</li>
+</ul>
+</li>
+<li>
+<p>Para la búsqueda binaria, nuestro algoritmo podría ser:</p>
+<pre><code>    Si no hay elementos
+        Devolver falso
+    Si el elemento central es 50
+        Devolver verdadero
+    De lo contrario, si 50 &lt; elemento central
+        Buscar en la mitad izquierda
+    De lo contrario, si 50 &gt; elemento central
+        Buscar en la mitad derecha
+</code></pre>
+<ul>
+<li>Finalmente, no nos quedará ninguna parte de la matriz (si el elemento que queríamos no estaba en ella), por lo que podemos devolver <code>falso</code>.</li>
+<li>De lo contrario, podemos buscar cada mitad dependiendo del valor del elemento central.</li>
+</ul>
+</li>
+</ul>
+<h2>Notación Big <em>O</em></h2>
+<ul>
+<li>En la semana 0, vimos diferentes tipos de algoritmos y sus tiempos de ejecución: <img alt="gráfica con: &quot;tamaño del problema&quot; como eje x; &quot;tiempo de solución&quot; como eje y; línea recta roja y empinada desde el origen hasta la parte superior de la gráfica etiquetada como &quot;n&quot;; línea recta amarilla y menos empinada desde el origen hasta la parte superior de la gráfica etiquetada como &quot;n/2&quot;; línea verde y curva que se vuelve cada vez menos empinada desde el origen hasta la derecha de la gráfica etiquetada como &quot;log2 n&quot;" src="https://cs50.harvard.edu/x/2020/notes/3/running_time.png" /></li>
+<li>La forma más formal de describir esto es con la notación <em>O</em> grande, que podemos considerar como "del orden de". Por ejemplo, si nuestro algoritmo es de búsqueda lineal, tomará aproximadamente <em>O</em>(<em>n</em>) pasos, "del orden de <em>n</em>". De hecho, incluso un algoritmo que observa dos elementos a la vez y toma <em>n</em>/2 pasos tiene <em>O</em>(<em>n</em>). Esto se debe a que, a medida que <em>n</em> aumenta, solo importa el término más grande, <em>n</em>.</li>
+<li>De manera similar, un tiempo de ejecución logarítmico es <em>O</em>(log <em>n</em>), sin importar cuál sea la base, ya que esto es solo una aproximación de lo que sucede con <em>n</em> muy grande.</li>
+<li>Hay algunos tiempos de ejecución comunes:<ul>
+<li><em>O</em>(_n_2)</li>
+<li><em>O</em>(<em>n</em> log <em>n</em>)</li>
+<li><em>O</em>(<em>n</em>)<ul>
+<li>(búsqueda lineal)</li>
+</ul>
+</li>
+<li><em>O</em>(log <em>n</em>)<ul>
+<li>(búsqueda binaria)</li>
+</ul>
+</li>
+<li><em>O</em>(1)</li>
+</ul>
+</li>
+<li>Los informáticos también pueden utilizar la notación <em>Ω</em> grande, <em>Omega</em> grande, que es el límite inferior del número de pasos para nuestro algoritmo. (<em>O</em> grande es el límite superior del número de pasos, o el peor de los casos, que normalmente es lo que más nos importa). Con la búsqueda lineal, por ejemplo, el peor de los casos es <em>n</em> pasos, pero el mejor de los casos es 1 paso, ya que nuestro elemento podría ser el primer elemento que revisamos. El mejor de los casos para la búsqueda binaria también es 1, ya que nuestro elemento podría estar en el medio del arreglo.</li>
+<li>Y tenemos un conjunto similar de los tiempos de ejecución <em>Ω</em> grandes más comunes:<ul>
+<li>Ω(_n_2)</li>
+<li>Ω(<em>n</em> log <em>n</em>)</li>
+<li>Ω(<em>n</em>)<ul>
+<li>(contar el número de elementos)</li>
+</ul>
+</li>
+<li>Ω(log <em>n</em>)</li>
+<li>Ω(1)<ul>
+<li>(búsqueda lineal, búsqueda binaria)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Búsqueda lineal</h2>
+<ul>
+<li>
+<p>Echemos un vistazo a <code>numbers.c</code>:</p>
+<pre><code>    #include &lt;cs50.h&gt;
+    #include &lt;stdio.h&gt;
+
+    int main(void)
+    {
+    // Un arreglo de números
+    int numbers[] = {4, 8, 15, 16, 23, 42};
+
+            // Busca el 50
+            for (int i = 0; i &lt; 6; i++)
+            {
+                if (numbers[i] == 50)
+                {
+                    printf("Encontrado\n");
+                    return 0;
+                }
+            }
+            printf("No encontrado\n");
+            return 1;
+    }
+</code></pre>
+</li>
+<li>
+<p>Aquí inicializamos un arreglo con algunos valores y verificamos los elementos del arreglo de uno en uno, en orden.</p>
+</li>
+<li>
+<p>Y en cada caso, dependiendo de si el valor se encontró o no, podemos regresar un código de salida de 0 (para éxito) o 1 (para falla).</p>
+</li>
+<li>
+<p>Podemos hacer lo mismo con nombres:</p>
+<pre><code>    #include &lt;cs50.h&gt;
+    #include &lt;stdio.h&gt;
+    #include &lt;string.h&gt;
+
+    int main(void)
+    {
+        // Un arreglo de nombres
+        string names[] = {"EMMA", "RODRIGO", "BRIAN", "DAVID"};
+
+        // Busca EMMA
+        for (int i = 0; i &lt; 4; i++)
+        {
+            if (strcmp(names[i], "EMMA") == 0)
+            {
+                printf("Encontrado\n");
+                return 0;
+            }
+        }
+        printf("No encontrado\n");
+        return 1;
+    }
+</code></pre>
+</li>
+<li>
+<p>No podemos comparar cadenas directamente, ya que no son un tipo de datos simple sino un arreglo de muchos caracteres, y necesitamos compararlos de manera diferente. Afortunadamente, la biblioteca <code>string</code> tiene una función <code>strcmp</code> que compara cadenas por nosotros y regresa <code>0</code> si son iguales, por lo que podemos usarla.</p>
+</li>
+<li>
+<p>Intentemos implementar una agenda telefónica con las mismas ideas:</p>
+<pre><code>    #include &lt;cs50.h&gt;
+    #include &lt;stdio.h&gt;
+    #include &lt;string.h&gt;
+
+    int main(void)
+    {
+        string names[] = {"EMMA", "RODRIGO", "BRIAN", "DAVID"};
+        string numbers[] = {"617–555–0100", "617–555–0101", "617–555–0102", "617–555–0103"};
+
+        for (int i = 0; i &lt; 4; i++)
+        {
+            if (strcmp(names[i], "EMMA") == 0)
+            {
+                printf("Encontrado %s\n", numbers[i]);
+                return 0;
+            }
+        }
+        printf("No encontrado\n");
+        return 1;
+    }
+</code></pre>
+</li>
+<li>
+<p>Usaremos cadenas para los números de teléfono, ya que pueden incluir formato o ser demasiado largos para un número.</p>
+</li>
+<li>Ahora, si el nombre en un determinado índice en el arreglo <code>names</code> coincide con el que estamos buscando, regresaremos el número de teléfono en el arreglo <code>numbers</code>, en el mismo índice. Pero eso significa que debemos tener especial cuidado para asegurarnos de que cada número corresponda al nombre en cada índice, especialmente si agregamos o eliminamos nombres y números.</li>
+</ul>
+<h2>Estructuras</h2>
+<ul>
+<li>
+<p>Resulta que podemos crear nuestros propios tipos de datos personalizados llamados <strong>estructuras</strong>:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  typedef struct
+  {
+      string name;
+      string number;
+  }
+  persona;
+
+  int main(void)
+  {
+      persona people[4];
+
+      people[0].name = "EMMA";
+      people[0].number = "617–555–0100";
+
+      people[1].name = "RODRIGO";
+      people[1].number = "617–555–0101";
+
+      people[2].name = "BRIAN";
+      people[2].number = "617–555–0102";
+
+      people[3].name = "DAVID";
+      people[3].number = "617–555–0103";
+
+      // Buscar EMMA
+      for (int i = 0; i &lt; 4; i++)
+      {
+          if (strcmp(people[i].name, "EMMA") == 0)
+          {
+              printf("Encontrado %s\n", people[i].number);
+              return 0;
+          }
+      }
+      printf("No encontrado\n");
+      return 1;
+  }
+</code></pre>
+<ul>
+<li>Podemos pensar en las estructuras como contenedores, dentro de los cuales hay múltiples otros tipos de datos.</li>
+<li>Aquí, creamos nuestro propio tipo con una estructura llamada <code>persona</code>, que tendrá un <code>string</code> llamado <code>name</code> y un <code>string</code> llamado <code>number</code>. Luego, podemos crear un arreglo de estos tipos de estructuras e inicializar los valores dentro de cada uno de ellos, utilizando una nueva sintaxis, <code>.</code>, para acceder a las propiedades de cada <code>persona</code>.</li>
+<li>En nuestro ciclo, ahora podemos estar más seguros de que el <code>number</code> corresponde al <code>name</code> ya que son del mismo elemento <code>persona</code>.</li>
+</ul>
+</li>
+</ul>
+<h2>Ordenamiento</h2>
+<ul>
+<li>Si nuestra entrada es una lista desordenada de números, hay muchos algoritmos que podríamos usar para producir una salida de una lista ordenada.</li>
+<li>Con ocho voluntarios en el escenario con los siguientes números, podríamos considerar intercambiar pares de números uno al lado del otro como primer paso.</li>
+<li>
+<p>Nuestros voluntarios comienzan en el siguiente orden aleatorio:</p>
+<pre><code>  6 3 8 5 2 7 4 1
+</code></pre>
+</li>
+<li>
+<p>Observamos los dos primeros números y los intercambiamos para que estén en orden:</p>
+<pre><code>  6 3 8 5 2 7 4 1
+  – –
+  3 6 8 5 2 7 4 1
+</code></pre>
+</li>
+<li>
+<p>El siguiente par, <code>6</code> y <code>8</code>, están en orden, por lo que no necesitamos intercambiarlos.</p>
+</li>
+<li>
+<p>El siguiente par, <code>8</code> y <code>5</code>, deben intercambiarse:</p>
+<pre><code>  3 6 8 5 2 7 4 1
+      – –
+  3 6 5 8 2 7 4 1
+</code></pre>
+</li>
+<li>
+<p>Continuamos hasta llegar al final de la lista:</p>
+<pre><code>  3 6 5 2 8 7 4 1
+          – –
+  3 6 5 2 7 8 4 1
+            – –
+  3 6 5 2 7 4 8 1
+              – –
+  3 6 5 2 7 4 1 8
+</code></pre>
+</li>
+<li>
+<p>Nuestra lista aún no está ordenada, pero estamos un poco más cerca de la solución porque el valor más grande, <code>8</code>, se ha desplazado hasta el final a la derecha.</p>
+</li>
+<li>
+<p>Repetimos esto con otra pasada por la lista:</p>
+<pre><code>  3 6 5 2 7 4 1 8
+  – –
+  3 6 5 2 7 4 1 8
+    – –
+  3 5 6 2 7 4 1 8
+      – –
+  3 5 2 6 7 4 1 8
+        – –
+  3 5 2 6 7 4 1 8
+          – –
+  3 5 2 6 4 7 1 8
+              – –
+  3 5 2 6 4 1 7 8
+</code></pre>
+<ul>
+<li>Tenga en cuenta que no necesitamos intercambiar el 3 y el 6, o el 6 y el 7.</li>
+</ul>
+</li>
+<li>
+<p>Ahora, el siguiente valor más grande, <code>7</code>, se movió hasta el final a la derecha. Si repetimos esto, cada vez más partes de la lista se ordenan y rápidamente tenemos una lista completamente ordenada.</p>
+</li>
+<li>
+<p>Este algoritmo se llama <strong>ordenamiento de burbuja</strong>, donde los valores grandes "burbujean" hacia la derecha. El pseudocódigo para esto podría verse así:</p>
+<pre><code>  Repetir n–1 veces
+      Para i de 0 a n–2
+          Si los elementos i y i+1 están fuera de orden
+              Intercambiarlos
+</code></pre>
+<ul>
+<li>Como estamos comparando el elemento <code>i</code> y <code>i+1</code>, solo necesitamos subir hasta <em>n</em> – 2 para <code>i</code>. Luego, intercambiamos los dos elementos si están fuera de orden.</li>
+<li>Y podemos detenernos después de haber realizado <em>n</em> – 1 pasadas, ya que sabemos que los n–1 elementos más grandes habrán burbujeado hacia la derecha.</li>
+</ul>
+</li>
+<li>
+<p>Tenemos <em>n</em> – 2 pasos para el bucle interno y <em>n</em> – 1 bucles, por lo que obtenemos un total de <em>n_2 – 3_n</em> + 2 pasos. Pero el factor más grande, o término dominante, es <em>n_2, a medida que <code>n</code> aumenta más y más, por lo que podemos decir que el ordenamiento de burbuja es _O</em>(_n_2).</p>
+</li>
+<li>Hemos visto tiempos de ejecución como los siguientes, por lo que aunque la búsqueda binaria es mucho más rápida que la búsqueda lineal, es posible que no valga la pena el costo único de ordenar la lista primero, a menos que hagamos muchas búsquedas con el tiempo:<ul>
+<li><em>O</em>(_n_2)<ul>
+<li>Ordenamiento de burbuja</li>
+</ul>
+</li>
+<li><em>O</em>(<em>n</em> log <em>n</em>)</li>
+<li><em>O</em>(<em>n</em>)<ul>
+<li>Búsqueda lineal</li>
+</ul>
+</li>
+<li><em>O</em>(log <em>n</em>)<ul>
+<li>Búsqueda binaria</li>
+</ul>
+</li>
+<li><em>O</em>(1)</li>
+</ul>
+</li>
+<li>Y Ω para el ordenamiento de burbuja sigue siendo <em>n_2, ya que todavía comprobamos cada par de elementos para _n</em> – 1 pasadas.</li>
+</ul>
+<h2>Selección de tipo</h2>
+<ul>
+<li>
+<p>Podemos elegir otro enfoque con el mismo conjunto de números:</p>
+<pre><code>    6 3 8 5 2 7 4 1
+</code></pre>
+</li>
+<li>
+<p>En primer lugar, consideraremos cada uno de los números y recordaremos el más pequeño que hayamos visto. Entonces, podemos canjearlo con el primer número en nuestra lista, ya que sabemos que es el más pequeño:</p>
+<pre><code>    6 3 8 5 2 7 4 1
+    – –
+    1 3 8 5 2 7 4 6
+</code></pre>
+</li>
+<li>
+<p>Ahora sabemos que al menos el primer elemento de nuestra lista está en el lugar correcto, por lo que podemos seleccionar el elemento más pequeño entre el resto y canjearlo con el siguiente elemento no ordenado (ahora el segundo elemento):</p>
+<pre><code>    1 3 8 5 2 7 4 6
+    – –
+    1 2 8 5 3 7 4 6
+</code></pre>
+</li>
+<li>
+<p>Podemos repetir esto una y otra vez hasta que tengamos una lista ordenada.</p>
+</li>
+<li>
+<p>Este algoritmo se llama <strong>selección de tipo</strong>, y podríamos escribir el pseudocódigo de la siguiente manera:</p>
+<pre><code>    Para i de 0 a n–1
+    Encontrar el elemento más pequeño entre el elemento i y el último elemento
+    Canjear el elemento más pequeño con el elemento i
+</code></pre>
+</li>
+<li>
+<p>Con la notación <em>O</em> grande, todavía tenemos un tiempo de ejecución de <em>O</em>(<em>n_2), ya que estábamos mirando aproximadamente todos los elementos _n</em> para encontrar el más pequeño y realizando <em>n</em> pasadas para ordenar todos los elementos.</p>
+</li>
+<li>
+<p>Más formalmente, podemos utilizar algunas fórmulas para demostrar que el factor más grande es de hecho _n_2:</p>
+<pre><code>    n + (n – 1) + (n – 2) + ... + 1
+    n(n + 1)/2
+    (n^2 + n)/2
+    n^2/2 + n/2
+    O(n^2)
+</code></pre>
+</li>
+<li>
+<p>Entonces, resulta que la selección de tipo es básicamente igual que la ordenación de burbuja en tiempo de ejecución:</p>
+<ul>
+<li><em>O</em>(_n_2)<ul>
+<li>Ordenación de burbuja, selección de tipo</li>
+</ul>
+</li>
+<li><em>O</em>(<em>n</em> log <em>n</em>)</li>
+<li><em>O</em>(<em>n</em>)<ul>
+<li>Búsqueda lineal</li>
+</ul>
+</li>
+<li><em>O</em>(log <em>n</em>)<ul>
+<li>Búsqueda binaria</li>
+</ul>
+</li>
+<li><em>O</em>(1)</li>
+</ul>
+</li>
+<li>El mejor caso, Ω, también es _n_2.</li>
+<li>
+<p>Podemos volver a la ordenación de burbuja y cambiar su algoritmo a que sea algo como esto, lo que nos permitirá detenernos antes de tiempo si se ordenan todos los elementos:</p>
+<pre><code>    Repetir hasta que no haya canjes
+    Para i de 0 a n–2
+    Si los elementos i e i+1 están fuera de orden
+    Canjearlos
+</code></pre>
+<ul>
+<li>Ahora, solo necesitamos mirar cada elemento una vez, por lo que el mejor caso es ahora Ω(<em>n</em>):<ul>
+<li>Ω(_n_2)<ul>
+<li>Selección de tipo</li>
+</ul>
+</li>
+<li>Ω(<em>n</em> log <em>n</em>)</li>
+<li>Ω(<em>n</em>)<ul>
+<li>Ordenación de burbuja</li>
+</ul>
+</li>
+<li>Ω(log <em>n</em>)</li>
+<li>Ω(1)<ul>
+<li>Búsqueda lineal, búsqueda binaria</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Consideramos una visualización en línea <a href="https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html">comparando algoritmos de ordenación</a> con animaciones para ver cómo se mueven los elementos dentro de las matrices para la ordenación de burbuja y la selección de tipo.</p>
+</li>
+</ul>
+<h2>Recursión</h2>
+<ul>
+<li>
+<p>Recuerde que en la semana 0, teníamos pseudocódigo para encontrar un nombre en una guía telefónica. Este pseudocódigo contenía líneas que nos decían "volver" y repetir algunos pasos:</p>
+<pre><code>  1  Tomar la guía telefónica
+  2  Abrirla por la mitad
+  3  Mirar la página
+  4  Si Smith está en la página
+  5      Llamar a Mike
+  6  Sino, si Smith está antes en la guía
+  7      Abrir por la mitad la mitad izquierda del libro
+  8      **Volver a la línea 3**
+  9  Sino si Smith está después en la guía
+  10     Abrir por la mitad la mitad derecha del libro
+  11     **Volver a la línea 3**
+  12 Sino
+  13     Salir
+</code></pre>
+</li>
+<li>
+<p>En lugar de eso, podríamos repetir todo nuestro algoritmo en la mitad del libro que nos queda:</p>
+<pre><code>  1  Tomar la guía telefónica
+  2  Abrirla por la mitad
+  3  Mirar la página
+  4  Si Smith está en la página
+  5      Llamar a Mike
+  6  Sino, si Smith está antes en la guía
+  7      **Buscar en la mitad izquierda del libro**
+  8
+  9  Sino si Smith está después en la guía
+  10     **Buscar en la mitad derecha del libro**
+  11
+  12 Sino
+  13     Salir
+</code></pre>
+<ul>
+<li>Esto parece un proceso cíclico que nunca terminará, pero en realidad estamos dividiendo el problema por la mitad cada vez y deteniéndonos una vez que no quede más libro.</li>
+</ul>
+</li>
+<li>
+<p><strong>Recursión</strong> ocurre cuando una función o algoritmo se refiere a sí mismo, como en el nuevo pseudocódigo anterior.</p>
+</li>
+<li>
+<p>También en la semana 1, implementamos una "pirámide" de bloques en la siguiente forma:</p>
+<pre><code>  #
+  ##
+  ###
+  ####
+</code></pre>
+<ul>
+<li>
+<p>Y podríamos haber tenido código iterativo como este:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  void draw(int h);
+
+  int main(void)
+  {
+      // Obtener la altura de la pirámide
+      int height = get_int("Altura: ");
+
+      // Dibujar la pirámide
+      draw(height);
+  }
+
+  void draw(int h)
+  {
+      // Dibujar una pirámide de altura h
+      for (int i = 1; i &lt;= h; i++)
+      {
+          for (int j = 1; j &lt;= i; j++)
+          {
+              printf("#");
+          }
+          printf("\n");
+      }
+  }
+</code></pre>
+<ul>
+<li>Aquí, usamos ciclos <code>for</code> para imprimir cada bloque en cada fila.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Pero observe que una pirámide de altura 4 es en realidad una pirámide de altura 3, con una fila adicional de 4 bloques añadida. Y una pirámide de altura 3 es una pirámide de altura 2, con una fila extra de 3 bloques. Una pirámide de altura 2 es una pirámide de altura 1, con una fila adicional de 2 bloques. Y finalmente, una pirámide de altura 1 es solo una pirámide de altura 0, o nada, con otra fila de un solo bloque añadida.</p>
+</li>
+<li>
+<p>Con esta idea en mente, podemos escribir:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  void draw(int h);
+
+  int main(void)
+  {
+      // Obtener la altura de la pirámide
+      int height = get_int("Altura: ");
+
+      // Dibujar la pirámide
+      draw(height);
+  }
+
+  void draw(int h)
+  {
+      // Si no hay nada que dibujar
+      if (h == 0)
+      {
+          return;
+      }
+
+      // Dibujar una pirámide de altura h - 1
+      draw(h - 1);
+
+      // Dibujar una fila más de ancho h
+      for (int i = 0; i &lt; h; i++)
+      {
+          printf("#");
+      }
+      printf("\n");
+  }
+</code></pre>
+<ul>
+<li>Ahora, nuestra función <code>draw</code> primero se llama a sí misma <strong>recursivamente</strong>, dibujando una pirámide de altura <code>h - 1</code>. Pero incluso antes de eso, necesitamos detenernos si <code>h</code> es 0, ya que no quedará nada por dibujar.</li>
+<li>Después, dibujamos la siguiente fila, o una fila de ancho <code>h</code>.</li>
+</ul>
+</li>
+</ul>
+<h2>Merge sort</h2>
+<ul>
+<li>
+<p>Podemos tomar la idea de la recursión para ordenar, con otro algoritmo llamado merge sort. El pseudocódigo podría ser algo como:</p>
+<pre><code>  Si solo hay un elemento
+    Devolver
+  Sino
+      Ordenar la mitad izquierda de los elementos
+      Ordenar la mitad derecha de los elementos
+      Fusionar las mitades ordenadas
+</code></pre>
+</li>
+<li>
+<p>Podemos ver esto mejor en la práctica con una lista desordenada:</p>
+<pre><code>  7 4 5 2 6 3 8 1
+</code></pre>
+</li>
+<li>
+<p>Primero, ordenaremos la mitad izquierda (los primeros cuatro elementos):</p>
+<pre><code>  7 4 5 2 | 6 3 8 1
+  – – – –
+</code></pre>
+</li>
+<li>
+<p>Bueno, para ordenar eso, primero necesitamos ordenar la mitad izquierda de la mitad izquierda:</p>
+<pre><code>  7 4 | 5 2 | 6 3 8 1
+  – –
+</code></pre>
+</li>
+<li>
+<p>Ahora, tenemos solo un elemento, <code>7</code>, en la mitad izquierda, y un elemento, <code>4</code>, en la mitad derecha. Entonces los fusionaremos, tomando el elemento más pequeño de cada lista primero:</p>
+<pre><code>  – – | 5 2 | 6 3 8 1
+  4 7
+</code></pre>
+</li>
+<li>
+<p>Y ahora regresamos a la mitad derecha de la mitad izquierda y la ordenamos:</p>
+<pre><code>  – – | – – | 6 3 8 1
+  4 7 | 2 5
+</code></pre>
+</li>
+<li>
+<p>Ahora, ambas mitades de la mitad izquierda están ordenadas, por lo que podemos fusionarlas. Miramos el inicio de cada lista y tomamos <code>2</code> ya que es más pequeño que <code>4</code>. Después, tomamos <code>4</code>, ya que ahora es el elemento más pequeño en el frente de ambas listas. Después, tomamos <code>5</code>, y finalmente, <code>7</code>, para obtener:</p>
+<pre><code>  – – – – | 6 3 8 1
+  – – – –
+  2 4 5 7
+</code></pre>
+</li>
+<li>
+<p>Ahora ordenamos la mitad derecha de la misma manera. Primero, la mitad izquierda de la mitad derecha:</p>
+<pre><code>  – – – – | – – | 8 1
+  – – – – | 3 6 |
+  2 4 5 7
+</code></pre>
+</li>
+<li>
+<p>Después, la mitad derecha de la mitad derecha:</p>
+<pre><code>  – – – – | – – | – –
+  – – – – | 3 6 | 1 8
+  2 4 5 7
+</code></pre>
+</li>
+<li>
+<p>Ahora podemos fusionar la mitad derecha:</p>
+<pre><code>  – – – – | – – – –
+  – – – – | – – – –
+  2 4 5 7 | 1 3 6 8
+</code></pre>
+</li>
+<li>
+<p>Y finalmente, podemos fusionar ambas mitades de la lista completa, siguiendo los mismos pasos que antes. Observa que no necesitamos verificar todos los elementos de cada mitad para encontrar el más pequeño, ya que sabemos que cada mitad ya está ordenada. En cambio, solo tomamos el elemento más pequeño de los dos al inicio de cada mitad:</p>
+<pre><code>    – – – – | – – – –
+    – – – – | – – – –
+    2 4 5 7 | – 3 6 8
+    1
+
+    – – – – | – – – –
+    – – – – | – – – –
+    – 4 5 7 | – 3 6 8
+    1 2
+
+    – – – – | – – – –
+    – – – – | – – – –
+    – 4 5 7 | – – 6 8
+    1 2 3
+
+    – – – – | – – – –
+    – – – – | – – – –
+    – – 5 7 | – – 6 8
+    1 2 3 4
+
+    – – – – | – – – –
+    – – – – | – – – –
+    – – – 7 | – – 6 8
+    1 2 3 4 5
+
+    – – – – | – – – –
+    – – – – | – – – –
+    – – – 7 | – – – 8
+    1 2 3 4 5 6
+
+    – – – – | – – – –
+    – – – – | – – – –
+    – – – – | – – – 8
+    1 2 3 4 5 6 7
+
+    – – – – | – – – –
+    – – – – | – – – –
+    – – – – | – – – –
+    1 2 3 4 5 6 7 8
+</code></pre>
+</li>
+<li>
+<p>Llevó muchos pasos, pero en realidad llevó menos pasos que los otros algoritmos que hemos visto hasta ahora. Dividimos nuestra lista por la mitad cada vez, hasta que estuvimos "ordenando" ocho listas con un elemento cada una:</p>
+<pre><code>    7 | 4 | 5 | 2 | 6 | 3 | 8 | 1
+    4 7 | 2 5 | 3 6 | 1 8
+    2 4 5 7 | 1 3 6 8
+    1 2 3 4 5 6 7 8
+</code></pre>
+</li>
+<li>
+<p>Dado que nuestro algoritmo dividía el problema por la mitad cada vez, su tiempo de ejecución es logarítmico con <em>O</em>(log <em>n</em>). Y después de ordenar cada mitad (o la mitad de una mitad), necesitábamos fusionar todos los elementos, con <em>n</em> pasos ya que teníamos que buscar cada elemento una vez.</p>
+</li>
+<li>Por lo que nuestro tiempo de ejecución total es <em>O</em>(<em>n</em> log <em>n</em>):<ul>
+<li><em>O</em>(_n_2)<ul>
+<li>Ordenamiento de burbuja, ordenamiento por selección</li>
+</ul>
+</li>
+<li><em>O</em>(<em>n</em> log <em>n</em>)<ul>
+<li>Ordenamiento por combinación</li>
+</ul>
+</li>
+<li><em>O</em>(<em>n</em>)<ul>
+<li>Búsqueda lineal</li>
+</ul>
+</li>
+<li><em>O</em>(log <em>n</em>)<ul>
+<li>Búsqueda binaria</li>
+</ul>
+</li>
+<li><em>O</em>(1)</li>
+</ul>
+</li>
+<li>Como log <em>n</em> es mayor que 1 pero menor que <em>n</em>, <em>n</em> log <em>n</em> está entre <em>n</em> (veces 1) y _n_2.</li>
+<li>El mejor caso, Ω, sigue siendo <em>n</em> log <em>n</em>, ya que todavía ordenamos cada mitad primero y luego las fusionamos:<ul>
+<li>Ω(_n_2)<ul>
+<li>Ordenamiento por selección</li>
+</ul>
+</li>
+<li>Ω(<em>n</em> log <em>n</em>)<ul>
+<li>Ordenamiento por combinación</li>
+</ul>
+</li>
+<li>Ω(<em>n</em>)<ul>
+<li>Ordenamiento de burbuja</li>
+</ul>
+</li>
+<li>Ω(log <em>n</em>)</li>
+<li>Ω(1)<ul>
+<li>Búsqueda lineal, búsqueda binaria</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Finalmente, hay otra notación, Θ, Theta, que usamos para describir los tiempos de ejecución de los algoritmos si el límite superior y el límite inferior son los mismos. Por ejemplo, el ordenamiento por combinación tiene Θ(<em>n</em> log <em>n</em>) ya que el mejor y el peor caso requieren el mismo número de pasos. Y el ordenamiento por selección tiene Θ(_n_2).</li>
+<li>Vemos una <a href="https://www.youtube.com/watch?v=ZZuD6iUe3Pc">visualización final</a> de algoritmos de ordenamiento con un mayor número de entradas, ejecutándose al mismo tiempo.</li>
+</ul>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

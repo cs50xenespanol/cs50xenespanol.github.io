@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Español</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: orangered">
+  <header>
+    <h1>
+      <a href="">CS50x en Español</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href="">Curso de Introducción a la Ciencia de la Computación de la Universidad de Harvard</a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semanas/0.html">Semana
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semanas/1.html">Semana
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semanas/2.html">Semana
+          2</a>
+        Arreglos
+      </li>
+      <li>
+        <a href="/2024/semanas/3.html">Semana
+          3</a>
+        Algoritmos
+      </li>
+      <li>
+        <a href="/2024/semanas/4.html">Semana
+          4</a>
+        Memoria
+      </li>
+      <li>
+        <a href="/2024/semanas/5.html">Semana
+          5</a>
+        Estructuras de Datos
+      </li>
+      <li>
+        <a href="/2024/semanas/6.html">Semana
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semanas/7.html">Semana
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semanas/8.html">Semana
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semanas/9.html">Semana
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semanas/10.html">Semana
+          10</a>
+        Ciberseguridad
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/proyecto.html">Proyecto Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honestidad.html">Honestidad Académica</a>
+      </li>
+      <li>
+        <a href="/2024/certificado.html">Certificado CS50</a>
+      </li>
+      <li>
+        <a href="/2024/preguntas_frecuentes.html">Preguntas Frecuentes</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Libro de Calificaciones</a>
+      </li>
+      <li>
+        <a href="/2024/personal.html">Equipo</a>
+      </li>
+      <li>
+        <a href="/2024/plan_de_estudios.html">Programa del Curso</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Manual del Programador</a>
+      </li>
+      <li>
+        <a href="/2024/estilo.html">Guía de Estilo</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Mario</h1>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/cWOkHQXw0JQ?modestbranding=0&amp;rel=0&amp;showinfo=0&amp;start=11"></iframe></div>
+
+<h2>Problema a resolver</h2>
+<p>Hacia el final del mundo 1-1 en <a href="https://en.wikipedia.org/wiki/Super_Mario_Bros.">Super Mario Bros.</a> de Nintendo, Mario debe ascender una pirámide de ladrillos alineada a la derecha, como en la imagen de abajo.</p>
+<p><img alt="captura de pantalla de Mario saltando sobre una pirámide alineada a la derecha" src="https://cs50.harvard.edu/x/2024/psets/1/mario/less/pyramid.png" /></p>
+<p>En un archivo llamado <code>mario.c</code> en una carpeta llamada <code>mario-less</code>, implementa un programa en C que recree esa pirámide, usando almohadillas (<code>#</code>) para los ladrillos, como en la imagen de abajo:</p>
+<pre><code>         #
+        ##
+       ###
+      ####
+     #####
+    ######
+   #######
+  ########
+</code></pre>
+<p>Pero solicita al usuario un <code>int</code> para la altura real de la pirámide, de modo que el programa también pueda generar pirámides más pequeñas como la siguiente:</p>
+<pre><code>    #
+   ##
+  ###
+</code></pre>
+<p>Vuelve a solicitar al usuario, una y otra vez según sea necesario, si su entrada no es mayor que 0 o no es un <code>int</code> en su totalidad.</p>
+<h4>Sugerencias</h4>
+<ul>
+<li>Recuerda que puedes obtener un <code>int</code> de un usuario con <code>get_int</code>, que se declara en <code>cs50.h</code>.</li>
+<li>Recuerda que puedes imprimir una <code>string</code> con <code>printf</code>, que se declara en <code>stdio.h</code>.</li>
+</ul>
+<h2>Demostración</h2>
+<script async="" data-autoplay="1" data-cols="80" data-loop="1" data-rows="12" id="asciicast-WPrv7PFVLaLkJ2BU96uTEQKuA" src="https://asc
+iinema.org/a/WPrv7PFVLaLkJ2BU96uTEQKuA.js"></script>
+
+<h2>Consejo</h2>
+<h3>Escribe código que sepas que se compilará</h3>
+<p>Aunque este programa no haga nada, ¡al menos debería compilarse con <code>make</code>!</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+
+  }
+</code></pre>
+<h3>Escribe pseudocódigo antes de escribir más código</h3>
+<p>Si no estás seguro de cómo resolver el problema en sí, divídelo en problemas más pequeños que probablemente puedas resolver primero. Por ejemplo, este problema son realmente dos problemas:</p>
+<ol>
+<li>Pedirle al usuario la altura de la pirámide</li>
+<li>Imprimir una pirámide de esa altura</li>
+</ol>
+<p>Así que escribe un pseudocódigo como comentarios que te recuerden hacer eso:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Pídele al usuario la altura de la pirámide
+
+      // Imprime una pirámide de esa altura
+  }
+</code></pre>
+<h3>Convierte el pseudocódigo en código</h3>
+<p>Primero, considera cómo podrías pedirle al usuario la altura de la pirámide. Recuerda que un bucle <code>do while</code> es útil cuando quieres hacer algo al menos una vez, y posiblemente una y otra vez, como en el siguiente ejemplo:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Pídele al usuario la altura de la pirámide
+      int n;
+      do
+      {
+          n = get_int("Altura: ");
+      }
+      while (n &lt; 1);
+
+      // Imprime una pirámide de esa altura
+  }
+</code></pre>
+<p>En segundo lugar, considera cómo podrías imprimir una pirámide de esa altura, de arriba a abajo. Observa que la primera fila debe tener un ladrillo, la segunda fila debe tener dos ladrillos, y así sucesivamente. Lo más probable es que necesites un bucle, como en el siguiente ejemplo, aunque (¡todavía!) no estés seguro de qué poner en ese bucle. Así que añade más pseudocódigo como comentario por ahora:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Pídele al usuario la altura de la pirámide
+      int n;
+      do
+      {
+          n = get_int("Altura: ");
+      }
+      while (n &lt; 1);
+
+      // Imprime una pirámide de esa altura
+      for (int i = 0; i &lt; n; i++)
+      {
+          // Imprime la fila de ladrillos
+      }
+  }
+</code></pre>
+<p>¿Cómo imprimir esa fila de ladrillos? Bueno, ¿no sería genial si hubiera una función llamada <code>print_row</code> que pudiera hacer eso? Supongamos que la hay:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  void print_row(int bricks);
+
+  int main(void)
+  {
+      // Pídele al usuario la altura de la pirámide
+      int n;
+      do
+      {
+          n = get_int("Altura: ");
+      }
+      while (n &lt; 1);
+
+      // Imprime una pirámide de esa altura
+      for (int i = 0; i &lt; n; i++)
+      {
+          // Imprime la fila de ladrillos
+      }
+  }
+
+  void print_row(int bricks)
+  {
+      // Imprime la fila de ladrillos
+  }
+</code></pre>
+<p>Luego podríamos llamar a esa función desde <code>main</code>, como en el siguiente ejemplo:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  void print_row(int bricks);
+
+  int main(void)
+  {
+      // Pídele al usuario la altura de la pirámide
+      int n;
+      do
+      {
+          n = get_int("Altura: ");
+      }
+      while (n &lt; 1);
+
+      // Imprime una pirámide de esa altura
+      for (int i = 0; i &lt; n; i++)
+      {
+          // Imprime la fila de ladrillos
+          print_row(i + 1);
+      }
+  }
+
+  void print_row(int bricks)
+  {
+      // Imprime la fila de ladrillos
+  }
+</code></pre>
+<p>¿Pero por qué <code>i + 1</code>?</p>
+<p>Ahora vamos a implementar <code>print_row</code>:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  void print_row(int bricks);
+
+  int main(void)
+  {
+      // Pídele al usuario la altura de la pirámide
+      int n;
+      do
+      {
+          n = get_int("Altura: ");
+      }
+      while (n &lt; 1);
+
+      // Imprime una pirámide de esa altura
+      for (int i = 0; i &lt; n; i++)
+      {
+          // Imprime la fila de ladrillos
+          print_row(i + 1);
+      }
+  }
+
+  void print_row(int bricks)
+  {
+      for (int i = 0; i &lt; bricks; i++)
+      {
+          printf("#");
+      }
+      printf("\n");
+  }
+</code></pre>
+<p>¿Pero por qué el <code>\n</code> al final?</p>
+<p>Desafortunadamente, este código imprime una pirámide alineada a la izquierda, ¡pero tú necesitas una alineada a la derecha! ¿Quizás deberíamos imprimir algunos espacios en blanco antes de algunos de los ladrillos, para moverlos hacia la derecha? Vamos a cambiar <code>print_row</code> de la siguiente manera para que pueda imprimir ambas:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  void print_row(int spaces, int bricks);
+
+  int main(void)
+  {
+      // Pídele al usuario la altura de la pirámide
+      int n;
+      do
+      {
+          n = get_int("Altura: ");
+      }
+      while (n &lt; 1);
+
+      // Imprime una pirámide de esa altura
+      for (int i = 0; i &lt; n; i++)
+      {
+          // Imprime la fila de ladrillos
+      }
+  }
+
+  void print_row(int spaces, int bricks)
+  {
+      // Imprime los espacios
+
+      // Imprime los ladrillos
+  }
+</code></pre>
+<p>Todavía queda algo de pseudocódigo en <code>main</code> y <code>print_row</code>, ¡así que te lo dejamos a ti!</p>
+<p>Y considera si podrías factorizar parte del código en <code>main</code> en una función <code>get_height</code>, ¡que también devuelva el <code>int</code> que necesitas!</p>
+<h2>Tutorial</h2>
+<div class="alert alert-info" data-alert="info" role="alert"><p>Tenga en cuenta que este tutorial especifica que su programa debe pedirle al usuario la altura de una pirámide y <em>volver</em> a preguntar si el usuario ingresa un valor menor a 1 o mayor a 8. La especificación solo requiere que le vuelva a preguntar al usuario si ingresa un valor menor a 1.</p></div>
+
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/NAs4FIWkJ4s?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<h2>Cómo probar</h2>
+<p>¿Su código funciona según lo prescrito cuando ingresa:</p>
+<ul>
+<li><code>-1</code> u otros números negativos?</li>
+<li><code>0</code>?</li>
+<li><code>1</code> u otros números positivos?</li>
+<li>¿letras o palabras?</li>
+<li>¿no ingresa nada, cuando solo presiona Enter?</li>
+</ul>
+<h3>Corrección</h3>
+<p>En su terminal, ejecute lo siguiente para verificar la corrección de su trabajo.</p>
+<pre><code>  check50 cs50/problems/2024/x/mario/less
+</code></pre>
+<h3>Estilo</h3>
+<p>Ejecute lo siguiente para evaluar el estilo de su código usando <code>style50</code>.</p>
+<pre><code>  style50 mario.c
+</code></pre>
+<h2>Cómo enviar</h2>
+<p>En su terminal, ejecute lo siguiente para enviar su trabajo.</p>
+<pre><code>  submit50 cs50/problems/2024/x/mario/less
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

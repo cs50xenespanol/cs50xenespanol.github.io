@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Español</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: orangered">
+  <header>
+    <h1>
+      <a href="">CS50x en Español</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href="">Curso de Introducción a la Ciencia de la Computación de la Universidad de Harvard</a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semanas/0.html">Semana
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semanas/1.html">Semana
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semanas/2.html">Semana
+          2</a>
+        Arreglos
+      </li>
+      <li>
+        <a href="/2024/semanas/3.html">Semana
+          3</a>
+        Algoritmos
+      </li>
+      <li>
+        <a href="/2024/semanas/4.html">Semana
+          4</a>
+        Memoria
+      </li>
+      <li>
+        <a href="/2024/semanas/5.html">Semana
+          5</a>
+        Estructuras de Datos
+      </li>
+      <li>
+        <a href="/2024/semanas/6.html">Semana
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semanas/7.html">Semana
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semanas/8.html">Semana
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semanas/9.html">Semana
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semanas/10.html">Semana
+          10</a>
+        Ciberseguridad
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/proyecto.html">Proyecto Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honestidad.html">Honestidad Académica</a>
+      </li>
+      <li>
+        <a href="/2024/certificado.html">Certificado CS50</a>
+      </li>
+      <li>
+        <a href="/2024/preguntas_frecuentes.html">Preguntas Frecuentes</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Libro de Calificaciones</a>
+      </li>
+      <li>
+        <a href="/2024/personal.html">Equipo</a>
+      </li>
+      <li>
+        <a href="/2024/plan_de_estudios.html">Programa del Curso</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Manual del Programador</a>
+      </li>
+      <li>
+        <a href="/2024/estilo.html">Guía de Estilo</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h2>Página de inicio</h2>
+<p>Crea una página de inicio sencilla usando HTML, CSS y JavaScript.</p>
+<h2>Antecedentes</h2>
+<p>Internet ha permitido cosas increíbles: podemos usar un motor de búsqueda para investigar cualquier cosa imaginable, comunicarnos con amigos y familiares en todo el mundo, jugar juegos, tomar cursos y mucho más. Pero resulta que casi todas las páginas que podemos visitar están construidas sobre tres lenguajes principales, cada uno de los cuales tiene un propósito ligeramente diferente:</p>
+<ol>
+<li>HTML, o <em>HyperText Markup Language</em>, que se utiliza para describir el contenido de los sitios web;</li>
+<li>CSS, <em>Cascading Style Sheets</em>, que se utiliza para describir la estética de los sitios web; y</li>
+<li>JavaScript, que se utiliza para hacer que los sitios web sean interactivos y dinámicos.</li>
+</ol>
+<p>Crea una página de inicio sencilla que te presente, tu pasatiempo favorito o actividad extracurricular, o cualquier otra cosa que te interese.</p>
+<h2>Primeros pasos</h2>
+<p>Inicia sesión en <a href="https://cs50.dev/">cs50.dev</a>, haz clic en la ventana de tu terminal y ejecuta <code>cd</code> por sí solo. Deberías encontrar que el indicador de la ventana de tu terminal se asemeja al siguiente:</p>
+<pre><code>  $
+</code></pre>
+<p>A continuación, ejecuta</p>
+<pre><code>  wget https://cdn.cs50.net/2023/fall/psets/8/homepage.zip
+</code></pre>
+<p>para descargar un ZIP llamado <code>homepage.zip</code> en tu espacio de códigos.</p>
+<p>A continuación, ejecuta</p>
+<pre><code>  unzip homepage.zip
+</code></pre>
+<p>para crear una carpeta llamada <code>homepage</code>. Ya no necesitas el archivo ZIP, por lo que puedes ejecutar</p>
+<pre><code>  rm homepage.zip
+</code></pre>
+<p>y responder con "y" seguido de Enter en el indicador para eliminar el archivo ZIP que descargaste.</p>
+<p>Ahora escribe</p>
+<pre><code>  cd homepage
+</code></pre>
+<p>seguido de Enter para moverte (es decir, abrir) ese directorio. Tu indicador ahora debería parecerse al siguiente.</p>
+<pre><code>  homepage/ $
+</code></pre>
+<p>Ejecuta <code>ls</code> por sí solo, y deberías ver algunos archivos:</p>
+<pre><code>  index.html  styles.css
+</code></pre>
+<p>Si tienes algún problema, sigue estos mismos pasos nuevamente y ¡mira si puedes determinar dónde te equivocaste! Puedes iniciar inmediatamente un servidor para ver tu sitio ejecutando</p>
+<pre><code>  http-server
+</code></pre>
+<p>en la ventana de terminal. Luego, haz clic con el comando (si estás en Mac) o haz clic con el control (si estás en PC) en el primer enlace que aparezca:</p>
+<pre><code>  http-server en ejecución en LINK
+</code></pre>
+<p>Donde LINK es la dirección de tu servidor.</p>
+<h2>Especificación</h2>
+<p>Implementa en tu directorio <code>homepage</code> un sitio web que debe:</p>
+<ul>
+<li>Contener al menos cuatro páginas <code>.html</code> diferentes, al menos una de las cuales es <code>index.html</code> (la página principal de tu sitio web), y debería ser posible acceder a cualquier página de tu sitio web desde cualquier otra página siguiendo uno o más hipervínculos.</li>
+<li>Usar al menos diez (10) etiquetas HTML distintas además de <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code> y <code>&lt;title&gt;</code>. ¡Utilizar una etiqueta (por ejemplo, <code>&lt;p&gt;</code>) varias veces todavía cuenta como solo una (1) de esas diez!</li>
+<li>Integrar una o más funciones de Bootstrap en tu sitio. Bootstrap es una biblioteca popular (que viene con muchas clases CSS y más) a través de la cual puedes embellecer tu sitio. Consulta la <a href="https://getbootstrap.com/docs/5.2/">documentación de Bootstrap</a> para comenzar. En particular, puedes encontrar interesantes algunos de los <a href="https://getbootstrap.com/docs/5.2/components/">componentes de Bootstrap</a>. Para agregar Bootstrap a tu sitio, basta con incluir<pre><code>    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"&gt;
+    &lt;script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"&gt;&lt;/script&gt;
+</code></pre>
+</li>
+</ul>
+<p>en la <code>&lt;head&gt;</code> de tus páginas, debajo de la cual también puedes incluir</p>
+<pre><code>      &lt;link href="styles.css" rel="stylesheet"&gt;
+</code></pre>
+<p>para vincular tu propio CSS.</p>
+<ul>
+<li>Tener al menos un archivo de hoja de estilo de tu propia creación, <code>styles.css</code>, que utilice al menos cinco (5) selectores CSS diferentes (por ejemplo, etiqueta (<code>example</code>), clase (<code>.example</code>) o ID (<code>#example</code>)), y dentro del cual utilices un total de al menos cinco (5) propiedades CSS diferentes, como <code>font-size</code> o <code>margin</code>; y</li>
+<li>Integrar una o más funciones de JavaScript en tu sitio para que sea más interactivo. Por ejemplo, puedes usar JavaScript para agregar alertas, para tener un efecto a un intervalo recurrente o para agregar interactividad a botones, menús desplegables o formularios. ¡Siéntete libre de ser creativo!</li>
+<li>Asegúrate de que tu sitio se vea bien en los navegadores tanto en dispositivos móviles como en laptops y computadoras de escritorio.</li>
+</ul>
+<p>También debes crear un archivo de texto, <code>specification.txt</code>, que enumere las 10 etiquetas HTML y las 5 propiedades CSS que has utilizado, así como una breve descripción (de una oración) de cómo elegiste utilizar JavaScript y Bootstrap.</p>
+<h2>Pruebas</h2>
+<p>Si quieres ver cómo se ve tu sitio mientras trabajas en él, puedes ejecutar <code>http-server</code>. Haz clic con el comando o el control en el primer enlace presentado por http-server, que debería abrir tu página web en una nueva pestaña. A continuación, deberías poder actualizar la pestaña que contiene tu página web para ver tus últimos cambios.</p>
+<p>Recuerda también que al abrir las herramientas para desarrolladores en Google Chrome, puedes <em>simular</em> visitar tu página en un dispositivo móvil haciendo clic en el ícono con forma de teléfono a la izquierda de <strong>Elementos</strong> en la ventana de herramientas para desarrolladores, o, una vez que la pestaña Herramientas para desarrolladores ha abierto, escribiendo <code>Ctrl</code> + <code>Shift</code> + <code>M</code> en una PC o <code>Cmd</code> + <code>Shift</code> + <code>M</code> en una Mac, ¡en lugar de tener que visitar tu sitio en un dispositivo móvil por separado!</p>
+<h2>Evaluación</h2>
+<p>¡No hay <code>check50</code> para esta tarea! En cambio, la corrección de tu sitio se evaluará en función de si cumples con los requisitos de la especificación como se describe anteriormente, y si tu HTML está bien formado y es válido. Para asegurarte de que tus páginas lo estén, puedes utilizar este <a href="https://validator.w3.org/#validate_by_input">Servicio de validación de marcado</a>, copiando y pegando tu HTML directamente en el cuadro de texto proporcionado. ¡Ten cuidado de eliminar cualquier advertencia o error sugerido por el validador antes de enviar!</p>
+<p>Considera también:</p>
+<ul>
+<li>si la estética de tu sitio es tal que es intuitivo y sencillo de navegar para el usuario;</li>
+<li>si tu CSS ha sido factorizado en un archivo o archivos CSS separados; y</li>
+<li>si has evitado la repetición y redundancia "cascading" de propiedades de estilo desde etiquetas principales.</li>
+</ul>
+<p>Lamentablemente, <code>style50</code> no admite archivos HTML, por lo que te corresponde a ti sangrar y alinear tus etiquetas HTML de forma clara. También debes saber que puedes crear un comentario HTML con:</p>
+<pre><code>  &lt;!-- Comentario aquí --&gt;
+</code></pre>
+<p>pero comentar tu código HTML no es tan imperativo como lo es cuando se comentan códigos en, por ejemplo, C o Python. También puedes comentar tu CSS, en archivos CSS, con:</p>
+<pre><code>  /* Comentario aquí */
+</code></pre>
+<h2>Consejos</h2>
+<p>Para obtener guías bastante completas sobre los idiomas introducidos en este problema, consulta estos tutoriales:</p>
+<ul>
+<li><a href="https://www.w3schools.com/html/">HTML</a></li>
+<li><a href="https://www.w3schools.com/css/">CSS</a></li>
+<li><a href="https://www.w3schools.com/js/">JavaScript</a></li>
+</ul>
+<h2>Cómo enviar</h2>
+<pre><code>  submit50 cs50/problems/2024/x/homepage
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>
